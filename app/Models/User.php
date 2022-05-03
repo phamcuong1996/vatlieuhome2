@@ -2,14 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class
-User extends Authenticatable
+class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -18,10 +16,13 @@ User extends Authenticatable
      *
      * @var array<int, string>
      */
+    protected $table = "users";
     protected $fillable = [
         'name',
         'email',
         'password',
+        'email_verified_at',
+        'remember_token'
     ];
 
     /**
@@ -34,6 +35,10 @@ User extends Authenticatable
         'remember_token',
     ];
 
+    public function getNameAttribute($value)
+    {
+        return $this->strtoupper($value);
+    }
     /**
      * The attributes that should be cast.
      *
