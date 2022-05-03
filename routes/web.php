@@ -1,5 +1,12 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminOrderController;
+use App\Http\Controllers\FeController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +23,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+//
+Route::get('admin/posts/index', [PostController::class, 'index'])->name('posts.index');
+Route::get('admin/posts/create', [PostController::class, 'create'])->name('posts.create');
+Route::post('admin/posts/store', [PostController::class, 'store'])->name('posts.store');
+Route::get('admin/posts/{id}/edit', [PostController::class, 'edit'])->name('posts.edit');
+Route::put('admin/posts/{id}/update', [PostController::class, 'update'])->name('posts.update');
+Route::delete('admin/posts/{id}/destroy', [PostController::class, 'destroy'])->name('posts.destroy');
