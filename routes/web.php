@@ -30,3 +30,11 @@ Route::post('admin/posts/store', [PostController::class, 'store'])->name('posts.
 Route::get('admin/posts/{id}/edit', [PostController::class, 'edit'])->name('posts.edit');
 Route::put('admin/posts/{id}/update', [PostController::class, 'update'])->name('posts.update');
 Route::delete('admin/posts/{id}/destroy', [PostController::class, 'destroy'])->name('posts.destroy');
+
+//Products
+Route::get('admin/products/index', [ProductController::class, 'index'])->name('admin.products.index');
+Route::get('admin/products/create', [ProductController::class, 'create'])->name('admin.products.create');
+Route::post('admin/products/store', [ProductController::class, 'store'])->name('admin.products.store');
+Route::get('admin/products/{id}/edit', [ProductController::class, 'edit']);
+Route::post('admin/products/{id}/update', [ProductController::class, 'update'])->name('admin.products.update');
+Route::get('admin/products/{id}/destroy', [ProductController::class, 'destroy'])->name('admin.products.destroy');
