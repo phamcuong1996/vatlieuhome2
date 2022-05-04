@@ -28,7 +28,7 @@
                             <td>{{ $post->title }}</td>
                             <td>{{ $post->content }}</td>
                             <td>{{ $post->image }}</td>
-                            <td>{{ $post->category->name }}</td>
+{{--                            <td>{{ $post->category->name }}</td>--}}
                             <td>
                                 <a href="{{ route('posts.edit', $post->id) }}">SỬA</a>
                             </td>
