@@ -46,3 +46,10 @@ Route::post('admin/users/store', [UserController::class, 'store'])->name('users.
 Route::get('admin/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
 Route::put('admin/users/{id}/update', [UserController::class, 'update'])->name('users.update');
 Route::delete('admin/users/{id}/destroy', [UserController::class, 'destroy'])->name('users.destroy');
+
+//fe
+Route::get('/', [FeController::class, 'index'])->name('index');
+Route::get('categories/{id}/products', [FeController::class, 'getProductsByCategoryId'])->name('fe.product.list');
+Route::get('products/{id}', [FeController::class, 'productDetail'])->name('fe.products.show');
+Route::get('posts/{id}/detail', [FeController::class, 'postDetail'])->name('fe.post.detail');
+Route::get('categories/{id}/posts', [FeController::class, 'getPostsByCategoryId'])->name('fe.product.list');
