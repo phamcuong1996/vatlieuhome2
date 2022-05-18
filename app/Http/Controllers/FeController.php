@@ -50,7 +50,7 @@ class FeController extends Controller
     {
         $product = Product::find($id);
 
-        return view('fe.products.detail', ['product' => $product]);
+        return view('products.detail', ['product' => $product]);
     }
 
     public function postDetail(int $id)
