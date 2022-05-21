@@ -9,7 +9,7 @@
                     <th scope="col">Số Lượng</th>
                     <th scope="col">Ảnh</th>
                     <th scope="col">Giá</th>
-                    <th scope="col">Sub total</th>
+                    <th scope="col">Tổng Tiền</th>
                     <th scope="col">Hành Động</th>
                 </tr>
                 </thead>
@@ -31,7 +31,7 @@
                         <td>{{number_format($productsKeyById[$cart['product_id']]->price * $cart['quantity'])}}VNĐ</td>
                         <td>
                             <a href="" data-product_id="{{ $cart['product_id'] }}" class="btn btn-primary cart_update">Cập Nhật</a>
-                            <a href="" data-product_id="{{ $cart['product_id'] }}" class="btn btn-danger cart_delete">Xoa</a>
+                            <a href="" data-product_id="{{ $cart['product_id'] }}" class="btn btn-danger cart_delete">Xóa</a>
                         </td>
                     </tr>
                 @endforeach
@@ -63,7 +63,7 @@
                 <div class="input-group mb-3">
                     <input name="note" type="text" class="form-control" placeholder="Note"> <br>
                 </div>
-                <button type="submit" class="btn btn-primary">Dat hang</button>
+                <button type="submit" class="btn btn-primary">Đặt Hàng</button>
             </div>
         </form>
         <div class="card-body">
