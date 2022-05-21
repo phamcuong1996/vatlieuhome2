@@ -53,3 +53,10 @@ Route::get('categories/{id}/products', [FeController::class, 'getProductsByCateg
 Route::get('products/{id}', [FeController::class, 'productDetail'])->name('fe.products.detail');
 Route::get('posts/{id}/detail', [FeController::class, 'postDetail'])->name('fe.post.detail');
 Route::get('categories/{id}/posts', [FeController::class, 'getPostsByCategoryId'])->name('fe.products.list');
+
+// Cart
+Route::post('orders', [OrderController::class, 'addProduct'])->name('fe.orders.add_product');
+Route::get('orders/index', [OrderController::class, 'index'])->name('carts.index');
+Route::get('/updatecart', [OrderController::class, 'updatecart'])->name('carts.update');
+Route::get('/deletecart', [OrderController::class, 'deletecart'])->name('carts.delete');
+Route::post('orders/save', [OrderController::class, 'save'])->name('orders.save');
