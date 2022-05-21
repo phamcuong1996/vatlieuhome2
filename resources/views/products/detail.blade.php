@@ -41,4 +41,25 @@
     <div>
         <h5>Sản Phẩm Cùng Loại:</h5>
 
+        <script>
+            $(document).ready(function () {
+                $(".product-card__addtocart").click(function () {
+                    $.ajax({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        url: '/orders',
+                        dataType : 'json',
+                        type: 'POST',
+                        data: {
+                            product_id: {{ $product->id }},
+                            quantity: 4
+                        },
+                        success:function(response) {
+                            console.log(response);
+                        }
+                    });
+                });
+            })
+        </script>
 @endsection
