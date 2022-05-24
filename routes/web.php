@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminOrderController;
 use App\Http\Controllers\FeController;
 use App\Http\Controllers\OrderController;
@@ -60,3 +59,9 @@ Route::get('orders/index', [OrderController::class, 'index'])->name('carts.index
 Route::get('/updatecart', [OrderController::class, 'updatecart'])->name('carts.update');
 Route::get('/deletecart', [OrderController::class, 'deletecart'])->name('carts.delete');
 Route::post('orders/save', [OrderController::class, 'save'])->name('orders.save');
+
+// AdminOrder
+Route::get('admin/orders/init', [AdminOrderController::class, 'indexInit'])->name('admin.orders.indexInit');
+Route::get('admin/orders/confirmed', [AdminOrderController::class, 'indexConfirmed'])->name('admin.orders.indexConfirmed');
+Route::get('admin/orders/done', [AdminOrderController::class, 'indexDone'])->name('admin.orders.indexDone');
+Route::get('admin/orders/cancel', [AdminOrderController::class, 'indexCancel'])->name('admin.orders.indexCancel');
