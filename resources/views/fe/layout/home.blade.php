@@ -6,20 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
     <title>Stroyka</title>
-    <link rel="icon" type="image/png" href="/fe/HTML/default/images/favicon.png">
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <!-- fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i">
     <!-- css -->
-    <link rel="stylesheet" href="/fe/HTML/default/vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/fe/HTML/default/vendor/owl-carousel/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="/fe/HTML/default/vendor/photoswipe/photoswipe.css">
-    <link rel="stylesheet" href="/fe/HTML/default/vendor/photoswipe/default-skin/default-skin.css">
-    <link rel="stylesheet" href="/fe/HTML/default/vendor/select2/css/select2.min.css">
-    <link rel="stylesheet" href="/fe/HTML/default/css/style.css">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/owl-carousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="vendor/photoswipe/photoswipe.css">
+    <link rel="stylesheet" href="vendor/photoswipe/default-skin/default-skin.css">
+    <link rel="stylesheet" href="vendor/select2/css/select2.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <!-- font - fontawesome -->
-    <link rel="stylesheet" href="/fe/HTML/default/vendor/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css">
     <!-- font - stroyka -->
-    <link rel="stylesheet" href="/fe/HTML/default/fonts/stroyka/stroyka.css">
+    <link rel="stylesheet" href="fonts/stroyka/stroyka.css">
 </head>
 
 <body>
@@ -9637,17 +9637,17 @@
 </div>
 <!-- photoswipe / end -->
 <!-- js -->
-<script src="/fe/HTML/default/vendor/jquery/jquery.min.js"></script>
-<script src="/fe/HTML/default/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="/fe/HTML/default/vendor/owl-carousel/owl.carousel.min.js"></script>
-<script src="/fe/HTML/default/vendor/nouislider/nouislider.min.js"></script>
-<script src="/fe/HTML/default/vendor/photoswipe/photoswipe.min.js"></script>
-<script src="/fe/HTML/default/vendor/photoswipe/photoswipe-ui-default.min.js"></script>
-<script src="/fe/HTML/default/vendor/select2/js/select2.min.js"></script>
-<script src="/fe/HTML/default/js/number.js"></script>
-<script src="/fe/HTML/default/js/main.js"></script>
-<script src="/fe/HTML/default/js/header.js"></script>
-<script src="/fe/HTML/default/vendor/svg4everybody/svg4everybody.min.js"></script>
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="vendor/owl-carousel/owl.carousel.min.js"></script>
+<script src="vendor/nouislider/nouislider.min.js"></script>
+<script src="vendor/photoswipe/photoswipe.min.js"></script>
+<script src="vendor/photoswipe/photoswipe-ui-default.min.js"></script>
+<script src="vendor/select2/js/select2.min.js"></script>
+<script src="js/number.js"></script>
+<script src="js/main.js"></script>
+<script src="js/header.js"></script>
+<script src="vendor/svg4everybody/svg4everybody.min.js"></script>
 <script>
     svg4everybody();
 </script>

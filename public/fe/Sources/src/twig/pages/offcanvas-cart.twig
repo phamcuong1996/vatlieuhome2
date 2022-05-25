@@ -1,0 +1,16 @@
+{% set header_layout = 'default' %}
+{% set cart_style = 'offcanvas' %}
+{% extends '/layouts/default.twig' %}
+
+{% block site_body %}
+    {% include '/partials/page-header.twig' with {
+        title: 'Offcanvas Cart'
+    } %}
+
+    <div class="block-empty__body">
+        <div class="block-empty__message">Click on the button to open the offcanvas cart!</div>
+        <div class="block-empty__actions">
+            <a class="btn btn-primary btn-sm" href="#" data-open="offcanvas-cart">Open Cart</a>
+        </div>
+    </div>
+{% endblock %}

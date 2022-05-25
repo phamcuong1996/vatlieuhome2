@@ -1,0 +1,28 @@
+<ul class="nav-links__list">
+    {% for link in nav_links %}
+        <li class="nav-links__item {% if link.submenu %} nav-links__item--has-submenu {% endif %}">
+            <a class="nav-links__item-link" href="{{ link.url }}">
+                <div class="nav-links__item-body">
+                    {{ link.title }}
+                    {% if link.submenu %}
+                        <svg class="nav-links__item-arrow" width="9px" height="6px"><use xlink:href="images/sprite.svg#arrow-rounded-down-9x6"></use></svg>
+                    {% endif %}
+                </div>
+            </a>
+            {% if link.submenu and link.submenu.type == 'menu' %}
+                <div class="nav-links__submenu nav-links__submenu--type--menu">
+                    {% include '/header/menu.twig' with {
+                        menu_links: link.submenu.menu
+                    } %}
+                </div>
+            {% endif %}
+            {% if link.submenu and link.submenu.type == 'megamenu' %}
+                <div class="nav-links__submenu nav-links__submenu--type--megamenu nav-links__submenu--size--{{ link.submenu.menu.size }}">
+                    {% include '/header/megamenu.twig' with {
+                        megamenu: link.submenu.menu
+                    } %}
+                </div>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
