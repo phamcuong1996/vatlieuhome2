@@ -1,0 +1,37 @@
+{#
+// inputs:
+// - classes: string - CSS classes to be applied to the root element.
+// - shape:   string - one of [circle, rounded].
+#}
+
+{% set classes = classes|default('') %}
+{% set shape   = shape|default(null) %}
+
+{% set root_classes = 'social-links' %}
+
+{% if classes %}
+    {% set root_classes = root_classes~' '~classes %}
+{% endif %}
+
+{% if shape %}
+    {% set root_classes = root_classes~' social-links--shape--'~shape %}
+{% endif %}
+
+<!-- social-links -->
+<div class="{{ root_classes }}">
+    <ul class="social-links__list">
+        {% for link in social_links %}
+            {% set url = link.url ? link.url : theme.author.profile_ur %}
+            <li class="social-links__item">
+                <a
+                        class="social-links__link social-links__link--type--{{ link.type }}"
+                        href="{{ url }}"
+                        target="_blank"
+                >
+                    <i class="{{ link.icon }}"></i>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+<!-- social-links / end -->

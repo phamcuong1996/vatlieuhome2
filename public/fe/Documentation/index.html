@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Stroyka</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i" rel="stylesheet">
+
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="vendor/highlight.js-9.13.1/styles/github-gist.css">
+
+    <!-- js -->
+    <script src="vendor/highlight.js-9.13.1/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+<div class="docs-markup">
+    <nav class="docs-nav">
+
+        <div class="docs-nav__logo">
+            <a href="" target="_blank">
+                <svg class="docs-logo" xmlns="http://www.w3.org/2000/svg" width="120px" height="20px">
+                    <path d="M118.5,20h-1.1c-0.6,0-1.2-0.4-1.4-1l-1.5-4h-6.1l-1.5,4c-0.2,0.6-0.8,1-1.4,1h-1.1c-1,0-1.8-1-1.4-2l1.1-3
+                             l1.5-4l3.6-10c0.2-0.6,0.8-1,1.4-1h1.6c0.6,0,1.2,0.4,1.4,1l3.6,10l1.5,4l1.1,3C120.3,19,119.5,20,118.5,20z M111.5,6.6l-1.6,4.4
+                             h3.2L111.5,6.6z M99.5,20h-1.4c-0.4,0-0.7-0.2-0.9-0.5L94,14l-2,3.5v1c0,0.8-0.7,1.5-1.5,1.5h-1c-0.8,0-1.5-0.7-1.5-1.5v-17
+                             C88,0.7,88.7,0,89.5,0h1C91.3,0,92,0.7,92,1.5v8L94,6l3.2-5.5C97.4,0.2,97.7,0,98.1,0h1.4c1.2,0,1.9,1.3,1.3,2.3L96.3,10l4.5,7.8
+                             C101.4,18.8,100.7,20,99.5,20z M80.3,11.8L80,12.3v6.2c0,0.8-0.7,1.5-1.5,1.5h-1c-0.8,0-1.5-0.7-1.5-1.5v-6.2l-0.3-0.5l-5.5-9.5
+                             c-0.6-1,0.2-2.3,1.3-2.3h1.4c0.4,0,0.7,0.2,0.9,0.5L76,4.3l2,3.5l2-3.5l2.2-3.8C82.4,0.2,82.7,0,83.1,0h1.4c1.2,0,1.9,1.3,1.3,2.3
+                             L80.3,11.8z M60,20c-5.5,0-10-4.5-10-10S54.5,0,60,0s10,4.5,10,10S65.5,20,60,20z M60,4c-3.3,0-6,2.7-6,6s2.7,6,6,6s6-2.7,6-6
+                             S63.3,4,60,4z M47.8,17.8c0.6,1-0.2,2.3-1.3,2.3h-2L41,14h-4v4.5c0,0.8-0.7,1.5-1.5,1.5h-1c-0.8,0-1.5-0.7-1.5-1.5v-17
+                             C33,0.7,33.7,0,34.5,0H41c0.3,0,0.7,0,1,0.1c3.4,0.5,6,3.4,6,6.9c0,2.4-1.2,4.5-3.1,5.8L47.8,17.8z M42,4.2C41.7,4.1,41.3,4,41,4h-3
+                             c-0.6,0-1,0.4-1,1v4c0,0.6,0.4,1,1,1h3c0.3,0,0.7-0.1,1-0.2c0.3-0.1,0.6-0.3,0.9-0.5C43.6,8.8,44,7.9,44,7C44,5.7,43.2,4.6,42,4.2z
+                              M29.5,4H25v14.5c0,0.8-0.7,1.5-1.5,1.5h-1c-0.8,0-1.5-0.7-1.5-1.5V4h-4.5C15.7,4,15,3.3,15,2.5v-1C15,0.7,15.7,0,16.5,0h13
+                             C30.3,0,31,0.7,31,1.5v1C31,3.3,30.3,4,29.5,4z M6.5,20c-2.8,0-5.5-1.7-6.4-4c-0.4-1,0.3-2,1.3-2h1c0.5,0,0.9,0.3,1.2,0.7
+                             c0.2,0.3,0.4,0.6,0.8,0.8C4.9,15.8,5.8,16,6.5,16c1.5,0,2.8-0.9,2.8-2c0-0.7-0.5-1.3-1.2-1.6C7.4,12,7,11,7.4,10.3l0.4-0.9
+                             c0.4-0.7,1.2-1,1.8-0.6c0.6,0.3,1.2,0.7,1.6,1.2c1,1.1,1.7,2.5,1.7,4C13,17.3,10.1,20,6.5,20z M11.6,6h-1c-0.5,0-0.9-0.3-1.2-0.7
+                             C9.2,4.9,8.9,4.7,8.6,4.5C8.1,4.2,7.2,4,6.5,4C5,4,3.7,4.9,3.7,6c0,0.7,0.5,1.3,1.2,1.6C5.6,8,6,9,5.6,9.7l-0.4,0.9
+                             c-0.4,0.7-1.2,1-1.8,0.6c-0.6-0.3-1.2-0.7-1.6-1.2C0.6,8.9,0,7.5,0,6c0-3.3,2.9-6,6.5-6c2.8,0,5.5,1.7,6.4,4C13.3,4.9,12.6,6,11.6,6
+                             z"></path>
+                </svg>
+            </a>
+        </div>
+
+        <ul class="docs-nav__links">
+            
+                <li>
+                    <a class="docs-nav__link" href="#section-home">
+                        Introduction
+                    </a>
+                </li>
+            
+                <li>
+                    <a class="docs-nav__link" href="#section-features">
+                        Features
+                    </a>
+                </li>
+            
+                <li>
+                    <a class="docs-nav__link" href="#section-getting-started">
+                        Getting Started
+                    </a>
+                </li>
+            
+                <li>
+                    <a class="docs-nav__link" href="#section-html-structure">
+                        HTML Structure
+                    </a>
+                </li>
+            
+                <li>
+                    <a class="docs-nav__link" href="#section-css-files">
+                        CSS Files
+                    </a>
+                </li>
+            
+                <li>
+                    <a class="docs-nav__link" href="#section-javascript">
+                        Javascript
+                    </a>
+                </li>
+            
+                <li>
+                    <a class="docs-nav__link" href="#section-fonts">
+                        Fonts
+                    </a>
+                </li>
+            
+                <li>
+                    <a class="docs-nav__link" href="#section-sources">
+                        Sources
+                    </a>
+                </li>
+            
+                <li>
+                    <a class="docs-nav__link" href="#section-customization">
+                        Customization
+                    </a>
+                </li>
+            
+                <li>
+                    <a class="docs-nav__link" href="#section-changelog">
+                        Changelog
+                    </a>
+                </li>
+            
+                <li>
+                    <a class="docs-nav__link" href="#section-known-issues">
+                        Known Issues
+                    </a>
+                </li>
+            
+                <li>
+                    <a class="docs-nav__link" href="#section-credits">
+                        Credits
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <div class="docs-content">
+        
+            <section class="docs-section" id="section-home">
+                <h1 class="docs-section__title">Stroyka</h1>
+
+                <div class="docs-typography">
+<p>Thank you for purchasing my theme. If you have any questions that are beyond the scope of this help file, please feel free to email via my
+user page contact form <a href="https://themeforest.net/user/kos9">here</a>. Thanks so much!</p>
+
+
+</div>
+            </section>
+        
+            <section class="docs-section" id="section-features">
+                <h1 class="docs-section__title">Features</h1>
+
+                <div class="docs-typography">
+    <ul>
+<li>100% Responsive Layout</li>
+<li>LTR/RTL version</li>
+<li>HTML5 and CSS3</li>
+<li>Bootstrap 4</li>
+<li>SASS</li>
+<li>CSS3 Animation</li>
+<li>SVG Icons</li>
+<li>Font Awesome Icons</li>
+<li>BEM syntax</li>
+<li>Roboto Google Font</li>
+<li>Compatible with all major browsers</li>
+<li>Grid / List products view</li>
+<li>Quickview</li>
+<li><strong>Off canvas</strong> filters</li>
+<li><strong>Photoswipe</strong> gallery</li>
+<li><strong>Select2</strong> integration</li>
+<li>2 Variants of the home page</li>
+<li>3 Variants of the product page</li>
+<li>3 Variants of the blog page layout</li>
+<li>3 Variants of the post page layout</li>
+<li><strong>Off canvas</strong> and <strong>Drop down</strong> shopping cart</li>
+<li><strong>Drop down</strong> account menu</li>
+<li><strong>Search suggestions</strong></li>
+<li><strong>Sticky tabs</strong> on product page</li>
+</ul>
+
+
+</div>
+
+            </section>
+        
+            <section class="docs-section" id="section-getting-started">
+                <h1 class="docs-section__title">Getting Started</h1>
+
+                <div class="docs-typography">
+    <p>There are two ways to start using the <strong>Stroyka</strong> template:</p>
+<ul>
+<li>The first way is to use pre-compiled HTML files. The description of this method is below;</li>
+<li>The second way is to build a template from sources, it is suitable for experienced developers (See the section <a href="#section-sources">Sources</a>).</li>
+</ul>
+<h2 id="pre-compiled-html">Pre-compiled HTML</h2>
+<p>After downloading and unpacking the <strong>Stroyka</strong> template, pre-compiled HTML files will be located in the <code>HTML</code> directory.</p>
+<p>So, the <code>HTML</code> directory will look like after unpacking:</p>
+<pre><code class="language-text">HTML/
+   black/
+   blue/
+   default/
+   green/
+   red/</code></pre>
+<p>This directory contains different versions of the template:</p>
+<ul>
+<li><strong>default</strong> - standard version (yellow);</li>
+<li><strong>black</strong> - with black theme color;</li>
+<li><strong>blue</strong> - with blue theme color;</li>
+<li><strong>green</strong> - with green theme color;</li>
+<li><strong>red</strong> - with red theme color.</li>
+</ul>
+<p>Choose the one you want to use (for example <strong>default</strong>):</p>
+<pre><code class="language-text">HTML/
+   default/
+      css/
+      images/
+      js/
+      vendor/
+      404.html
+      about-us.html
+      account-addresses.html
+      blog-classic.html
+      ...</code></pre>
+<p>Description of <a href="#section-html-structure">HTML Structure</a>, <a href="#section-css-files">CSS Files</a> and <a href="#section-javascript">Javascript</a>
+files are in the relevant sections.</p>
+<p>If you want to add images or make changes to CSS or Javascript files, you need to open the corresponding files.</p>
+
+
+    <div class="docs-alert docs-alert--warning">
+        Please note that any errors or broken layouts that result from you editing the CSS or JavaScript files are not covered by support.
+        Edit these files at your own risk.
+    </div>
+
+</div>
+
+To continue customizing the template, go to the "Customization" section.
+
+            </section>
+        
+            <section class="docs-section" id="section-html-structure">
+                <h1 class="docs-section__title">HTML Structure</h1>
+
+                <div class="docs-typography">
+    <p>This template based on a responsive layout. All of the information within the main content area is nested within a body tag.
+The general template structure is the same throughout the template. Here is the general structure.</p>
+<pre><code class="language-html">&lt;body&gt;
+    &lt;!-- site --&gt;
+    &lt;div class=&quot;site&quot;&gt;
+        &lt;!-- mobile site__header --&gt;
+        &lt;header class=&quot;site__header d-lg-none&quot;&gt;
+            ...
+        &lt;/header&gt;
+        &lt;!-- mobile site__header / end --&gt;
+
+        &lt;!-- desktop site__header --&gt;
+        &lt;header class=&quot;site__header d-lg-block d-none&quot;&gt;
+            ...
+        &lt;/header&gt;
+        &lt;!-- desktop site__header / end --&gt;
+
+        &lt;!-- site__body --&gt;
+        &lt;div class=&quot;site__body&quot;&gt;
+            ...
+        &lt;/div&gt;
+        &lt;!-- site__body / end --&gt;
+
+        &lt;!-- site__footer --&gt;
+        &lt;footer class=&quot;site__footer&quot;&gt;
+            ...
+        &lt;/footer&gt;
+        &lt;!-- site__footer / end --&gt;
+    &lt;/div&gt;
+    &lt;!-- site / end --&gt;
+
+    &lt;!-- quickview-modal --&gt;
+    &lt;div id=&quot;quickview-modal&quot;&gt;
+        ...
+    &lt;/div&gt;
+    &lt;!-- quickview-modal / end --&gt;
+
+    &lt;!-- mobilemenu --&gt;
+    &lt;div class=&quot;mobilemenu&quot;&gt;
+        ...
+    &lt;/div&gt;
+    &lt;!-- mobilemenu / end --&gt;
+
+    &lt;!-- photoswipe --&gt;
+    &lt;div class=&quot;pswp&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-hidden=&quot;true&quot;&gt;
+        ...
+    &lt;/div&gt;
+    &lt;!-- photoswipe / end --&gt;
+&lt;/body&gt;</code></pre>
+
+
+</div>
+
+            </section>
+        
+            <section class="docs-section" id="section-css-files">
+                <h1 class="docs-section__title">CSS Files</h1>
+
+                <div class="docs-typography">
+    <p>This template uses seven css files:</p>
+<ul>
+<li><p><strong>css/style.css</strong><br>
+Contains main stylesheets.</p>
+<p><strong>css/style.ltr.css</strong> - same as <code>css/style.css</code> but only contains styles for LTR direction.<br>
+<strong>css/style.rtl.css</strong> - same as <code>css/style.css</code> but only contains styles for RTL direction.</p>
+</li>
+<li><p><strong>vendor/bootstrap/css/bootstrap.min.css</strong><br>
+Bootstrap is an open source toolkit for developing with HTML, CSS, and JS.</p>
+</li>
+<li><p><strong>vendor/owl-carousel/assets/owl.carousel.min.css</strong><br>
+Touch enabled jQuery plugin that lets you create a beautiful responsive carousel slider.
+Used for home page slider, products carousel, posts carousel, etc.</p>
+</li>
+<li><p><strong>vendor/photoswipe/photoswipe.css</strong><br>
+<strong>vendor/photoswipe/default-skin/default-skin.css</strong><br>
+JavaScript image gallery for mobile and desktop, modular, framework independent.
+Used on the product page in the product gallery.</p>
+</li>
+<li><p><strong>vendor/select2/css/select2.min.css</strong><br>
+Select2 is a jQuery based replacement for select boxes. It supports searching, remote data sets, and infinite scrolling of results.
+User for some select boxes.</p>
+</li>
+<li><p><strong>vendor/fontawesome/css/all.min.css</strong><br>
+This CSS file is required for Icon Font.</p>
+</li>
+</ul>
+<h2 id="style-css">style.css</h2>
+<p>At the very beginning of the <code>css/style.css</code> file you will find a table of
+contents that you can use to quickly navigate through the file.</p>
+<p>Here is an example of the structure of the <code>style.css</code>:</p>
+<pre><code class="language-text">/* ----------------------------------------
+
+Table of Contents:
+- Common
+  - animations
+  - base
+  - .document
+  ...
+- Components
+  ...
+- Filters
+  ...
+- Header
+  ...
+- Footer
+  ...
+- Pages
+  ...
+- Shop
+  ...
+- Blog
+  ...
+- Blocks
+  ...
+- Widgets
+  ...
+
+---------------------------------------- */
+/* ----------------------------------------
+// Common
+// ---------------------------------------- */
+/*
+// animations
+*/
+
+    ...
+
+/*
+// base
+*/
+
+    ...
+
+/*
+// .document
+*/
+
+    ...
+
+/* ----------------------------------------
+// Components
+// ---------------------------------------- */
+
+    ...
+</code></pre>
+
+
+</div>
+
+            </section>
+        
+            <section class="docs-section" id="section-javascript">
+                <h1 class="docs-section__title">Javascript</h1>
+
+                <div class="docs-typography">
+<p>This template uses eleven javascript files:</p>
+<ul>
+<li><p><strong>js/main.js</strong><br>
+This file contains all code related to theme, except for the code related to the header.</p>
+</li>
+<li><p><strong>js/header.js</strong><br>
+Contains code related to site header and mobile header.</p>
+</li>
+<li><p><strong>js/number.js</strong><br>
+Defines behaviour of the &quot;.input-number&quot; component.</p>
+</li>
+<li><p><strong>vendor/jquery/jquery.min.js</strong><br>
+jQuery is a Javascript library that greatly reduces the amount of code that you must write.</p>
+</li>
+<li><p><strong>vendor/bootstrap/js/bootstrap.bundle.min.js</strong><br>
+Bootstrap is an open source toolkit for developing with HTML, CSS, and JS.</p>
+</li>
+<li><p><strong>vendor/nouislider/nouislider.min.js</strong><br>
+Lightweight JavaScript range slider with full touch support.</p>
+</li>
+<li><p><strong>vendor/owl-carousel/owl.carousel.min.js</strong><br>
+Touch enabled jQuery plugin that lets you create a beautiful responsive carousel slider.</p>
+</li>
+<li><p><strong>vendor/svg4everybody/svg4everybody.min.js</strong><br>
+SVG for Everybody adds SVG External Content support to all browsers.</p>
+</li>
+<li><p><strong>vendor/photoswipe/photoswipe.min.js</strong><br>
+<strong>vendor/photoswipe/photoswipe-ui-default.min.js</strong><br>
+JavaScript image gallery for mobile and desktop, modular, framework independent.
+Used on the product page in the product gallery.</p>
+</li>
+<li><p><strong>vendor/select2/js/select2.min.js</strong><br>
+Select2 is a jQuery based replacement for select boxes. It supports searching, remote data sets, and infinite scrolling of results.
+User for some select boxes.</p>
+</li>
+</ul>
+
+
+</div>
+
+            </section>
+        
+            <section class="docs-section" id="section-fonts">
+                <h1 class="docs-section__title">Fonts</h1>
+
+                <div class="docs-typography">
+    <p>We used three fonts in this template:</p>
+<ul>
+<li><p><strong>Roboto</strong> (Google Web Font: <a href="https://fonts.google.com/specimen/Roboto">https://fonts.google.com/specimen/Roboto</a>)
+The main font used in the template.</p>
+</li>
+<li><p><strong>FontAwesome</strong> (<a href="https://fontawesome.com/">https://fontawesome.com/</a>)
+Icon Font to display some icons in the template.</p>
+</li>
+<li><p><strong>stroyka</strong> (fonts/stroyka)
+Custom Icon Font to display some icons in the template. It is used only in Edge to solve performance issue associated with
+rendering a huge amount of SVG icons.</p>
+</li>
+</ul>
+
+
+</div>
+            </section>
+        
+            <section class="docs-section" id="section-sources">
+                <h1 class="docs-section__title">Sources</h1>
+
+                <div class="docs-typography">
+
+    <div class="docs-alert docs-alert--warning">
+        Attention! This section is for advanced users.
+    </div>
+
+    <p>Template source codes are in the <code>Sources</code> directory.
+After downloading and unpacking the template, the <code>Sources</code> directory will look like this:</p>
+<pre><code class="language-text">Sources/
+   gulp/
+      tasks.js
+   src/
+      ...
+   gulpfile.js
+   package.json
+   package-lock.json</code></pre>
+<h2 id="preparation">Preparation</h2>
+<ol>
+<li>Make sure your system has installed <a href="https://nodejs.org">Node.js</a>.</li>
+<li>Open a terminal window and go to the <code>Source</code> directory.</li>
+<li>Run the <code>npm install</code> command. This command will load all necessary dependencies specified in the <code>package.json</code> file.</li>
+</ol>
+<p>To build the project run the command:</p>
+<pre><code class="language-text">./node_modules/.bin/gulp build</code></pre>
+<p>Or (if gulp is installed globally):</p>
+<pre><code class="language-text">gulp build</code></pre>
+<p>After executing the command, the compiled template will be located in the <code>dist</code> directory.</p>
+<p>For a complete list of available commands, see the <strong>Gulp Tasks</strong> section below.</p>
+<h2 id="gulp-tasks">Gulp Tasks</h2>
+<p>Gulp tasks are in the <code>gulp/tasks.js</code> and <code>gulpfile.js</code> files.
+Unfortunately, such a bit unusual structure is necessary for us to automatically build the package for themeforest.</p>
+<p>Gulp tasks description:</p>
+<ul>
+<li><strong>twig</strong> - Compiles twig templates into html pages.</li>
+<li><strong>scss</strong> - Compiles scss to <code>css/style.css</code> file.</li>
+<li><strong>vendor</strong> - Copies the contents of the <code>src/vendor</code> directory to the <code>dist/vendor</code> directory.</li>
+<li><strong>images</strong> - Copies the contents of the <code>src/images</code> directory to the <code>dist/images</code> directory.</li>
+<li><strong>svg</strong> - Creates SVG sprite (<code>sprite.svg</code>) from svg files and save it to the <code>dist/images</code> directory.</li>
+<li><strong>js</strong> - Copies the contents of the <code>src/js</code> directory to the <code>dist/js</code> directory.</li>
+<li><strong>fonts</strong> - Copies the contents of the <code>src/fonts</code> directory to the <code>dist/fonts</code> directory.</li>
+<li><strong>clean</strong> - Removes the <code>dist</code> directory.</li>
+<li><strong>build</strong> - Builds a template (default task).</li>
+<li><strong>watch</strong> - Runs the template build process with change tracking.</li>
+<li><strong>serve</strong> - Starts a local HTTP server and runs the template build process with change tracking.</li>
+</ul>
+<h2 id="twig-templates">Twig templates</h2>
+<p>We used <a href="https://github.com/twigjs/twig.js/wiki">twig.js</a> as a template engine (this is a port of the popular PHP library for javascript).
+Documentation on its syntax can be found on the <a href="https://twig.symfony.com/doc/2.x/">official site</a>.</p>
+<h3 id="data-for-templates">Data for templates</h3>
+<p>Each file from the <code>Sources/src/data</code> directory is projected into the global namespace.
+The variable name is the file name without the extension.
+For example, we have the file <code>Sources/src/data/theme.json</code> with the following contents:</p>
+<pre><code class="language-json">{
+    &quot;name&quot;: &quot;Stroyka&quot;
+}</code></pre>
+<p>Now, to display the name of the theme in the template, we can use the following construction <code>{{ theme.name }}</code>.</p>
+<p>Pay attention to the fact that all files must be in json format, and their names must match the
+regular expression <code>/^[_A-Za-z0-9]+\.json$/</code>.</p>
+<h3 id="template-directories">Template directories</h3>
+<p>The directory with the templates (<code>Sources/src/twig</code>) is divided into the following subdirectories:</p>
+<ul>
+<li><strong>blocks</strong> - Independent parts that can be used on different pages.</li>
+<li><strong>footer</strong> - Template files associated with the site footer.</li>
+<li><strong>header</strong> - Template files associated with the site header.</li>
+<li><strong>layouts</strong> - In this directory is the base layout used by all pages.</li>
+<li><strong>pages</strong> - These are the main template files that are directly compiles into html page files.</li>
+<li><strong>partials</strong> - Other parts not included in any other directory.</li>
+<li><strong>widgets</strong> - Component parts of blocks (usually they are used in the sidebar).</li>
+</ul>
+<h2 id="scss-files">SCSS Files</h2>
+<p>The directory with SCSS files contains the following files and subdirectories:</p>
+<pre><code class="language-text">scss/
+   blocks/
+   blog/
+   common/
+   components/
+   filters/
+   footer/
+   header/
+   mixins/
+   pages/
+   shop/
+   themes/
+   widgets/
+   _custom.scss
+   _custom-variables.scss
+   _functions.scss
+   _variables.scss
+   style.ltr.scss
+   style.rtl.scss
+   style.scss</code></pre>
+<p>You can make changes to any of these files.</p>
+<p>To make it easier for you in the future to upgrade the template to the new version,
+we recommend (if possible) making changes only to <code>_custom-variables.scss</code> and <code>_custom.scss</code> files.</p>
+<ul>
+<li><code>_custom-variables.scss</code> - It is used to override the values of variables.</li>
+<li><code>_custom.scss</code> - Use to write your own scss code.</li>
+</ul>
+<h2 id="predefined-color-schemes">Predefined color schemes</h2>
+<p>To compile a template with one of the predefined color schemes,
+open the <code>_custom-variables.scss</code> file, then find and uncomment one of the following lines:</p>
+<pre><code class="language-text">//@import &#39;themes/red&#39;;
+//@import &#39;themes/blue&#39;;
+//@import &#39;themes/black&#39;;
+//@import &#39;themes/green&#39;;</code></pre>
+<p>After that, you need to rebuild the template using the <code>gulp build</code> command.</p>
+<h2 id="how-does-ltr-rtl-support-work-">How does LTR/RTL support work?</h2>
+<p>The direction is controlled using two scss variables:</p>
+<ul>
+<li><code>$direction</code> - indicates direction. Possible values: <code>ltr</code> or <code>rtl</code>.</li>
+<li><code>$both-directions</code> - if <code>true</code> compiles styles for two directions, the <code>$direction</code> variable will be ignored.
+Possible values: <code>true</code> or <code>false</code>.</li>
+</ul>
+<p>Some &quot;magic&quot; variables are also used, which change their value depending on the given direction value.
+The names of these variables are the same as the names of the
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties" target="_blank">Logical Properties</a>
+(for example, variable <code>$margin-inline-start</code>).
+These variables should only be used in the <code>direction</code> mixin.</p>
+<p>This example demonstrates how it works:</p>
+<pre><code class="language-scss">.alert {
+    @include direction {
+        #{$margin-inline-start}: 20px;
+    }
+}</code></pre>
+<p>Will be compiled to:</p>
+<ul>
+<li><p>If <code>$direction == ltr</code> and <code>$both-directions == false</code>:</p>
+<pre><code class="language-css"> .alert {
+     margin-left: 20px;
+ }</code></pre>
+</li>
+<li><p>If <code>$direction == rtl</code> and <code>$both-directions == false</code>:</p>
+<pre><code class="language-css">.alert {
+    margin-right: 20px;
+}</code></pre>
+</li>
+<li><p>If <code>$both-directions == true</code>:</p>
+<pre><code class="language-css">[dir=ltr] .alert {
+    margin-left: 20px;
+}
+[dir=rtl] .alert {
+    margin-right: 20px;
+}</code></pre>
+</li>
+</ul>
+<h3 id="what-if-you-want-to-use-only-one-direction-">What if you want to use only one direction?</h3>
+<p>Open <code>src/scss/_custom-variables.scss</code>, and define next variables:</p>
+<pre><code class="language-scss">$direction:       ltr;   // specify the direction you need (ltr or rtl)
+$both-directions: false; // set to false to disable style compilation
+                         // for two directions</code></pre>
+
+
+</div>
+
+            </section>
+        
+            <section class="docs-section" id="section-customization">
+                <h1 class="docs-section__title">Customization</h1>
+
+                <div class="docs-typography">
+<h2 id="table-of-content">Table of content</h2>
+<ul>
+<li>How to change the logo?</li>
+<li>How to change the font?</li>
+<li>How to remove/change copyright notice?</li>
+<li>How to add social link?</li>
+<li>How to always show the &quot;Add to cart&quot; button in the product card?</li>
+<li>How to change product image aspect ratio?</li>
+<li>How to change direction (LTR &lt;-&gt; RTL)?</li>
+<li>How to change the sticky header mode?</li>
+<li>How to disable sticky header?</li>
+<li>How to disable sticky tabs on product page?</li>
+</ul>
+<h2 id="how-to-change-the-logo-">How to change the logo?</h2>
+<p><em>If you are working with HTML files:</em></p>
+<ul>
+<li><strong>Desktop header</strong> - In HTML files, find comments <code>&lt;!-- logo --&gt;</code> and <code>&lt;!-- logo / end --&gt;</code>
+and replace code between them with your logo image.</li>
+<li><strong>Mobile header</strong> - In HTML files, find comments <code>&lt;!-- mobile-logo --&gt;</code> and <code>&lt;!-- mobile-logo / end --&gt;</code>
+and replace code between them with your logo image.</li>
+</ul>
+<hr>
+<p><em>If you are working with source code:</em></p>
+<ul>
+<li><strong>Desktop header (classic layout)</strong><ol>
+<li>Open the <code>src/twig/header/header.twig</code> file.</li>
+<li>Find comments <code>&lt;!-- logo --&gt;</code> and <code>&lt;!-- logo / end --&gt;</code> and replace code between them with your logo image.</li>
+</ol>
+</li>
+<li><strong>Desktop header (compact layout)</strong><ol>
+<li>Open the <code>src/twig/header/nav-panel.twig</code> file.</li>
+<li>Find comments <code>&lt;!-- logo --&gt;</code> and <code>&lt;!-- logo / end --&gt;</code> and replace code between them with your logo image.</li>
+</ol>
+</li>
+<li><strong>Mobile header</strong><ol>
+<li>Open the <code>src/twig/header/mobile-header.twig</code> file.</li>
+<li>Find comments <code>&lt;!-- mobile-logo --&gt;</code> and <code>&lt;!-- mobile-logo / end --&gt;</code>
+and replace code between them with your logo image.</li>
+</ol>
+</li>
+</ul>
+<h2 id="how-to-change-the-font-">How to change the font?</h2>
+<p><em>If you are working with HTML files:</em></p>
+<ol>
+<li>In HTML files find and replace with the desired font:<pre><code class="language-html">&lt;!-- fonts --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i&quot;&gt;</code></pre>
+</li>
+<li>Open the <code>css/style.css</code> file.</li>
+<li>Insert at the end:<pre><code class="language-css">body {
+    font-family: &quot;YOUR_FONT_NAME&quot;;
+}</code></pre>
+</li>
+</ol>
+<hr>
+<p><em>If you are working with source code:</em></p>
+<ol>
+<li>Open the <code>src/twig/layouts/default.twig</code> file.</li>
+<li>Find and replace with the desired font:<pre><code class="language-html">&lt;!-- fonts --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i&quot;&gt;</code></pre>
+</li>
+<li>Open the <code>src/scss/_custom-variables.scss</code> file.</li>
+<li>And define a special variable, as in the example below:<pre><code class="language-scss">$body-font-family: &#39;YOUR_FONT_NAME&#39;;</code></pre>
+</li>
+</ol>
+<h2 id="how-to-remove-change-copyright-notice-">How to remove/change copyright notice?</h2>
+<p><em>If you are working with HTML files:</em></p>
+<p>In HTML files, find comments <code>&lt;!-- copyright --&gt;</code> and <code>&lt;!-- copyright / end --&gt;</code>,
+then replace code between them with your copyright.</p>
+<hr>
+<p><em>If you are working with source code:</em></p>
+<ol>
+<li>Open the <code>src/twig/footer/footer.twig</code> file.</li>
+<li>Find comments <code>&lt;!-- copyright --&gt;</code> and <code>&lt;!-- copyright / end --&gt;</code>,
+then replace code between them with your copyright.</li>
+</ol>
+<h2 id="how-to-add-social-link-">How to add social link?</h2>
+<p>Social links appear in the About Us widget on the blog and in the site footer.
+To add your own link, follow the instructions:</p>
+<ol>
+<li>First you need to choose an icon for your link, go to <a href="https://fontawesome.com/">https://fontawesome.com/</a> and use site search.
+When you find the icon you need, copy its classes (for example: fab fa-github) and return to this instruction.</li>
+</ol>
+<p><em>If you are working with HTML files:</em></p>
+<ol start="2">
+<li><p>In HTML files, find comments <code>&lt;!-- social-links --&gt;</code> and <code>&lt;!-- social-links / end --&gt;</code>,
+between these comments add an additional element to the <code>.social-links__list</code>, for example:</p>
+<pre><code class="language-html">&lt;ul class=&quot;social-links__list&quot;&gt;
+    ...
+    &lt;li class=&quot;social-links__item&quot;&gt;
+        &lt;!-- Next .social-links__link--type--github class will be used to set the icon color. --&gt;
+        &lt;a class=&quot;social-links__link social-links__link--type--github&quot; href=&quot;https://github.com/4Bos&quot; target=&quot;_blank&quot;&gt;
+            &lt;!-- Put the early copied CSS classes (fab fa-github) in the &quot;class&quot; attribute of this tag. --&gt;
+            &lt;i class=&quot;fab fa-github&quot;&gt;&lt;/i&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+</li>
+<li><p>Open the <code>css/style.css</code> and append to the end:</p>
+<pre><code class="language-css">.social-links__link--type--github {
+    background-color: #24292e;
+    color: #fff;
+}</code></pre>
+</li>
+</ol>
+<p><em>If you are working with source code:</em></p>
+<ol start="4">
+<li>Open the <code>src/data/social_links.json</code> and add a new element to the root array:<pre><code class="language-json">[
+    // ...
+    // type - will be used to generate link class,
+    //        for example: social-links__link--type--github.
+    // icon - the early copied CSS classes (fab fa-github).
+    // url  - social link url.
+    {&quot;type&quot;: &quot;github&quot;, &quot;icon&quot;: &quot;fab fa-github&quot;, &quot;url&quot;: &quot;https://github.com/4Bos&quot;}
+]</code></pre>
+</li>
+<li>Open the <code>src/scss/_custom-variables.scss</code> and define colors for our social link:<pre><code class="language-scss">$social-links: (
+    // The map key (github) must be the same as the type in the
+    // social_links.json file.
+    github: (bg-color: #24292e, font-color: #fff),
+);</code></pre>
+</li>
+</ol>
+<p>This is the end. Of course, don&#39;t forget to follow me on <a href="https://github.com/4Bos">github</a>.</p>
+<h2 id="how-to-always-show-the-add-to-cart-button-in-the-product-card-">How to always show the &quot;Add to cart&quot; button in the product card?</h2>
+<p>Just remove the class <code>product-card--hidden-actions</code> from all <code>.product-card</code>&#39;s.</p>
+<pre><code class="language-html">&lt;!-- Replace --&gt;
+&lt;div class=&quot;product-card product-card--hidden-actions&quot;&gt;
+    ...
+&lt;/div&gt;
+
+&lt;!-- With --&gt;
+&lt;div class=&quot;product-card&quot;&gt;
+    ...
+&lt;/div&gt;</code></pre>
+<h2 id="how-to-change-product-image-aspect-ratio-">How to change product image aspect ratio?</h2>
+<p><em>If you are working with HTML files:</em></p>
+<ol>
+<li>Open the <code>css/style.css</code> file.</li>
+<li>Insert at the end:<pre><code class="language-css">.product-image__body {
+    padding-bottom: calc(100% * (3 / 4));
+}</code></pre>
+where 4 is the relative width of the image and 3 is the relative height of the image.</li>
+</ol>
+<hr>
+<p><em>If you are working with source code:</em></p>
+<ol>
+<li>Open the <code>src/scss/_custom-variables.scss</code> file.</li>
+<li>And define a special variables, as in the example below:<pre><code class="language-scss">$product-image-width:  4; // Relative image width.
+$product-image-height: 3; // Relative image height.</code></pre>
+</li>
+</ol>
+<h2 id="how-to-change-direction-ltr-rtl-">How to change direction (LTR &lt;-&gt; RTL)?</h2>
+<p><em>If you are working with HTML files:</em></p>
+<ol>
+<li>Open <code>HTML/{THEME_NAME}/{*}.html</code> (for example <code>HTML/default/index.html</code>);</li>
+<li>And specify value of the <code>dir</code> attribute (ltr or rtl) for <code>&lt;html&gt;</code> tag, for example:<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot; dir=&quot;rtl&quot;&gt;
+...</code></pre>
+</li>
+</ol>
+<p>By default, <code>style.css</code> is used in template files, it contains styles for both directions.
+If you want to use one direction, you can replace it with a more efficient version <code>style.{direction}.css</code>.</p>
+<ol start="3">
+<li>Find: <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&gt;</code>.<br>
+And replace to: <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.rtl.css&quot;&gt;</code></li>
+</ol>
+<hr>
+<p><em>If you are working with source code:</em></p>
+<p>Described in the &quot;Sources&quot; section.</p>
+<h2 id="how-to-change-the-sticky-header-mode-">How to change the sticky header mode?</h2>
+<p><em>If you are working with HTML files:</em></p>
+<ol>
+<li>Open <code>HTML/{THEME_NAME}/{*}.html</code> (for example <code>HTML/default/index.html</code>);</li>
+</ol>
+<p><em>If you are working with source code:</em></p>
+<ol>
+<li><p>Open <code>src/twig/header/nav-panel.twig</code> and/or <code>src/twig/header/mobile-header.twig</code>.</p>
+</li>
+<li><p>Find:</p>
+<pre><code class="language-html">&lt;!-- for desktop: --&gt;
+&lt;div class=&quot;nav-panel nav-panel--sticky&quot; data-sticky-mode=&quot;pullToShow&quot;&gt;
+
+&lt;!-- for mobile: --&gt;
+&lt;div class=&quot;mobile-header mobile-header--sticky&quot; data-sticky-mode=&quot;pullToShow&quot;&gt;</code></pre>
+</li>
+<li><p>Specify the value of <code>data-sticky-mode</code> attribute (possible values: <code>pullToShow</code>, <code>alwaysOnTop</code>);</p>
+</li>
+</ol>
+<h2 id="how-to-disable-sticky-header-">How to disable sticky header?</h2>
+<p><em>If you are working with HTML files:</em></p>
+<ol>
+<li>Open <code>HTML/{THEME_NAME}/{*}.html</code> (for example <code>HTML/default/index.html</code>);</li>
+</ol>
+<p><em>If you are working with source code:</em></p>
+<ol>
+<li><p>Open <code>src/twig/header/nav-panel.twig</code> and/or <code>src/twig/header/mobile-header.twig</code>.</p>
+</li>
+<li><p>Find:</p>
+<pre><code class="language-html">&lt;!-- for desktop: --&gt;
+&lt;div class=&quot;nav-panel nav-panel--sticky&quot; data-sticky-mode=&quot;pullToShow&quot;&gt;
+
+&lt;!-- for mobile: --&gt;
+&lt;div class=&quot;mobile-header mobile-header--sticky&quot; data-sticky-mode=&quot;pullToShow&quot;&gt;</code></pre>
+</li>
+<li><p>Remove <code>nav-panel--sticky</code> and/or <code>mobile-header--sticky</code> class;</p>
+</li>
+</ol>
+<h2 id="how-to-disable-sticky-tabs-on-product-page-">How to disable sticky tabs on product page?</h2>
+<p><em>If you are working with HTML files:</em></p>
+<ol>
+<li>Open <code>HTML/{THEME_NAME}/product{*}.html</code> (for example <code>HTML/default/product.html</code>);</li>
+</ol>
+<p><em>If you are working with source code:</em></p>
+<ol>
+<li>Open <code>src/twig/partials/product-tabs.twig</code>;</li>
+<li>Then find and remove <code>product-tabs--sticky</code> class.</li>
+</ol>
+
+</div>
+
+            </section>
+        
+            <section class="docs-section" id="section-changelog">
+                <h1 class="docs-section__title">Changelog</h1>
+
+                <div class="docs-typography">
+    <p><strong>Version 1.14.0</strong> – August 15, 2021</p>
+<ul>
+<li>Other: node-sass replaced with sass;</li>
+<li>Updated <strong>jquery</strong> form <code>3.5.1</code> to <code>3.6.0</code>;</li>
+<li>Updated dependencies.</li>
+</ul>
+<p><strong>Version 1.13.0</strong> – May 14, 2020</p>
+<ul>
+<li>Added: Category selector to the search;</li>
+<li>Added: Add to cart button to the search suggestions;</li>
+<li>Fixed: Color swatches are not wrapped to a new line;</li>
+<li>Updated:<ul>
+<li><strong>bootstrap</strong> form <code>4.4.1</code> to <code>4.5.0</code>;</li>
+<li><strong>@fortawesome/fontawesome-free</strong> form <code>5.11.2</code> to <code>5.13.0</code>;</li>
+<li><strong>jquery</strong> form <code>3.4.1</code> to <code>3.5.1</code>;</li>
+<li><strong>nouislider</strong> form <code>14.1.0</code> to <code>14.5.0</code>;</li>
+<li><strong>select2</strong> form <code>4.0.12</code> to <code>4.0.13</code>.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Version 1.12.0</strong> – March 23, 2020</p>
+<ul>
+<li>Added: <strong>Sticky tabs</strong> on product page (can be disabled);</li>
+<li>Added: Ability to display two columns of post cards in .block-posts (Latest News) on mobile devices;</li>
+<li>Added: Ability to display four columns of post cards in .block-posts (Latest News) on desktop devices;</li>
+<li>Added: Ability to display two columns of product cards in .block-products and .block-products-carousels on mobile devices.</li>
+</ul>
+<p><strong>Version 1.11.0</strong> – March 7, 2020</p>
+<ul>
+<li>Added: The ability to always show the &quot;Add to cart&quot; button, and not only when hovering;</li>
+<li>Added: The ability to change the aspect ratio of the product images;</li>
+<li>Added: Added customization section to the documentation;</li>
+<li>Changed: Social links component refactored;</li>
+<li>Fixed: All issues related to a non-square images.</li>
+</ul>
+<p><strong>Version 1.10.0</strong> – March 4, 2020</p>
+<ul>
+<li>Added: Order success page.</li>
+</ul>
+<p><strong>Version 1.9.0</strong> – February 27, 2020</p>
+<ul>
+<li>Added: Order details page;</li>
+<li>Added: Edit address page.</li>
+</ul>
+<p><strong>Version 1.8.0</strong> – February 15, 2020</p>
+<ul>
+<li>Updated: Now two products are displayed per row in the products list on mobile devices;</li>
+<li>Fixed: Incorrect display of block-products-carousel in IE;</li>
+<li>Fixed: Submenu width bug in IE.</li>
+</ul>
+<p><strong>Version 1.7.1</strong> – January 25, 2020</p>
+<ul>
+<li>Fixed: Pagination z-index;</li>
+<li>Fixed: Same height of product cards in the block products carousel.</li>
+</ul>
+<p><strong>Version 1.7.0</strong> – December 6, 2019</p>
+<ul>
+<li>Added: <strong>Off canvas</strong> shopping cart;</li>
+<li>Added: Drop down <strong>account menu</strong>;</li>
+<li>Added: <strong>Search suggestions</strong>;</li>
+<li>Updated: Alternative category filter now supports more nesting levels;</li>
+<li>Updated: Mobile menu moved to the end of page;</li>
+<li>Updated: <strong>bootstrap</strong> form <code>4.2.1</code> to <code>4.4.1</code>;</li>
+<li>Updated: <strong>@fortawesome/fontawesome-free</strong> form <code>5.6.1</code> to <code>5.11.2</code>;</li>
+<li>Updated: <strong>jquery</strong> form <code>3.3.1</code> to <code>3.4.1</code>;</li>
+<li>Updated: <strong>nouislider</strong> form <code>12.1.0</code> to <code>14.1.0</code>;</li>
+<li>Updated: <strong>select2</strong> form <code>4.0.10</code> to <code>4.0.12</code>;</li>
+<li>Fixed: Text alignment issue in a slideshow block on mobile devices;</li>
+<li>Fixed: Reverse image order in PhotoSwipe gallery for RTL direction;</li>
+<li>Fixed: Minor CSS issues;</li>
+<li>Other: Now instead of black images of stubs, more friendly gray images with an image resolution printed on them are used.</li>
+</ul>
+<p><strong>Version 1.6.0</strong> – November 1, 2019</p>
+<ul>
+<li>Added: Alternative category filter;</li>
+<li>Fixed: On the checkout page, prices break to a new line if they contain a space;</li>
+<li>Updated: Scripts moved to the end of page.</li>
+</ul>
+<p><strong>Version 1.5.0</strong> – October 7, 2019</p>
+<ul>
+<li>Added: <strong>PhotoSwipe</strong> gallery on the product page;</li>
+<li>Added: <strong>Select2</strong> integration;</li>
+<li>Added: <strong>Block Finder</strong> (vehicle picker) for auto parts stores;</li>
+<li>Added: <strong>To Top</strong> button.</li>
+</ul>
+<p><strong>Version 1.4.0</strong> – August 16, 2019</p>
+<ul>
+<li>Added: <strong>Sticky header</strong> that can work in two modes: pullToShow, alwaysOnTop.</li>
+</ul>
+<p><strong>Version 1.3.1</strong> – August 2, 2019</p>
+<ul>
+<li>Fixed: &quot;Price&quot; and &quot;Quantity&quot; in the drop-down cart are displayed incorrectly in the RTL version.</li>
+</ul>
+<p><strong>Version 1.3.0</strong> – July 6, 2019</p>
+<ul>
+<li>Added: <strong>Off canvas</strong> filters on the shop page.</li>
+</ul>
+<p><strong>Version 1.2.0</strong> – April 27, 2019</p>
+<ul>
+<li>Added: Five account pages (Dashboard, Edit Profile, Order History, Addresses, Change Password);</li>
+<li>Added: Empty cart page;</li>
+<li>Updated: RTL support;</li>
+<li>Fixed: Some css issues.</li>
+</ul>
+<p><strong>Version 1.1.0</strong> – March 15, 2019</p>
+<ul>
+<li>Added: RTL version.</li>
+</ul>
+<p><strong>Version 1.0.0</strong> – February 17, 2019</p>
+<ul>
+<li>Initial Release</li>
+</ul>
+
+
+</div>
+
+            </section>
+        
+            <section class="docs-section" id="section-known-issues">
+                <h1 class="docs-section__title">Known Issues</h1>
+
+                <div class="docs-typography">
+    <p><strong>SVG icons are not displayed when opening HTML files in a browser</strong></p>
+<p>When loading pages via <code>file://</code> URI, due to the security policy,
+browsers block the loading of external SVG icons because they have a unique origin.
+To fix this, you need to open HTML files using the HTTP/HTTPS protocol.
+To do this, launch a local HTTP server or upload files to a remote server.</p>
+
+
+</div>
+
+            </section>
+        
+            <section class="docs-section" id="section-credits">
+                <h1 class="docs-section__title">Credits</h1>
+
+                <div class="docs-typography">
+    <ul>
+<li>jQuery (<a href="https://jquery.com">https://jquery.com</a>)</li>
+<li>Bootstrap (<a href="http://getbootstrap.com">http://getbootstrap.com</a>)</li>
+<li>SVG for Everybody (<a href="https://github.com/jonathantneal/svg4everybody">https://github.com/jonathantneal/svg4everybody</a>)</li>
+<li>noUiSlider (<a href="https://github.com/leongersen/noUiSlider/">https://github.com/leongersen/noUiSlider/</a>)</li>
+<li>Owl Carousel 2 (<a href="https://github.com/OwlCarousel2/OwlCarousel2">https://github.com/OwlCarousel2/OwlCarousel2</a>)</li>
+<li>Font Awesome (<a href="https://fontawesome.com/">https://fontawesome.com/</a>)</li>
+<li>PhotoSwipe (<a href="https://photoswipe.com/">https://photoswipe.com/</a>)</li>
+<li>Select2 (<a href="https://select2.org/">https://select2.org/</a>)</li>
+</ul>
+
+
+</div>
+
+            </section>
+        
+    </div>
+</div>
+<script>
+    const links = [].slice.call(document.querySelectorAll('.docs-nav__links a'));
+
+    links.forEach(link => {
+        if (link.hash === window.location.hash) {
+            link.classList.add('docs-nav__link--current');
+
+            const section = document.querySelector(link.hash);
+
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    window.scrollTo({top: section.offsetTop});
+                }, 0);
+            });
+        } else {
+            link.classList.remove('docs-nav__link--current');
+        }
+    });
+
+    window.addEventListener('hashchange', () => {
+        links.forEach(link => {
+            if (link.hash === window.location.hash) {
+                link.classList.add('docs-nav__link--current');
+
+                const section = document.querySelector(link.hash);
+                window.scrollTo({top: section.offsetTop});
+            } else {
+                link.classList.remove('docs-nav__link--current');
+            }
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+{#
+// inputs:
+// - items: array   - Array of list items (required)
+// - level: integer - Current list level (default: 1)
+#}
+
+{% set level = level|default(1) %}
+
+<ul
+    class="filter-categories-alt__list filter-categories-alt__list--level--{{ level }}"
+    {% if level == 1 %}
+        data-collapse-opened-class="filter-categories-alt__item--open"
+    {% endif %}
+>
+    {% for item in items %}
+        {% set item_classes = 'filter-categories-alt__item' %}
+        {% if item.open %}
+            {% set item_classes = item_classes~' filter-categories-alt__item--open' %}
+        {% endif %}
+        {% if item.current %}
+            {% set item_classes = item_classes~' filter-categories-alt__item--current' %}
+        {% endif %}
+
+        <li class="{{ item_classes }}" data-collapse-item>
+            {% if item.children|length > 0 %}
+                <button class="filter-categories-alt__expander" data-collapse-trigger></button>
+            {% endif %}
+            <a href="">{{ item.name }}</a>
+            {% if item.children|length > 0 %}
+                <div class="filter-categories-alt__children" data-collapse-content>
+                    {% include '/partials/filter-categories-alt-list.twig' with {items: item.children, level: level + 1} %}
+                </div>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>

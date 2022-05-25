@@ -1,0 +1,64 @@
+<div class="site-footer">
+    <div class="container">
+        <div class="site-footer__widgets">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4">
+                    {% include '/footer/contacts.twig' %}
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    {% include '/footer/links.twig' with {
+                        title: 'Information',
+                        links: [
+                            {'title': 'About Us'},
+                            {'title': 'Delivery Information'},
+                            {'title': 'Privacy Policy'},
+                            {'title': 'Brands'},
+                            {'title': 'Contact Us'},
+                            {'title': 'Returns'},
+                            {'title': 'Site Map'}
+                        ]
+                    } %}
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    {% include '/footer/links.twig' with {
+                        title: 'My Account',
+                        links: [
+                            {'title': 'Store Location'},
+                            {'title': 'Order History'},
+                            {'title': 'Wish List'},
+                            {'title': 'Newsletter'},
+                            {'title': 'Specials'},
+                            {'title': 'Gift Certificates'},
+                            {'title': 'Affiliate'}
+                        ]
+                    } %}
+                </div>
+                <div class="col-12 col-md-12 col-lg-4">
+                    {% include '/footer/newsletter.twig' %}
+                </div>
+            </div>
+        </div>
+
+        <div class="site-footer__bottom">
+            <div class="site-footer__copyright">
+                <!-- copyright -->
+                Powered by HTML — Design by <a href="{{ theme.author.profile_url }}" target="_blank">{{ theme.author.name }}</a>
+                <!-- copyright / end -->
+            </div>
+            <div class="site-footer__payments">
+                <img src="images/payments.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="totop">
+        <div class="totop__body">
+            <div class="totop__start"></div>
+            <div class="totop__container container"></div>
+            <div class="totop__end">
+                <button type="button" class="totop__button">
+                    <svg width="13px" height="8px"><use xlink:href="images/sprite.svg#arrow-rounded-up-13x8"></use></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

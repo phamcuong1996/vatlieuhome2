@@ -1,0 +1,7 @@
+[
+  {"type": "rss",       "icon": "fas fa-rss",        "url": ""},
+  {"type": "youtube",   "icon": "fab fa-youtube",    "url": ""},
+  {"type": "facebook",  "icon": "fab fa-facebook-f", "url": ""},
+  {"type": "twitter",   "icon": "fab fa-twitter",    "url": ""},
+  {"type": "instagram", "icon": "fab fa-instagram",  "url": ""}
+]
