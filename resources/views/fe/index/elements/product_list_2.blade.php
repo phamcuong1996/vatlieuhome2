@@ -1,7 +1,7 @@
-<div class="block block-products-carousel" data-layout="grid-4" data-mobile-grid-columns="2">
+<div class="block block-products-carousel" data-layout="horizontal" data-mobile-grid-columns="2">
     <div class="container">
         <div class="block-header">
-            <h3 class="block-header__title">Featured Products</h3>
+            <h3 class="block-header__title">New Arrivals</h3>
             <div class="block-header__divider"></div>
             <ul class="block-header__groups-list">
                 <li><button type="button" class="block-header__group  block-header__group--active ">All</button></li>
@@ -169,8 +169,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="block-products-carousel__column">
                     <div class="block-products-carousel__cell">
                         <div class="product-card product-card--hidden-actions ">
                             <button class="product-card__quickview" type="button">
@@ -456,8 +454,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="block-products-carousel__column">
                     <div class="block-products-carousel__cell">
                         <div class="product-card product-card--hidden-actions ">
                             <button class="product-card__quickview" type="button">
@@ -744,8 +740,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="block-products-carousel__column">
                     <div class="block-products-carousel__cell">
                         <div class="product-card product-card--hidden-actions ">
                             <button class="product-card__quickview" type="button">
@@ -1028,8 +1022,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="block-products-carousel__column">
                     <div class="block-products-carousel__cell">
                         <div class="product-card product-card--hidden-actions ">
                             <button class="product-card__quickview" type="button">
@@ -1312,8 +1304,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="block-products-carousel__column">
                     <div class="block-products-carousel__cell">
                         <div class="product-card product-card--hidden-actions ">
                             <button class="product-card__quickview" type="button">
@@ -1596,8 +1586,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="block-products-carousel__column">
                     <div class="block-products-carousel__cell">
                         <div class="product-card product-card--hidden-actions ">
                             <button class="product-card__quickview" type="button">
@@ -1880,8 +1868,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="block-products-carousel__column">
                     <div class="block-products-carousel__cell">
                         <div class="product-card product-card--hidden-actions ">
                             <button class="product-card__quickview" type="button">
@@ -2164,8 +2150,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="block-products-carousel__column">
                     <div class="block-products-carousel__cell">
                         <div class="product-card product-card--hidden-actions ">
                             <button class="product-card__quickview" type="button">
