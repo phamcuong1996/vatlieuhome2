@@ -9,11 +9,12 @@
             </div>
             <div class="form-group">
                 <label>status_id:</label>
-                <select id="status_id" name="status_id" class="form-control">
-                    @foreach(__('constant.products.statuses') as $key => $value)
-                        <option value="{{ $key }}" {{ @$product->status_id == $key ? 'selected="selected"' : '' }}>{{ $value }}</option>
-                    @endforeach
-                </select>
+                <input type="text" class="form-control" name="name" value="{{ @$product->name }}">
+{{--                <select id="status_id" name="status_id" class="form-control">--}}
+{{--                    @foreach(__('constant.products.statuses') as $key => $value)--}}
+{{--                        <option value="{{ $key }}" {{ @$product->status_id == $key ? 'selected="selected"' : '' }}>{{ $value }}</option>--}}
+{{--                    @endforeach--}}
+{{--                </select>--}}
             </div>
             <div class="form-group">
                 <label>Name:</label>
@@ -28,8 +29,8 @@
                 <input type="text" class="form-control" name="original_price" value="{{ @$product->original_price }}">
             </div>
             <div class="form-group">
-                <label>Price:</label>
-                <input type="text" class="form-control" name="Price" value="{{ @$product->Price }}">
+                <label>price:</label>
+                <input type="text" class="form-control" name="price" value="{{ @$product->price }}">
             </div>
             <div class="form-group">
                 <label>category_id:</label>
