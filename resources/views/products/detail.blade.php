@@ -1493,7 +1493,7 @@
                                     <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-right-6x9"></use>
                                 </svg>
                             </li>
-                            <li class="breadcrumb-item active" aria-current="page">Brandix Screwdriver SCREW1500ACC</li>
+                            <li class="breadcrumb-item active" aria-current="page">{{ $product->name }}</li>
                         </ol>
                     </nav>
                 </div>
@@ -1523,7 +1523,7 @@
                                 and naturalHeight property of img.product-image__img.
                                 -->
                                             <a href="fe/HTML/default/images/products/product-16.jpg" data-width="700" data-height="700" class="product-image__body" target="_blank">
-                                                <img class="product-image__img" src="/fe/HTML/default/images/products/product-16.jpg" alt="">
+                                                <img class="product-image__img" src="{{ $product->image }}" alt="">
                                             </a>
                                         </div>
                                         <div class="product-image product-image--location--gallery">
@@ -1584,7 +1584,7 @@
                                     <div class="owl-carousel" id="product-carousel">
                                         <a href="fe/HTML/default/images/products/product-16.jpg" class="product-image product-gallery__carousel-item">
                                             <div class="product-image__body">
-                                                <img class="product-image__img product-gallery__carousel-image" src="/fe/HTML/default/images/products/product-16.jpg" alt="">
+                                                <img class="product-image__img product-gallery__carousel-image" src="{{ $product->image }}" alt="">
                                             </div>
                                         </a>
                                         <a href="fe/HTML/default/images/products/product-16-1.jpg" class="product-image product-gallery__carousel-item">
@@ -1626,7 +1626,7 @@
                                     </svg>
                                 </button>
                             </div>
-                            <h1 class="product__name">Brandix Screwdriver SCREW1500ACC</h1>
+                            <h1 class="product__name">{{ $product->name }}</h1>
                             <div class="product__rating">
                                 <div class="product__rating-stars">
                                     <div class="rating">
@@ -3046,7 +3046,7 @@
                                     </button>
                                     <div class="product-card__image product-image">
                                         <a href="product.html" class="product-image__body">
-                                            <img class="product-image__img" src="/fe/HTML/default/images/products/product-6.jpg" alt="">
+                                            <img class="product-image__img Hello" src="{{ $product->image }}" alt="">
                                         </a>
                                     </div>
                                     <div class="product-card__info">
@@ -4466,12 +4466,12 @@
                                     </button>
                                     <div class="product-card__image product-image">
                                         <a href="product.html" class="product-image__body">
-                                            <img class="product-image__img" src="/fe/HTML/default/images/products/product-16.jpg" alt="">
+                                            <img class="product-image__img" src="{{ $product->image }}" alt="">
                                         </a>
                                     </div>
                                     <div class="product-card__info">
                                         <div class="product-card__name">
-                                            <a href="product.html">Brandix Screwdriver SCREW1500ACC</a>
+                                            <a href="product.html">{{ $product->name }}</a>
                                         </div>
                                         <div class="product-card__rating">
                                             <div class="product-card__rating-stars">
