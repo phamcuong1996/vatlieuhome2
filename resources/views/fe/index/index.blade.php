@@ -106,8 +106,8 @@
         </div>
         <!-- .block-features / end -->
         <!-- .block-products-carousel -->
-        @include('fe.index.elements.product_list')
-        @include('fe.index.elements.product_list')
+        @include('fe.index.elements.product_list', ['products' => $sachGiaoDuc, 'productListTitle' => 'Sach Giao Duc'])
+        @include('fe.index.elements.product_list', ['products' => $sachYTe, 'productListTitle' => 'Sach Y te'])
         <!-- .block-products-carousel / end -->
         <!-- .block-banner -->
         <div class="block block-banner">
@@ -127,7 +127,7 @@
         <!-- .block-products -->
         @include('fe.index.elements.product_list_1')
         <!-- .block-products / end -->
-        @include('fe.index.elements.product_list')
+        @include('fe.index.elements.product_list', ['products' => $sachGiaoDuc])
         <!-- .block-products-carousel -->
         @include('fe.index.elements.product_list_2')
         <!-- .block-products-carousel / end -->
