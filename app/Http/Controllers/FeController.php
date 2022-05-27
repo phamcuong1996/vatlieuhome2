@@ -15,7 +15,8 @@ class FeController extends Controller
         $thepXayDung = Product::where('category_id', 12)->limit(4)->get();
         $hot = Product::where('type', 1)->limit(7)->get();
         $sale = Product::where('type', 2)->limit(7)->get();
+        $new = Product::where('type', 2)->limit(7)->get();
 
-        return view('fe.index.index', compact('chongTham', 'keoDan', 'thepXayDung', 'hot'));
+        return view('fe.index.index', compact('chongTham', 'keoDan', 'thepXayDung', 'hot','sale', 'new'));
     }
 }
