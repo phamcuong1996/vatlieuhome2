@@ -13,7 +13,7 @@ class FeController extends Controller
         $chongTham = Product::where('category_id', 1)->limit(4)->get();
         $keoDan = Product::where('category_id', 5)->limit(4)->get();
         $thepXayDung = Product::where('category_id', 12)->limit(4)->get();
-        $phuTro = Product::where('category_id', 14)->limit(7)->get();
+        $phuTro = Product::where('type', 1)->limit(7)->get();
 
         return view('fe.index.index', compact('chongTham', 'keoDan', 'thepXayDung', 'phuTro'));
     }
