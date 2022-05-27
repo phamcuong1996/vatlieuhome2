@@ -125,7 +125,7 @@
         </div>
         <!-- .block-banner / end -->
         <!-- .block-products -->
-        @include('fe.index.elements.product_list_1', ['products' => $phuTro, 'productListTitle' => 'Các Vật Liệu Phụ Trợ'])
+        @include('fe.index.elements.product_list_1', ['products' => $hot, 'productListTitle' => 'Các Sản Phẩm HOT'])
         <!-- .block-products / end -->
         @include('fe.index.elements.product_list', ['products' => $thepXayDung, 'productListTitle' => 'Thép Xây Dựng'])
         <!-- .block-products-carousel -->
