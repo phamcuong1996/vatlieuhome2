@@ -106,8 +106,8 @@
         </div>
         <!-- .block-features / end -->
         <!-- .block-products-carousel -->
-        @include('fe.index.elements.product_list', ['products' => $sachGiaoDuc, 'productListTitle' => 'Sach Giao Duc'])
-        @include('fe.index.elements.product_list', ['products' => $sachYTe, 'productListTitle' => 'Sach Y te'])
+        @include('fe.index.elements.product_list', ['products' => $chongTham, 'productListTitle' => 'Chống Thấm'])
+        @include('fe.index.elements.product_list', ['products' => $keoDan, 'productListTitle' => 'Keo Dán - Miết Mạch'])
         <!-- .block-products-carousel / end -->
         <!-- .block-banner -->
         <div class="block block-banner">
@@ -125,9 +125,9 @@
         </div>
         <!-- .block-banner / end -->
         <!-- .block-products -->
-        @include('fe.index.elements.product_list_1')
+        @include('fe.index.elements.product_list_1', ['products' => $phuTro, 'productListTitle' => 'Các Vật Liệu Phụ Trợ'])
         <!-- .block-products / end -->
-        @include('fe.index.elements.product_list', ['products' => $sachGiaoDuc])
+        @include('fe.index.elements.product_list', ['products' => $thepXayDung, 'productListTitle' => 'Thép Xây Dựng'])
         <!-- .block-products-carousel -->
         @include('fe.index.elements.product_list_2')
         <!-- .block-products-carousel / end -->
