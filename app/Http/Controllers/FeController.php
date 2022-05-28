@@ -27,4 +27,13 @@ class FeController extends Controller
 
         return view('products.detail', compact('product'));
     }
+
+    public function getProductsByCategoryId(int $id)
+    {
+        $products = Product::where('category_id', $id)->get();
+        dd($products);
+        return view('products.list', [
+            'product' => $products
+        ]);
+    }
 }

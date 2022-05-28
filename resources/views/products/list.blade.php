@@ -3,21 +3,21 @@
     <div class="card container">
         <div class="row">
             <div class="col" style="padding: 30px">
-                <div class="card"><img src="{{ $product->image }}" class="card-img-top"
+                <div class="card"><img src="{{ $products->image }}" class="card-img-top"
                                        style="width: 500px;height: 500px;text-align: center"></div>
                 <h5 style="text-align: center">Mô Tả Chi Tiết:</h5>
-                <div class="card"><p>{{ $product->description }}</p></div>
+                <div class="card"><p>{{ $products->description }}</p></div>
             </div>
             <div class="col" style="padding: 70px">
-                <h1>{{ $product->name }}</h1>
-                <p>{{ $product->short_description }}</p>
+                <h1>{{ $products->name }}</h1>
+                <p>{{ $products->short_description }}</p>
                 <div style="display: flex">
-                    <h5 style="margin-right: 50px;">Tình trạng: {{ $product->status_label }}</h5>
-                    <h5>Mã sản phẩm: {{ $product->code }}</h5>
+                    <h5 style="margin-right: 50px;">Tình trạng: {{ $products->status_label }}</h5>
+                    <h5>Mã sản phẩm: {{ $products->code }}</h5>
                 </div>
                 <div style="display: flex">
-                    <div style="margin-right: 50px"><h1 style="color: red">{{ $product->price }}</h1></div>
-                    <div><h1 style="text-decoration: line-through">{{ $product->original_price }}</h1></div>
+                    <div style="margin-right: 50px"><h1 style="color: red">{{ $products->price }}</h1></div>
+                    <div><h1 style="text-decoration: line-through">{{ $products->original_price }}</h1></div>
                 </div>
                 <div style="display: flex;padding: 10px">
                     <div>
