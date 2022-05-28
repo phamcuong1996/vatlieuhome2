@@ -24,16 +24,17 @@ class FeController extends Controller
     public function productDetail(int $id)
     {
         $product = Product::find($id);
+        $lists = Product::where('category_id', $id)->get();
 
-        return view('products.detail', compact('product'));
+        return view('products.detail', compact('product','lists'));
     }
 
     public function getProductsByCategoryId(int $id)
     {
         $products = Product::where('category_id', $id)->get();
-        dd($products);
+
         return view('products.list', [
-            'product' => $products
+            'products' => $products
         ]);
     }
 }
