@@ -45,7 +45,7 @@
                             <div class="product-card__badge product-card__badge--hot">Hot</div>
                         </div>
                         <div class="product-card__image product-image">
-                            <a href="product.html" class="product-image__body">
+                            <a href="/products/{{$sach->id}}" class="product-image__body">
                                 <img class="product-image__img" src="{{$sach->image}}" alt="">
                             </a>
                         </div>
@@ -155,7 +155,7 @@
                                 Availability: <span class="text-success">In Stock</span>
                             </div>
                             <div class="product-card__prices">
-                                {{$sach->price}}
+                                {{number_format($sach->price)}}
                             </div>
                             <div class="product-card__buttons">
                                 <button class="btn btn-primary product-card__addtocart" type="button">Add To Cart</button>
