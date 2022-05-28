@@ -155,7 +155,7 @@
                                 Availability: <span class="text-success">In Stock</span>
                             </div>
                             <div class="product-card__prices">
-                                {{$sach->price}}
+                                {{number_format($sach->price)}}
                             </div>
                             <div class="product-card__buttons">
                                 <button class="btn btn-primary product-card__addtocart" type="button">Add To Cart</button>

@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="block-products__list">
-                @foreach($hot as $sach)
+                @foreach($sale as $sach)
                     <div class="block-products__list-item">
                         <div class="product-card product-card--hidden-actions ">
                             <button class="product-card__quickview" type="button">
@@ -155,7 +155,7 @@
                                     Availability: <span class="text-success">In Stock</span>
                                 </div>
                                 <div class="product-card__prices">
-                                    {{$sach->price}}
+                                    {{number_format($sach->price)}}
                                 </div>
                                 <div class="product-card__buttons">
                                     <button class="btn btn-primary product-card__addtocart" type="button">Add To Cart</button>
