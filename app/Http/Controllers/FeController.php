@@ -20,4 +20,11 @@ class FeController extends Controller
 
         return view('fe.index.index', compact('chongTham', 'keoDan', 'thepXayDung', 'hot','sale', 'new','posts'));
     }
+
+    public function productDetail(int $id)
+    {
+        $product = Product::find($id);
+
+        return view('products.detail', compact('product'));
+    }
 }
