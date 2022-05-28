@@ -38,8 +38,11 @@ class FeController extends Controller
         ]);
     }
 
-    public function postDetail()
+    public function postDetail(int $id)
     {
-        return view('fe.posts.detail');
+        $post = Post::find($id);
+        $lists = Post::where('category_id', $id)->get();
+
+        return view('fe.posts.detail', compact('post','lists'));
     }
 }
