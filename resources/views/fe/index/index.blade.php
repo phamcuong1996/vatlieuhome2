@@ -125,14 +125,14 @@
         </div>
         <!-- .block-banner / end -->
         <!-- .block-products -->
-        @include('fe.index.elements.product_list_1', ['products' => $hot, 'productListTitle' => 'Các Sản Phẩm HOT'])
+        @include('fe.index.elements.product_list_1')
         <!-- .block-products / end -->
         @include('fe.index.elements.product_list', ['products' => $thepXayDung, 'productListTitle' => 'Thép Xây Dựng'])
         <!-- .block-products-carousel -->
         @include('fe.index.elements.product_list_2')
         <!-- .block-products-carousel / end -->
         <!-- .block-posts -->
-        @include('fe.index.elements.post_list')
+        @include('fe.index.elements.product_list', ['products' => $new, 'productListTitle' => 'Sản Phẩm Mới'])
         <!-- .block-posts / end -->
         <!-- .block-brands -->
         <div class="block block-brands">
@@ -140,33 +140,28 @@
                 <div class="block-brands__slider">
                     <div class="owl-carousel">
                         <div class="block-brands__item">
-                            <a href=""><img src="/fe/HTML/default/images/logos/logo-1.png" alt=""></a>
+                            <a href=""><img src="https://vatlieuhome.com/brand/maika.jpg" alt=""></a>
                         </div>
                         <div class="block-brands__item">
-                            <a href=""><img src="/fe/HTML/default/images/logos/logo-2.png" alt=""></a>
+                            <a href=""><img src="https://vatlieuhome.com/brand/sika.png" alt=""></a>
                         </div>
                         <div class="block-brands__item">
-                            <a href=""><img src="/fe/HTML/default/images/logos/logo-3.png" alt=""></a>
+                            <a href=""><img src="https://vatlieuhome.com/brand/khaihoan.png" alt=""></a>
                         </div>
                         <div class="block-brands__item">
-                            <a href=""><img src="/fe/HTML/default/images/logos/logo-4.png" alt=""></a>
+                            <a href=""><img src="https://vatlieuhome.com/brand/hoa_binh.webp" alt=""></a>
                         </div>
                         <div class="block-brands__item">
-                            <a href=""><img src="/fe/HTML/default/images/logos/logo-5.png" alt=""></a>
+                            <a href=""><img src="https://vatlieuhome.com/brand/xps.png" alt=""></a>
                         </div>
                         <div class="block-brands__item">
-                            <a href=""><img src="/fe/HTML/default/images/logos/logo-6.png" alt=""></a>
-                        </div>
-                        <div class="block-brands__item">
-                            <a href=""><img src="/fe/HTML/default/images/logos/logo-7.png" alt=""></a>
+                            <a href=""><img src="https://vatlieuhome.com/brand/coteccons.png" alt=""></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- .block-brands / end -->
-        <!-- .block-product-columns -->
-        @include('fe.index.elements.product_list_3')
-        <!-- .block-product-columns / end -->
+        @include('fe.index.elements.post_list')
     </div>
 @endsection

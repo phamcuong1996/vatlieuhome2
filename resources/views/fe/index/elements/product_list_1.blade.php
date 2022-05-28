@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="block-products__list">
-                @foreach($products as $sach)
+                @foreach($hot as $sach)
                 <div class="block-products__list-item">
                     <div class="product-card product-card--hidden-actions ">
                         <button class="product-card__quickview" type="button">

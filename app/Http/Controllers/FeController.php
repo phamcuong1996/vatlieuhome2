@@ -14,7 +14,10 @@ class FeController extends Controller
         $keoDan = Product::where('category_id', 5)->limit(4)->get();
         $thepXayDung = Product::where('category_id', 12)->limit(4)->get();
         $hot = Product::where('type', 1)->limit(7)->get();
+        $sale = Product::where('type', 2)->limit(4)->get();
+        $new = Product::where('type', 3)->limit(6)->get();
+        $posts = Post::where('category_id', 1)->get();
 
-        return view('fe.index.index', compact('chongTham', 'keoDan', 'thepXayDung', 'hot'));
+        return view('fe.index.index', compact('chongTham', 'keoDan', 'thepXayDung', 'hot','sale', 'new','posts'));
     }
 }
