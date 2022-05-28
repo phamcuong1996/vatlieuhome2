@@ -56,8 +56,8 @@ Route::delete('admin/users/{id}/destroy', [UserController::class, 'destroy'])->n
 
 //fe
 Route::get('/', [FeController::class, 'index'])->name('index');
-Route::get('categories/{id}/products', [FeController::class, 'getProductsByCategoryId'])->name('fe.products.list');
 Route::get('products/{id}', [FeController::class, 'productDetail'])->name('fe.products.show');
+Route::get('categories/{id}/products', [FeController::class, 'getProductsByCategoryId'])->name('fe.product.list');
 Route::get('posts/{id}/detail', [FeController::class, 'postDetail'])->name('fe.post.detail');
 Route::get('categories/{id}/posts', [FeController::class, 'getPostsByCategoryId'])->name('fe.products.list');
 
