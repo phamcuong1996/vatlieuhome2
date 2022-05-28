@@ -21,7 +21,7 @@
                 @foreach($posts as $post)
                 <div class="post-card  ">
                     <div class="post-card__image">
-                        <a href="">
+                        <a href="/posts/{{$post->id}}/detail">
                             <img src="{{$post->image}}" alt="">
                         </a>
                     </div>

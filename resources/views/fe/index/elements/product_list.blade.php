@@ -36,10 +36,17 @@
                                 <span class="fake-svg-icon"></span>
                             </button>
                             <div class="product-card__badges-list">
+{{--                                {{ if($products->type ===1 ) {--}}
+{{--                                    return '1 ';--}}
+{{--                                } elseif ($products->type ===2 ) {--}}
+{{--                                    return '2';--}}
+{{--                                }elseif ($products->type ===3 ) {--}}
+{{--                                    return '3';--}}
+{{--                                }}}--}}
                                 <div class="product-card__badge product-card__badge--new">New</div>
                             </div>
                             <div class="product-card__image product-image">
-                                <a href="product.html" class="product-image__body">
+                                <a href="/products/{{ $sach->id }}" class="product-image__body">
                                     <img class="product-image__img" src="{{$sach->image}}" alt="">
                                 </a>
                             </div>
