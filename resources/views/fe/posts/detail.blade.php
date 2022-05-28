@@ -34,7 +34,7 @@
                     <div class="mobile-header__body">
                         <button class="mobile-header__menu-button">
                             <svg width="18px" height="14px">
-                                <use xlink:href="images/sprite.svg#menu-18x14"></use>
+                                <use xlink:href="/fe/HTML/default/images/sprite.svg#menu-18x14"></use>
                             </svg>
                         </button>
                         <a class="mobile-header__logo" href="index.html">
@@ -66,12 +66,12 @@
                                     <input class="search__input" name="search" placeholder="Search over 10,000 products" aria-label="Site search" type="text" autocomplete="off">
                                     <button class="search__button search__button--type--submit" type="submit">
                                         <svg width="20px" height="20px">
-                                            <use xlink:href="images/sprite.svg#search-20"></use>
+                                            <use xlink:href="/fe/HTML/default/images/sprite.svg#search-20"></use>
                                         </svg>
                                     </button>
                                     <button class="search__button search__button--type--close" type="button">
                                         <svg width="20px" height="20px">
-                                            <use xlink:href="images/sprite.svg#cross-20"></use>
+                                            <use xlink:href="/fe/HTML/default/images/sprite.svg#cross-20"></use>
                                         </svg>
                                     </button>
                                     <div class="search__border"></div>
@@ -84,7 +84,7 @@
                                 <button class="indicator__button">
                                         <span class="indicator__area">
                                             <svg width="20px" height="20px">
-                                                <use xlink:href="images/sprite.svg#search-20"></use>
+                                                <use xlink:href="/fe/HTML/default/images/sprite.svg#search-20"></use>
                                             </svg>
                                         </span>
                                 </button>
@@ -93,7 +93,7 @@
                                 <a href="wishlist.html" class="indicator__button">
                                         <span class="indicator__area">
                                             <svg width="20px" height="20px">
-                                                <use xlink:href="images/sprite.svg#heart-20"></use>
+                                                <use xlink:href="/fe/HTML/default/images/sprite.svg#heart-20"></use>
                                             </svg>
                                             <span class="indicator__value">0</span>
                                         </span>
@@ -103,7 +103,7 @@
                                 <a href="cart.html" class="indicator__button">
                                         <span class="indicator__area">
                                             <svg width="20px" height="20px">
-                                                <use xlink:href="images/sprite.svg#cart-20"></use>
+                                                <use xlink:href="/fe/HTML/default/images/sprite.svg#cart-20"></use>
                                             </svg>
                                             <span class="indicator__value">3</span>
                                         </span>
@@ -144,7 +144,7 @@
                                 <button class="topbar-dropdown__btn" type="button">
                                     My Account
                                     <svg width="7px" height="5px">
-                                        <use xlink:href="images/sprite.svg#arrow-rounded-down-7x5"></use>
+                                        <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-down-7x5"></use>
                                     </svg>
                                 </button>
                                 <div class="topbar-dropdown__body">
@@ -205,7 +205,7 @@
                                 <button class="topbar-dropdown__btn" type="button">
                                     Currency: <span class="topbar__item-value">USD</span>
                                     <svg width="7px" height="5px">
-                                        <use xlink:href="images/sprite.svg#arrow-rounded-down-7x5"></use>
+                                        <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-down-7x5"></use>
                                     </svg>
                                 </button>
                                 <div class="topbar-dropdown__body">
@@ -252,7 +252,7 @@
                                 <button class="topbar-dropdown__btn" type="button">
                                     Language: <span class="topbar__item-value">EN</span>
                                     <svg width="7px" height="5px">
-                                        <use xlink:href="images/sprite.svg#arrow-rounded-down-7x5"></use>
+                                        <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-down-7x5"></use>
                                     </svg>
                                 </button>
                                 <div class="topbar-dropdown__body">
@@ -264,7 +264,7 @@
                                                 <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                 <div class="menu__item-submenu-offset"></div>
                                                 <a class="menu__item-link" href="">
-                                                    <div class="menu__item-icon"><img srcset="images/languages/language-1.png 1x, images/languages/language-1@2x.png 2x" src="images/languages/language-1.png" alt=""></div>
+                                                    <div class="menu__item-icon"><img srcset="/fe/HTML/default/images/languages/language-1.png 1x, images/languages/language-1@2x.png 2x" src="images/languages/language-1.png" alt=""></div>
                                                     English
                                                 </a>
                                             </li>
@@ -272,7 +272,7 @@
                                                 <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                 <div class="menu__item-submenu-offset"></div>
                                                 <a class="menu__item-link" href="">
-                                                    <div class="menu__item-icon"><img srcset="images/languages/language-2.png 1x, images/languages/language-2@2x.png 2x" src="images/languages/language-2.png" alt=""></div>
+                                                    <div class="menu__item-icon"><img srcset="/fe/HTML/default/images/languages/language-2.png 1x, images/languages/language-2@2x.png 2x" src="images/languages/language-2.png" alt=""></div>
                                                     French
                                                 </a>
                                             </li>
@@ -280,7 +280,7 @@
                                                 <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                 <div class="menu__item-submenu-offset"></div>
                                                 <a class="menu__item-link" href="">
-                                                    <div class="menu__item-icon"><img srcset="images/languages/language-3.png 1x, images/languages/language-3@2x.png 2x" src="images/languages/language-3.png" alt=""></div>
+                                                    <div class="menu__item-icon"><img srcset="/fe/HTML/default/images/languages/language-3.png 1x, images/languages/language-3@2x.png 2x" src="images/languages/language-3.png" alt=""></div>
                                                     German
                                                 </a>
                                             </li>
@@ -288,7 +288,7 @@
                                                 <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                 <div class="menu__item-submenu-offset"></div>
                                                 <a class="menu__item-link" href="">
-                                                    <div class="menu__item-icon"><img srcset="images/languages/language-4.png 1x, images/languages/language-4@2x.png 2x" src="images/languages/language-4.png" alt=""></div>
+                                                    <div class="menu__item-icon"><img srcset="/fe/HTML/default/images/languages/language-4.png 1x, images/languages/language-4@2x.png 2x" src="images/languages/language-4.png" alt=""></div>
                                                     Russian
                                                 </a>
                                             </li>
@@ -296,7 +296,7 @@
                                                 <!-- This is a synthetic element that allows to adjust the vertical offset of the submenu using CSS. -->
                                                 <div class="menu__item-submenu-offset"></div>
                                                 <a class="menu__item-link" href="">
-                                                    <div class="menu__item-icon"><img srcset="images/languages/language-5.png 1x, images/languages/language-5@2x.png 2x" src="images/languages/language-5.png" alt=""></div>
+                                                    <div class="menu__item-icon"><img srcset="/fe/HTML/default/images/languages/language-5.png 1x, images/languages/language-5@2x.png 2x" src="images/languages/language-5.png" alt=""></div>
                                                     Italian
                                                 </a>
                                             </li>
@@ -343,7 +343,7 @@
                                 <input class="search__input" name="search" placeholder="Search over 10,000 products" aria-label="Site search" type="text" autocomplete="off">
                                 <button class="search__button search__button--type--submit" type="submit">
                                     <svg width="20px" height="20px">
-                                        <use xlink:href="images/sprite.svg#search-20"></use>
+                                        <use xlink:href="/fe/HTML/default/images/sprite.svg#search-20"></use>
                                     </svg>
                                 </button>
                                 <div class="search__border"></div>
@@ -373,7 +373,7 @@
                                                     <a class="departments__item-link" href="">
                                                         Power Tools
                                                         <svg class="departments__item-arrow" width="6px" height="9px">
-                                                            <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
+                                                            <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-right-6x9"></use>
                                                         </svg>
                                                     </a>
                                                     <div class="departments__submenu departments__submenu--type--megamenu departments__submenu--size--xl">
@@ -471,7 +471,7 @@
                                                     <a class="departments__item-link" href="">
                                                         Hand Tools
                                                         <svg class="departments__item-arrow" width="6px" height="9px">
-                                                            <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
+                                                            <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-right-6x9"></use>
                                                         </svg>
                                                     </a>
                                                     <div class="departments__submenu departments__submenu--type--megamenu departments__submenu--size--lg">
@@ -541,7 +541,7 @@
                                                     <a class="departments__item-link" href="">
                                                         Machine Tools
                                                         <svg class="departments__item-arrow" width="6px" height="9px">
-                                                            <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
+                                                            <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-right-6x9"></use>
                                                         </svg>
                                                     </a>
                                                     <div class="departments__submenu departments__submenu--type--megamenu departments__submenu--size--nl">
@@ -596,7 +596,7 @@
                                                     <a class="departments__item-link" href="">
                                                         Building Supplies
                                                         <svg class="departments__item-arrow" width="6px" height="9px">
-                                                            <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
+                                                            <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-right-6x9"></use>
                                                         </svg>
                                                     </a>
                                                     <div class="departments__submenu departments__submenu--type--megamenu departments__submenu--size--sm">
@@ -638,7 +638,7 @@
                                                     <a class="departments__item-link" href="">
                                                         Electrical
                                                         <svg class="departments__item-arrow" width="6px" height="9px">
-                                                            <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
+                                                            <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-right-6x9"></use>
                                                         </svg>
                                                     </a>
                                                     <div class="departments__submenu departments__submenu--type--menu">
@@ -652,7 +652,7 @@
                                                                     <a class="menu__item-link" href="">
                                                                         Soldering Equipment
                                                                         <svg class="menu__item-arrow" width="6px" height="9px">
-                                                                            <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
+                                                                            <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-right-6x9"></use>
                                                                         </svg>
                                                                     </a>
                                                                     <div class="menu__submenu">
@@ -775,11 +775,11 @@
                                     </div>
                                     <button class="departments__button">
                                         <svg class="departments__button-icon" width="18px" height="14px">
-                                            <use xlink:href="images/sprite.svg#menu-18x14"></use>
+                                            <use xlink:href="/fe/HTML/default/images/sprite.svg#menu-18x14"></use>
                                         </svg>
                                         Shop By Category
                                         <svg class="departments__button-arrow" width="9px" height="6px">
-                                            <use xlink:href="images/sprite.svg#arrow-rounded-down-9x6"></use>
+                                            <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-down-9x6"></use>
                                         </svg>
                                     </button>
                                 </div>
@@ -793,7 +793,7 @@
                                             <div class="nav-links__item-body">
                                                 Home
                                                 <svg class="nav-links__item-arrow" width="9px" height="6px">
-                                                    <use xlink:href="images/sprite.svg#arrow-rounded-down-9x6"></use>
+                                                    <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-down-9x6"></use>
                                                 </svg>
                                             </div>
                                         </a>
@@ -847,7 +847,7 @@
                                             <div class="nav-links__item-body">
                                                 Megamenu
                                                 <svg class="nav-links__item-arrow" width="9px" height="6px">
-                                                    <use xlink:href="images/sprite.svg#arrow-rounded-down-9x6"></use>
+                                                    <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-down-9x6"></use>
                                                 </svg>
                                             </div>
                                         </a>
@@ -915,7 +915,7 @@
                                             <div class="nav-links__item-body">
                                                 Shop
                                                 <svg class="nav-links__item-arrow" width="9px" height="6px">
-                                                    <use xlink:href="images/sprite.svg#arrow-rounded-down-9x6"></use>
+                                                    <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-down-9x6"></use>
                                                 </svg>
                                             </div>
                                         </a>
@@ -930,7 +930,7 @@
                                                         <a class="menu__item-link" href="shop-grid-3-columns-sidebar.html">
                                                             Shop Grid
                                                             <svg class="menu__item-arrow" width="6px" height="9px">
-                                                                <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
+                                                                <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-right-6x9"></use>
                                                             </svg>
                                                         </a>
                                                         <div class="menu__submenu">
@@ -984,7 +984,7 @@
                                                         <a class="menu__item-link" href="product.html">
                                                             Product
                                                             <svg class="menu__item-arrow" width="6px" height="9px">
-                                                                <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
+                                                                <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-right-6x9"></use>
                                                             </svg>
                                                         </a>
                                                         <div class="menu__submenu">
@@ -1077,7 +1077,7 @@
                                             <div class="nav-links__item-body">
                                                 Account
                                                 <svg class="nav-links__item-arrow" width="9px" height="6px">
-                                                    <use xlink:href="images/sprite.svg#arrow-rounded-down-9x6"></use>
+                                                    <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-down-9x6"></use>
                                                 </svg>
                                             </div>
                                         </a>
@@ -1152,7 +1152,7 @@
                                             <div class="nav-links__item-body">
                                                 Blog
                                                 <svg class="nav-links__item-arrow" width="9px" height="6px">
-                                                    <use xlink:href="images/sprite.svg#arrow-rounded-down-9x6"></use>
+                                                    <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-down-9x6"></use>
                                                 </svg>
                                             </div>
                                         </a>
@@ -1213,7 +1213,7 @@
                                             <div class="nav-links__item-body">
                                                 Pages
                                                 <svg class="nav-links__item-arrow" width="9px" height="6px">
-                                                    <use xlink:href="images/sprite.svg#arrow-rounded-down-9x6"></use>
+                                                    <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-down-9x6"></use>
                                                 </svg>
                                             </div>
                                         </a>
@@ -1298,7 +1298,7 @@
                                     <a href="wishlist.html" class="indicator__button">
                                             <span class="indicator__area">
                                                 <svg width="20px" height="20px">
-                                                    <use xlink:href="images/sprite.svg#heart-20"></use>
+                                                    <use xlink:href="/fe/HTML/default/images/sprite.svg#heart-20"></use>
                                                 </svg>
                                                 <span class="indicator__value">0</span>
                                             </span>
@@ -1308,7 +1308,7 @@
                                     <a href="cart.html" class="indicator__button">
                                             <span class="indicator__area">
                                                 <svg width="20px" height="20px">
-                                                    <use xlink:href="images/sprite.svg#cart-20"></use>
+                                                    <use xlink:href="/fe/HTML/default/images/sprite.svg#cart-20"></use>
                                                 </svg>
                                                 <span class="indicator__value">3</span>
                                             </span>
@@ -1321,7 +1321,7 @@
                                                     <div class="dropcart__product">
                                                         <div class="product-image dropcart__product-image">
                                                             <a href="product.html" class="product-image__body">
-                                                                <img class="product-image__img" src="images/products/product-1.jpg" alt="">
+                                                                <img class="product-image__img" src="/fe/HTML/default/images/products/product-1.jpg" alt="">
                                                             </a>
                                                         </div>
                                                         <div class="dropcart__product-info">
@@ -1337,14 +1337,14 @@
                                                         </div>
                                                         <button type="button" class="dropcart__product-remove btn btn-light btn-sm btn-svg-icon">
                                                             <svg width="10px" height="10px">
-                                                                <use xlink:href="images/sprite.svg#cross-10"></use>
+                                                                <use xlink:href="/fe/HTML/default/images/sprite.svg#cross-10"></use>
                                                             </svg>
                                                         </button>
                                                     </div>
                                                     <div class="dropcart__product">
                                                         <div class="product-image dropcart__product-image">
                                                             <a href="product.html" class="product-image__body">
-                                                                <img class="product-image__img" src="images/products/product-2.jpg" alt="">
+                                                                <img class="product-image__img" src="/fe/HTML/default/images/products/product-2.jpg" alt="">
                                                             </a>
                                                         </div>
                                                         <div class="dropcart__product-info">
@@ -1356,14 +1356,14 @@
                                                         </div>
                                                         <button type="button" class="dropcart__product-remove btn btn-light btn-sm btn-svg-icon">
                                                             <svg width="10px" height="10px">
-                                                                <use xlink:href="images/sprite.svg#cross-10"></use>
+                                                                <use xlink:href="/fe/HTML/default/images/sprite.svg#cross-10"></use>
                                                             </svg>
                                                         </button>
                                                     </div>
                                                     <div class="dropcart__product">
                                                         <div class="product-image dropcart__product-image">
                                                             <a href="product.html" class="product-image__body">
-                                                                <img class="product-image__img" src="images/products/product-5.jpg" alt="">
+                                                                <img class="product-image__img" src="/fe/HTML/default/images/products/product-5.jpg" alt="">
                                                             </a>
                                                         </div>
                                                         <div class="dropcart__product-info">
@@ -1378,7 +1378,7 @@
                                                         </div>
                                                         <button type="button" class="dropcart__product-remove btn btn-light btn-sm btn-svg-icon">
                                                             <svg width="10px" height="10px">
-                                                                <use xlink:href="images/sprite.svg#cross-10"></use>
+                                                                <use xlink:href="/fe/HTML/default/images/sprite.svg#cross-10"></use>
                                                             </svg>
                                                         </button>
                                                     </div>
@@ -1416,7 +1416,7 @@
                                     <a href="account-login.html" class="indicator__button">
                                             <span class="indicator__area">
                                                 <svg width="20px" height="20px">
-                                                    <use xlink:href="images/sprite.svg#person-20"></use>
+                                                    <use xlink:href="/fe/HTML/default/images/sprite.svg#person-20"></use>
                                                 </svg>
                                             </span>
                                     </a>
@@ -1443,7 +1443,7 @@
                                             <div class="account-menu__divider"></div>
                                             <a href="account-dashboard.html" class="account-menu__user">
                                                 <div class="account-menu__user-avatar">
-                                                    <img src="images/avatars/avatar-3.jpg" alt="">
+                                                    <img src="/fe/HTML/default/images/avatars/avatar-3.jpg" alt="">
                                                 </div>
                                                 <div class="account-menu__user-info">
                                                     <div class="account-menu__user-name">Helena Garcia</div>
@@ -1482,13 +1482,13 @@
                             <li class="breadcrumb-item">
                                 <a href="index.html">Home</a>
                                 <svg class="breadcrumb-arrow" width="6px" height="9px">
-                                    <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
+                                    <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-right-6x9"></use>
                                 </svg>
                             </li>
                             <li class="breadcrumb-item">
                                 <a href="">Breadcrumb</a>
                                 <svg class="breadcrumb-arrow" width="6px" height="9px">
-                                    <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
+                                    <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-right-6x9"></use>
                                 </svg>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">Post</li>
@@ -1514,7 +1514,7 @@
                         </div>
                         <div class="post__featured">
                             <a href="">
-                                <img src="images/posts/post-featured.jpg" alt="">
+                                <img src="/fe/HTML/default/images/posts/post-featured.jpg" alt="">
                             </a>
                         </div>
                         <div class="post__content typography ">
@@ -1554,7 +1554,7 @@
                             </p>
                             <figure>
                                 <a href="">
-                                    <img src="images/posts/post-featured.jpg" alt="">
+                                    <img src="/fe/HTML/default/images/posts/post-featured.jpg" alt="">
                                 </a>
                                 <figcaption>Nunc viverra, dui nec commodo dignissim, libero arcu.</figcaption>
                             </figure>
@@ -1608,7 +1608,7 @@
                             </div>
                             <div class="post-author">
                                 <div class="post-author__avatar">
-                                    <a href=""><img src="images/avatars/avatar-1.jpg" alt=""></a>
+                                    <a href=""><img src="/fe/HTML/default/images/avatars/avatar-1.jpg" alt=""></a>
                                 </div>
                                 <div class="post-author__info">
                                     <div class="post-author__name">
@@ -1628,7 +1628,7 @@
                                     <div class="related-posts__item post-card post-card--layout--related">
                                         <div class="post-card__image">
                                             <a href="">
-                                                <img src="images/posts/post-1.jpg" alt="">
+                                                <img src="/fe/HTML/default/images/posts/post-1.jpg" alt="">
                                             </a>
                                         </div>
                                         <div class="post-card__info">
@@ -1641,7 +1641,7 @@
                                     <div class="related-posts__item post-card post-card--layout--related">
                                         <div class="post-card__image">
                                             <a href="">
-                                                <img src="images/posts/post-2.jpg" alt="">
+                                                <img src="/fe/HTML/default/images/posts/post-2.jpg" alt="">
                                             </a>
                                         </div>
                                         <div class="post-card__info">
@@ -1660,7 +1660,7 @@
                                 <li class="comments-list__item">
                                     <div class="comment">
                                         <div class="comment__avatar">
-                                            <a href=""><img src="images/avatars/avatar-1.jpg" alt=""></a>
+                                            <a href=""><img src="/fe/HTML/default/images/avatars/avatar-1.jpg" alt=""></a>
                                         </div>
                                         <div class="comment__content">
                                             <div class="comment__header">
@@ -1680,7 +1680,7 @@
                                             <li class="comments-list__item">
                                                 <div class="comment">
                                                     <div class="comment__avatar">
-                                                        <a href=""><img src="images/avatars/avatar-2.jpg" alt=""></a>
+                                                        <a href=""><img src="/fe/HTML/default/images/avatars/avatar-2.jpg" alt=""></a>
                                                     </div>
                                                     <div class="comment__content">
                                                         <div class="comment__header">
@@ -1699,7 +1699,7 @@
                                             <li class="comments-list__item">
                                                 <div class="comment">
                                                     <div class="comment__avatar">
-                                                        <a href=""><img src="images/avatars/avatar-3.jpg" alt=""></a>
+                                                        <a href=""><img src="/fe/HTML/default/images/avatars/avatar-3.jpg" alt=""></a>
                                                     </div>
                                                     <div class="comment__content">
                                                         <div class="comment__header">
@@ -1721,7 +1721,7 @@
                                 <li class="comments-list__item">
                                     <div class="comment">
                                         <div class="comment__avatar">
-                                            <a href=""><img src="images/avatars/avatar-4.jpg" alt=""></a>
+                                            <a href=""><img src="/fe/HTML/default/images/avatars/avatar-4.jpg" alt=""></a>
                                         </div>
                                         <div class="comment__content">
                                             <div class="comment__header">
@@ -1775,7 +1775,7 @@
                                     <input class="widget-search__input" placeholder="Blog search..." type="text" autocomplete="off" spellcheck="false">
                                     <button class="widget-search__button" type="submit">
                                         <svg width="20px" height="20px">
-                                            <use xlink:href="images/sprite.svg#search-20"></use>
+                                            <use xlink:href="/fe/HTML/default/images/sprite.svg#search-20"></use>
                                         </svg>
                                     </button>
                                 </form>
@@ -1829,7 +1829,7 @@
                                         <div class="widget-categories__row">
                                             <a href="">
                                                 <svg class="widget-categories__arrow" width="6px" height="9px">
-                                                    <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
+                                                    <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-right-6x9"></use>
                                                 </svg>
                                                 Latest News
                                             </a>
@@ -1839,7 +1839,7 @@
                                         <div class="widget-categories__row">
                                             <a href="">
                                                 <svg class="widget-categories__arrow" width="6px" height="9px">
-                                                    <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
+                                                    <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-right-6x9"></use>
                                                 </svg>
                                                 Special Offers
                                             </a>
@@ -1859,7 +1859,7 @@
                                         <div class="widget-categories__row">
                                             <a href="">
                                                 <svg class="widget-categories__arrow" width="6px" height="9px">
-                                                    <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
+                                                    <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-right-6x9"></use>
                                                 </svg>
                                                 New Arrivals
                                             </a>
@@ -1869,7 +1869,7 @@
                                         <div class="widget-categories__row">
                                             <a href="">
                                                 <svg class="widget-categories__arrow" width="6px" height="9px">
-                                                    <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
+                                                    <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-right-6x9"></use>
                                                 </svg>
                                                 Reviews
                                             </a>
@@ -1879,7 +1879,7 @@
                                         <div class="widget-categories__row">
                                             <a href="">
                                                 <svg class="widget-categories__arrow" width="6px" height="9px">
-                                                    <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
+                                                    <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-right-6x9"></use>
                                                 </svg>
                                                 Drills and Mixers
                                             </a>
@@ -1889,7 +1889,7 @@
                                         <div class="widget-categories__row">
                                             <a href="">
                                                 <svg class="widget-categories__arrow" width="6px" height="9px">
-                                                    <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
+                                                    <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-right-6x9"></use>
                                                 </svg>
                                                 Cordless Screwdrivers
                                             </a>
@@ -1899,7 +1899,7 @@
                                         <div class="widget-categories__row">
                                             <a href="">
                                                 <svg class="widget-categories__arrow" width="6px" height="9px">
-                                                    <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
+                                                    <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-right-6x9"></use>
                                                 </svg>
                                                 Screwdrivers
                                             </a>
@@ -1909,7 +1909,7 @@
                                         <div class="widget-categories__row">
                                             <a href="">
                                                 <svg class="widget-categories__arrow" width="6px" height="9px">
-                                                    <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
+                                                    <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-right-6x9"></use>
                                                 </svg>
                                                 Wrenches
                                             </a>
@@ -1925,7 +1925,7 @@
                                     <div class="widget-posts__item">
                                         <div class="widget-posts__image">
                                             <a href="">
-                                                <img src="images/posts/post-1-thumbnail.jpg" alt="">
+                                                <img src="/fe/HTML/default/images/posts/post-1-thumbnail.jpg" alt="">
                                             </a>
                                         </div>
                                         <div class="widget-posts__info">
@@ -1938,7 +1938,7 @@
                                     <div class="widget-posts__item">
                                         <div class="widget-posts__image">
                                             <a href="">
-                                                <img src="images/posts/post-2-thumbnail.jpg" alt="">
+                                                <img src="/fe/HTML/default/images/posts/post-2-thumbnail.jpg" alt="">
                                             </a>
                                         </div>
                                         <div class="widget-posts__info">
@@ -1951,7 +1951,7 @@
                                     <div class="widget-posts__item">
                                         <div class="widget-posts__image">
                                             <a href="">
-                                                <img src="images/posts/post-3-thumbnail.jpg" alt="">
+                                                <img src="/fe/HTML/default/images/posts/post-3-thumbnail.jpg" alt="">
                                             </a>
                                         </div>
                                         <div class="widget-posts__info">
@@ -2139,7 +2139,7 @@
                         <!-- copyright / end -->
                     </div>
                     <div class="site-footer__payments">
-                        <img src="images/payments.png" alt="">
+                        <img src="/fe/HTML/default/images/payments.png" alt="">
                     </div>
                 </div>
             </div>
@@ -2150,7 +2150,7 @@
                     <div class="totop__end">
                         <button type="button" class="totop__button">
                             <svg width="13px" height="8px">
-                                <use xlink:href="images/sprite.svg#arrow-rounded-up-13x8"></use>
+                                <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-up-13x8"></use>
                             </svg>
                         </button>
                     </div>
@@ -2176,7 +2176,7 @@
             <div class="mobilemenu__title">Menu</div>
             <button type="button" class="mobilemenu__close">
                 <svg width="20px" height="20px">
-                    <use xlink:href="images/sprite.svg#cross-20"></use>
+                    <use xlink:href="/fe/HTML/default/images/sprite.svg#cross-20"></use>
                 </svg>
             </button>
         </div>
@@ -2187,7 +2187,7 @@
                         <a href="index.html" class="mobile-links__item-link">Home</a>
                         <button class="mobile-links__item-toggle" type="button" data-collapse-trigger>
                             <svg class="mobile-links__item-arrow" width="12px" height="7px">
-                                <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-down-12x7"></use>
                             </svg>
                         </button>
                     </div>
@@ -2226,7 +2226,7 @@
                         <a href="" class="mobile-links__item-link">Categories</a>
                         <button class="mobile-links__item-toggle" type="button" data-collapse-trigger>
                             <svg class="mobile-links__item-arrow" width="12px" height="7px">
-                                <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-down-12x7"></use>
                             </svg>
                         </button>
                     </div>
@@ -2237,7 +2237,7 @@
                                     <a href="" class="mobile-links__item-link">Power Tools</a>
                                     <button class="mobile-links__item-toggle" type="button" data-collapse-trigger>
                                         <svg class="mobile-links__item-arrow" width="12px" height="7px">
-                                            <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                            <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-down-12x7"></use>
                                         </svg>
                                     </button>
                                 </div>
@@ -2271,7 +2271,7 @@
                                     <a href="" class="mobile-links__item-link">Machine Tools</a>
                                     <button class="mobile-links__item-toggle" type="button" data-collapse-trigger>
                                         <svg class="mobile-links__item-arrow" width="12px" height="7px">
-                                            <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                            <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-down-12x7"></use>
                                         </svg>
                                     </button>
                                 </div>
@@ -2318,7 +2318,7 @@
                         <a href="shop-grid-3-columns-sidebar.html" class="mobile-links__item-link">Shop</a>
                         <button class="mobile-links__item-toggle" type="button" data-collapse-trigger>
                             <svg class="mobile-links__item-arrow" width="12px" height="7px">
-                                <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-down-12x7"></use>
                             </svg>
                         </button>
                     </div>
@@ -2329,7 +2329,7 @@
                                     <a href="shop-grid-3-columns-sidebar.html" class="mobile-links__item-link">Shop Grid</a>
                                     <button class="mobile-links__item-toggle" type="button" data-collapse-trigger>
                                         <svg class="mobile-links__item-arrow" width="12px" height="7px">
-                                            <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                            <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-down-12x7"></use>
                                         </svg>
                                     </button>
                                 </div>
@@ -2368,7 +2368,7 @@
                                     <a href="product.html" class="mobile-links__item-link">Product</a>
                                     <button class="mobile-links__item-toggle" type="button" data-collapse-trigger>
                                         <svg class="mobile-links__item-arrow" width="12px" height="7px">
-                                            <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                            <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-down-12x7"></use>
                                         </svg>
                                     </button>
                                 </div>
@@ -2435,7 +2435,7 @@
                         <a href="account-login.html" class="mobile-links__item-link">Account</a>
                         <button class="mobile-links__item-toggle" type="button" data-collapse-trigger>
                             <svg class="mobile-links__item-arrow" width="12px" height="7px">
-                                <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-down-12x7"></use>
                             </svg>
                         </button>
                     </div>
@@ -2489,7 +2489,7 @@
                         <a href="blog-classic.html" class="mobile-links__item-link">Blog</a>
                         <button class="mobile-links__item-toggle" type="button" data-collapse-trigger>
                             <svg class="mobile-links__item-arrow" width="12px" height="7px">
-                                <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-down-12x7"></use>
                             </svg>
                         </button>
                     </div>
@@ -2533,7 +2533,7 @@
                         <a href="" class="mobile-links__item-link">Pages</a>
                         <button class="mobile-links__item-toggle" type="button" data-collapse-trigger>
                             <svg class="mobile-links__item-arrow" width="12px" height="7px">
-                                <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-down-12x7"></use>
                             </svg>
                         </button>
                     </div>
@@ -2587,7 +2587,7 @@
                         <a data-collapse-trigger class="mobile-links__item-link">Currency</a>
                         <button class="mobile-links__item-toggle" type="button" data-collapse-trigger>
                             <svg class="mobile-links__item-arrow" width="12px" height="7px">
-                                <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-down-12x7"></use>
                             </svg>
                         </button>
                     </div>
@@ -2621,7 +2621,7 @@
                         <a data-collapse-trigger class="mobile-links__item-link">Language</a>
                         <button class="mobile-links__item-toggle" type="button" data-collapse-trigger>
                             <svg class="mobile-links__item-arrow" width="12px" height="7px">
-                                <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-down-12x7"></use>
                             </svg>
                         </button>
                     </div>

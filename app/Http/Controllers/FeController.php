@@ -37,4 +37,9 @@ class FeController extends Controller
             'products' => $products
         ]);
     }
+
+    public function postDetail()
+    {
+        return view('fe.posts.detail');
+    }
 }
