@@ -1,25 +1,26 @@
 @extends('admin.layout')
-
 @section('content')
     <div class="container">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h2 class="text-center">Quản Lý bài viết</h2>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Quản Lý Bài Viết</h3>
+                <div class="card-tools"> <a class="btn btn-primary btn-sm" href="/admin/products/create">
+                        <i class="fas fa-folder">
+                        </i>
+                        Add
+                    </a></div>
             </div>
-            <td>
-                <a href="{{ route('posts.create') }}">Thêm Mới</a>
-            </td>
-            <div class="panel-body">
+
+            <div class="card-body">
                 <table class="table table-bordered table-hover">
                     <thead>
                     <tr>
-                        <th width="50px">ID</th>
-                        <th>title</th>
-                        <th>content</th>
-                        <th>image</th>
-                        <th>category_id </th>
-                        <th width="50px">SỬA</th>
-                        <th width="50px">XOÁ</th>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Content</th>
+                        <th>Image</th>
+                        <th>Category_id</th>
+                        <th>Hành động</th>
                     </tr>
                     </thead>
                     @foreach ($posts as $post)
@@ -27,13 +28,20 @@
                             <td>{{ $post->id }}</td>
                             <td>{{ $post->title }}</td>
                             <td>{{ $post->content }}</td>
-                            <td>{{ $post->image }}</td>
-                            <td>{{ $post->category->name }}</td>
+                            <td>{{ $post->category_id }}</td>
+                            <td><img src="{{ $post->image }}" style="width:50px;height:50px"></td>
+
                             <td>
-                                <a href="{{ route('posts.edit', $post->id) }}">SỬA</a>
-                            </td>
-                            <td>
-                                <a href="{{ route('posts.destroy', $post->id) }}">XOÁ</a>
+                                <a class="btn btn-info btn-sm" href="/admin/posts/{{ $post->id }}/edit">
+                                    <i class="fas fa-pencil-alt">
+                                    </i>
+                                    Edit
+                                </a>
+                                <a class="btn btn-danger btn-sm" href="/admin/posts/{{ $post->id }}/destroy">
+                                    <i class="fas fa-trash">
+                                    </i>
+                                    Delete
+                                </a>
                             </td>
                         </tr>
                     @endforeach
@@ -42,4 +50,3 @@
         </div>
     </div>
 @endsection
-

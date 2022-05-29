@@ -39,12 +39,12 @@ Route::post('admin/products/{id}/update', [ProductController::class, 'update'])-
 Route::get('admin/products/{id}/destroy', [ProductController::class, 'destroy'])->name('admin.products.destroy');
 
 //Post
-Route::get('admin/posts/index', [PostController::class, 'index'])->name('posts.index');
-Route::get('admin/posts/create', [PostController::class, 'create'])->name('posts.create');
-Route::post('admin/posts/store', [PostController::class, 'store'])->name('posts.store');
-Route::get('admin/posts/{id}/edit', [PostController::class, 'edit'])->name('posts.edit');
-Route::put('admin/posts/{id}/update', [PostController::class, 'update'])->name('posts.update');
-Route::delete('admin/posts/{id}/destroy', [PostController::class, 'destroy'])->name('posts.destroy');
+Route::get('admin/posts/index', [PostController::class, 'index'])->name('admin.posts.index');
+Route::get('admin/posts/create', [PostController::class, 'create'])->name('admin.posts.create');
+Route::post('admin/posts/store', [PostController::class, 'store'])->name('admin.posts.store');
+Route::get('admin/posts/{id}/edit', [PostController::class, 'edit'])->name('admin.posts.edit');
+Route::put('admin/posts/{id}/update', [PostController::class, 'update'])->name('admin.posts.update');
+Route::delete('admin/posts/{id}/destroy', [PostController::class, 'destroy'])->name('admin.posts.destroy');
 
 //Users
 Route::get('admin/users/index', [UserController::class, 'index'])->name('users.index');
