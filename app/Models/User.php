@@ -35,10 +35,6 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    public function getNameAttribute($value)
-    {
-        return $this->strtoupper($value);
-    }
     /**
      * The attributes that should be cast.
      *
