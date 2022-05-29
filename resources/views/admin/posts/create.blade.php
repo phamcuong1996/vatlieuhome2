@@ -2,7 +2,8 @@
 @section('content')
     <div class="row">
         <div class="col-md-12">
-            <form method="post" action="{{ route('posts.store') }}">
+            <form method="post" action="{{ $route }}">
+                <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                 <div class="card card-primary">
                     <div class="card-header">
                         <h3 class="card-title">Thêm mới</h3>
