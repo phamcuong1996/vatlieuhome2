@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="/admin/plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
     <link rel="stylesheet" href="/admin/plugins/summernote/summernote-bs4.min.css">
-    <script src="/admin/ckeditor/ckeditor.js"></script>
+    <script src="/ckeditor/ckeditor.js"></script>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">

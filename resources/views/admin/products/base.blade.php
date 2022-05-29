@@ -21,6 +21,13 @@
                 <input type="text" class="form-control" name="name" value="{{ @$product->name }}">
             </div>
             <div class="form-group">
+                <label>Description:</label>
+                <textarea name="description" class="form-control" id="editor1" >{{ @$product->description }}</textarea>
+                <script>
+                    CKEDITOR.replace( 'editor1' );
+                </script>
+            </div>
+            <div class="form-group">
                 <label>image:</label>
                 <input type="file" class="form-control" name="file_update" value="{{ @$product->image }}">
             </div>
