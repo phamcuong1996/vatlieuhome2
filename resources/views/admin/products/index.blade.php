@@ -22,7 +22,6 @@
                         <th>Image</th>
                         <th>Original_price</th>
                         <th>Price</th>
-                        <th>Nhóm</th>
                         <th>Hành động</th>
                     </tr>
                     </thead>
@@ -35,7 +34,6 @@
                             <td><img src="{{ $products->image }}" style="width:50px;height:50px"></td>
                             <td>{{ number_format($products->original_price) }}</td>
                             <td>{{ number_format($products->price) }}</td>
-                            <td>{{ $products->category->name }}</td>
                             <td>
                                 <a class="btn btn-info btn-sm" href="/admin/products/{{ $products->id }}/edit">
                                     <i class="fas fa-pencil-alt">

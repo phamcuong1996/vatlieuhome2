@@ -1,7 +1,7 @@
 <div class="card card-primary">
     <div class="card-header">Sửa sản phẩm</div>
     <div class="card-body">
-        <form method="post" action="{{ $route }}">
+        <form method="post" action="{{ $route }}" enctype="multipart/form-data">
             <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
             <div class="form-group">
                 <label>Code:</label>
@@ -22,7 +22,7 @@
             </div>
             <div class="form-group">
                 <label>image:</label>
-                <input type="text" class="form-control" name="image" value="{{ @$product->image }}">
+                <input type="file" class="form-control" name="file_update" value="{{ @$product->image }}">
             </div>
             <div class="form-group">
                 <label>original_price:</label>
