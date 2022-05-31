@@ -21,7 +21,16 @@ class BannerController extends Controller
 
     public function store(Request $request)
     {
+        if ($request->has('file_update')) {
+            $file = $request->file_update;
+            $ext = $request->file_update->extension();
+            $file_name = time().'-'.'product.'.$ext;
+//            dd($file_name);
+            $file->move(public_path('update'), $file_name);
+        }
+        $request->merge(['image' => $file_name]);
         $data = $request->all();
+
         Banner::create($data);
 
         return redirect()->route('admin.banners.index');

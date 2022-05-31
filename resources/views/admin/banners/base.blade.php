@@ -13,11 +13,10 @@
                     {{--                    @endforeach--}}
                     {{--                </select>--}}
                 </div>
-                <label>Name:</label>
-                <textarea name="name" class="form-control" id="editor1" >{{ @$banner->name }}</textarea>
-                <script>
-                    CKEDITOR.replace( 'editor1' );
-                </script>
+            </div>
+            <div class="form-group">
+                <label>name:</label>
+                <input type="text" class="form-control" name="name" value="{{ @$banner->name }}">
             </div>
             <div class="form-group">
                 <label>image:</label>
