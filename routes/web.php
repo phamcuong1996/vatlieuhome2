@@ -8,7 +8,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-
+use App\Http\Controllers\bannerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -86,3 +86,11 @@ Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('profile', [AuthController::class, 'showProfile'])->name('show-profile');
 Route::put('profile', [AuthController::class, 'Profile'])->name('profile');
+
+//Banner
+Route::get('admin/banners/index', [BannerController::class, 'index'])->name('admin.banners.index');
+Route::get('admin/banners/create', [BannerController::class, 'create'])->name('admin.banners.create');
+Route::post('admin/banners/store', [BannerController::class, 'store'])->name('admin.banners.store');
+Route::get('admin/banners/{id}/edit', [BannerController::class, 'edit'])->name('admin.banners.edit');
+Route::post('admin/banners/{id}/update', [BannerController::class, 'update'])->name('admin.banners.update');
+Route::get('admin/banners/{id}/destroy', [BannerController::class, 'destroy'])->name('admin.banners.destroy');

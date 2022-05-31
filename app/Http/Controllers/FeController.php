@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\Product;
+use App\Models\Banner;
 use Illuminate\Http\Request;
 
 class FeController extends Controller
@@ -17,8 +18,9 @@ class FeController extends Controller
         $sale = Product::where('type', 2)->limit(6)->get();
         $new = Product::where('type', 3)->limit(6)->get();
         $posts = Post::where('category_id', 1)->get();
+        $banners = Banner::where('category_id', 1)->get();
 
-        return view('fe.index.index', compact('chongTham', 'keoDan', 'thepXayDung', 'hot','sale', 'new','posts'));
+        return view('fe.index.index', compact('chongTham', 'keoDan', 'thepXayDung', 'hot','sale', 'new','posts','banners'));
     }
 
     public function productDetail(int $id)
