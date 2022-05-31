@@ -7,6 +7,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,7 +45,7 @@ Route::get('admin/posts/create', [PostController::class, 'create'])->name('admin
 Route::post('admin/posts/store', [PostController::class, 'store'])->name('admin.posts.store');
 Route::get('admin/posts/{id}/edit', [PostController::class, 'edit'])->name('admin.posts.edit');
 Route::put('admin/posts/{id}/update', [PostController::class, 'update'])->name('admin.posts.update');
-Route::delete('admin/posts/{id}/destroy', [PostController::class, 'destroy'])->name('admin.posts.destroy');
+Route::get('admin/posts/{id}/destroy', [PostController::class, 'destroy'])->name('admin.posts.destroy');
 
 //Users
 Route::get('admin/users/index', [UserController::class, 'index'])->name('users.index');
@@ -73,3 +74,15 @@ Route::get('admin/orders/init', [AdminOrderController::class, 'indexInit'])->nam
 Route::get('admin/orders/confirmed', [AdminOrderController::class, 'indexConfirmed'])->name('admin.orders.indexConfirmed');
 Route::get('admin/orders/done', [AdminOrderController::class, 'indexDone'])->name('admin.orders.indexDone');
 Route::get('admin/orders/cancel', [AdminOrderController::class, 'indexCancel'])->name('admin.orders.indexCancel');
+
+//Auth
+Route::get('register', [AuthController::class, 'showFormRegister'])->name('show-form-register');
+Route::post('register', [AuthController::class, 'register'])->name('register');
+
+Route::get('login', [AuthController::class, 'showFormLogin'])->name('show-form-login');
+Route::post('login', [AuthController::class, 'login'])->name('login');
+
+Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('profile', [AuthController::class, 'showProfile'])->name('show-profile');
+Route::put('profile', [AuthController::class, 'Profile'])->name('profile');
