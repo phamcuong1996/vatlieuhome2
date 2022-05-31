@@ -31,7 +31,7 @@
                             <td>{{ $products->code }}</td>
                             <td>{{ $products->status_label }}</td>
                             <td>{{ $products->name }}</td>
-                            <td><img src="{{ $products->image }}" style="width:50px;height:50px"></td>
+                            <td><img src=/update/{{$products->image}} style="width:50px;height:50px"></td>
                             <td>{{ number_format($products->original_price) }}</td>
                             <td>{{ number_format($products->price) }}</td>
                             <td>
