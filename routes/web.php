@@ -76,5 +76,13 @@ Route::get('admin/orders/done', [AdminOrderController::class, 'indexDone'])->nam
 Route::get('admin/orders/cancel', [AdminOrderController::class, 'indexCancel'])->name('admin.orders.indexCancel');
 
 //Auth
-Route::get('authlogin', [AuthController::class, 'getAuthLogin']);
-Route::post('authlogin', [AuthController::class, 'postAuthLogin']);
+Route::get('register', [AuthController::class, 'showFormRegister'])->name('show-form-register');
+Route::post('register', [AuthController::class, 'register'])->name('register');
+
+Route::get('login', [AuthController::class, 'showFormLogin'])->name('show-form-login');
+Route::post('login', [AuthController::class, 'login'])->name('login');
+
+Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('profile', [AuthController::class, 'showProfile'])->name('show-profile');
+Route::post('profile', [AuthController::class, 'Profile'])->name('profile');

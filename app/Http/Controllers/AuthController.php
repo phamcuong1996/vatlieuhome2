@@ -2,15 +2,30 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Http\Auth;
+use Illuminate\Support\Facedes\Auth;
+use Monolog\Handler\NewRelicHandler;
 
 class AuthController extends Controller
 {
-    public function getAuthLogin()
+    public function showFormRegister()
     {
-        return view('admin.auth.login');
+        return view('admin.auth.register');
     }
+
+    public function register( Request $request)
+    {
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = bcrypt($request->password);
+        $user->save();
+
+        return redirect()->route('show-form-register')->with('success', 'dang ky thanh cong');
+    }
+
+
 
     public function postAuthLogin(Request $request)
     {
