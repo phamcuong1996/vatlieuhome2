@@ -39,7 +39,26 @@ class AuthController extends Controller
     }
 
     public function showProfile(){
+        if (Auth::check()) {
+            return view('admin.auth.profile');
+        }
+        return redirect()->route('show-form-login');
+    }
 
-        return view('admin.auth.profile');
+    public function Profile(Request $request){
+       $user = User::find(\auth()->id());
+       $user->name = $request->name;
+        if ($request->change_password == 'on') {
+            $user->password = bcrypt($request->password);
+        }
+        $user->save();
+
+        return redirect()->route('show-profile')->with('success','Cập Nhật Thành Công');
+    }
+
+    public function logout(){
+        Auth::logout();
+
+        return redirect()->route('show-form-login');
     }
 }
