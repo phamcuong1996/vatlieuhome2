@@ -27,27 +27,27 @@ class BannerController extends Controller
         return redirect()->route('admin.banners.index');
     }
 
-//    public function edit(int $id)
-//    {
-//        $post = Post::find($id);
-//
-//        return view('admin.banners.edit', compact('post'));
-//    }
-//
-//    public function update(Request $request, $id)
-//    {
-//        $data = $request->all();
-//        $post = Post::find($id);
-//        $post->update($data);
-//
-//        return redirect()->route('banners.index');
-//    }
-//
-//    public function destroy($id)
-//    {
-//        $post = Post::find($id);
-//        $post->delete();
-//
-//        return redirect()->route('admin.banners.index');
-//    }
+    public function edit(int $id)
+    {
+        $banner = Banner::find($id);
+
+        return view('admin.banners.edit', compact('banner'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $data = $request->all();
+        $banner = Banner::find($id);
+        $banner->update($data);
+
+        return redirect()->route('admin.banners.index');
+    }
+
+    public function destroy($id)
+    {
+        $banner = Banner::find($id);
+        $banner->delete();
+
+        return redirect()->route('admin.banners.index');
+    }
 }

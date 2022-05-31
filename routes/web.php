@@ -92,5 +92,5 @@ Route::get('admin/banners/index', [BannerController::class, 'index'])->name('adm
 Route::get('admin/banners/create', [BannerController::class, 'create'])->name('admin.banners.create');
 Route::post('admin/banners/store', [BannerController::class, 'store'])->name('admin.banners.store');
 Route::get('admin/banners/{id}/edit', [BannerController::class, 'edit'])->name('admin.banners.edit');
-Route::put('admin/banners/{id}/update', [BannerController::class, 'update'])->name('admin.banners.update');
+Route::post('admin/banners/{id}/update', [BannerController::class, 'update'])->name('admin.banners.update');
 Route::get('admin/banners/{id}/destroy', [BannerController::class, 'destroy'])->name('admin.banners.destroy');
