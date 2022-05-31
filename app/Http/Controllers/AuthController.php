@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facedes\Auth;
+use Illuminate\Support\Facades\Auth;
 use Monolog\Handler\NewRelicHandler;
 
 class AuthController extends Controller
@@ -25,18 +25,21 @@ class AuthController extends Controller
         return redirect()->route('show-form-register')->with('success', 'dang ky thanh cong');
     }
 
+    public function showFormLogin(){
+        return view('admin.auth.login');
+    }
 
-
-    public function postAuthLogin(Request $request)
+    public function login(Request $request)
     {
-        $arr = [
-            'email' => $request-> email,
-            'password' => $request->password
-        ];
-        if (Auth::attempt($arr)) {
-            dd('Dang nhap thanh Cong');
-        } else {
-            dd('Dang nhap sai');
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+            return redirect()->route('show-profile');
         }
+
+        return redirect()->route('show-form-login')->with('error', 'Email hoac mk khong chinh xac');
+    }
+
+    public function showProfile(){
+
+        return view('admin.auth.profile');
     }
 }
