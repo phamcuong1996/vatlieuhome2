@@ -4,6 +4,15 @@
         <form method="post" action="{{ $route }}" enctype="multipart/form-data">
             <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
             <div class="form-group">
+                <div class="form-group">
+                    <label>status_id:</label>
+                    <input type="text" class="form-control" name="name" value="{{ @$product->status_id}}">
+                    {{--                <select id="status_id" name="status_id" class="form-control">--}}
+                    {{--                    @foreach(__('constant.products.statuses') as $key => $value)--}}
+                    {{--                        <option value="{{ $key }}" {{ @$product->status_id == $key ? 'selected="selected"' : '' }}>{{ $value }}</option>--}}
+                    {{--                    @endforeach--}}
+                    {{--                </select>--}}
+                </div>
                 <label>Name:</label>
                 <textarea name="name" class="form-control" id="editor1" >{{ @$banner->name }}</textarea>
                 <script>

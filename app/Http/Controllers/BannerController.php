@@ -9,9 +9,9 @@ class BannerController extends Controller
 {
     public function index()
     {
-        $banner = Banner::all();
+        $banners = Banner::all();
 
-        return view('admin.banners.index', compact('banner'));
+        return view('admin.banners.index', compact('banners'));
     }
 
     public function create()
@@ -24,7 +24,7 @@ class BannerController extends Controller
         $data = $request->all();
         Banner::create($data);
 
-        return redirect()->route('banners.index');
+        return redirect()->route('admin.banners.index');
     }
 
 //    public function edit(int $id)

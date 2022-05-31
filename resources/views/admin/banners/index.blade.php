@@ -4,7 +4,7 @@
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">Quản Lý Sản Phẩm</h3>
-                <div class="card-tools"> <a class="btn btn-primary btn-sm" href="/admin/products/create">
+                <div class="card-tools"> <a class="btn btn-primary btn-sm" href="/admin/banners/create">
                         <i class="fas fa-folder">
                         </i>
                         Add
@@ -15,32 +15,26 @@
                 <table class="table table-bordered table-hover">
                     <thead>
                     <tr>
-                        <th>Id</th>
-                        <th>Code</th>
+                        <th>ID</th>
                         <th>Status</th>
                         <th>Name</th>
                         <th>Image</th>
-                        <th>Original_price</th>
-                        <th>Price</th>
                         <th>Hành động</th>
                     </tr>
                     </thead>
-                    @foreach ($products as $products)
+                    @foreach ($banners as $banners)
                         <tr>
-                            <td>{{ $products->id }}</td>
-                            <td>{{ $products->code }}</td>
-                            <td>{{ $products->status_label }}</td>
-                            <td>{{ $products->name }}</td>
-                            <td><img src=/update/{{$products->image}} style="width:50px;height:50px"></td>
-                            <td>{{ number_format($products->original_price) }}</td>
-                            <td>{{ number_format($products->price) }}</td>
+                            <td>{{ $banners->id }}</td>
+                            <td>{{ $banners->status_label }}</td>
+                            <td>{{ $banners->name }}</td>
+                            <td><img src=/update/{{$banners->image}} style="width:50px;height:50px"></td>
                             <td>
-                                <a class="btn btn-info btn-sm" href="/admin/products/{{ $products->id }}/edit">
+                                <a class="btn btn-info btn-sm" href="/admin/banners/{{ $banners->id }}/edit">
                                     <i class="fas fa-pencil-alt">
                                     </i>
                                     Edit
                                 </a>
-                                <a class="btn btn-danger btn-sm" href="/admin/products/{{ $products->id }}/destroy">
+                                <a class="btn btn-danger btn-sm" href="/admin/banners/{{ $banners->id }}/destroy">
                                     <i class="fas fa-trash">
                                     </i>
                                     Delete
