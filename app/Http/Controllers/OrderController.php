@@ -102,6 +102,10 @@ class OrderController extends Controller
             $total += $item['quantity'] * $productsKeyById[$item['product_id']]->price;
         }
         $data['full_name'] = $request['full_name'];
+        $data['email'] = $request['email'];
+        $data['address'] = $request['address'];
+        $data['phone'] = $request['phone'];
+        $data['note'] = $request['note'];
         $data['total_price'] = $total;
         $data['status'] = Order::STATUS_INIT;
         $order = Order::create($data);
