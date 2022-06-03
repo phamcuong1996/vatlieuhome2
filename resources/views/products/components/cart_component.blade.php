@@ -30,7 +30,7 @@
                         <td>{{ number_format($productsKeyById[$cart['product_id']]->price)}}VNĐ</td>
                         <td>{{number_format($productsKeyById[$cart['product_id']]->price * $cart['quantity'])}}VNĐ</td>
                         <td>
-                            <a href="" data-product_id="{{ $cart['product_id'] }}" class="btn btn-primary cart_update">Cập Nhật</a>
+                            <a href="" data-product_id="{{ $cart['product_id'] }}" class="btn btn-primary cart_update">Cập Nhật</button>
                             <a href="" data-product_id="{{ $cart['product_id'] }}" class="btn btn-danger cart_delete">Xóa</a>
                         </td>
                     </tr>

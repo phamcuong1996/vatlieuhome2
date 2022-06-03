@@ -8,8 +8,9 @@
         <h2>Chưa có sản phẩm</h2>
     @endif
     <script>
-        function cartUpdate(event) {
-            event.preventDefault();
+        function cartUpdate() {
+
+            alert('123');
             let urlUpdateCart = $('.update_cart_url').data('url');
             let product_id = $(this).data('product_id');
             let quantity = $(this).parents('tr').find('input.quantity').val();
@@ -45,7 +46,7 @@
                 }
             })
         }
-        $(function () {
+        $(function (){
             $(document).on('click', '.cart_update', cartUpdate);
             $(document).on('click', '.cart_delete', cartDelete);
         });
