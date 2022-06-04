@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Post;
 use App\Models\Product;
 use App\Models\Banner;
@@ -19,8 +20,9 @@ class FeController extends Controller
         $new = Product::where('type', 3)->limit(6)->get();
         $posts = Post::where('category_id', 1)->get();
         $banners = Banner::where('category_id', 1)->get();
+        $categories = Category::where('parent_id', null)->get();
 
-        return view('fe.index.index', compact('chongTham', 'keoDan', 'thepXayDung', 'hot','sale', 'new','posts','banners'));
+        return view('fe.index.index', compact('chongTham', 'keoDan', 'thepXayDung', 'hot','sale', 'new','posts','banners','categories'));
     }
 
     public function productDetail(int $id)
