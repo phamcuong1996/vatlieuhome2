@@ -75,6 +75,18 @@ Route::get('admin/orders/confirmed', [AdminOrderController::class, 'indexConfirm
 Route::get('admin/orders/done', [AdminOrderController::class, 'indexDone'])->name('admin.orders.indexDone');
 Route::get('admin/orders/cancel', [AdminOrderController::class, 'indexCancel'])->name('admin.orders.indexCancel');
 
+Route::get('admin/orders/{id}/show', [AdminOrderController::class, 'show'])->name('admin.orders.show');
+Route::get('admin/orders/{id}/edit', [AdminOrderController::class, 'editOrder'])->name('admin.orders.edit');
+
+Route::post('admin/orders/{id}/confirmed', [AdminOrderController::class, 'confirmed'])->name('orders.confirmed');
+Route::post('admin/orders/{id}/done', [AdminOrderController::class, 'done'])->name('orders.done');
+Route::post('admin/orders/{id}/cancel', [AdminOrderController::class, 'cancel'])->name('orders.cancel');
+
+Route::put('admin/orders/{id}/update', [AdminOrderController::class, 'update'])->name('admin.orders.update');
+Route::get('admin/orders/create', [AdminOrderController::class, 'createOrder'])->name('admin.orders.create');
+Route::post('admin/orders/store', [AdminOrderController::class, 'storeOrder'])->name('admin.orders.store');
+Route::get('admin/orders/{id}/destroy', [AdminOrderController::class, 'destroy'])->name('admin.orders.destroy');
+
 //Auth
 Route::get('register', [AuthController::class, 'showFormRegister'])->name('show-form-register');
 Route::post('register', [AuthController::class, 'register'])->name('register');
