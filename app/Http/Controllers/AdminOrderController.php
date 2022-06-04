@@ -107,7 +107,7 @@ class AdminOrderController extends Controller
         $product = Product::find($id);
         $orderDetails = OrderDetail::where('order_id', $order->id)->with('product')->get();
 
-        return view('admin.orders.indexorder', compact('order', 'orderDetails', 'product',));
+        return view('admin.orders.index', compact('order', 'orderDetails', 'product',));
     }
 
     public function createOrder()
