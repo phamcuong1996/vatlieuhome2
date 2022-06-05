@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Order;
 use App\Models\OrderDetail;
 use App\Models\Product;
@@ -14,8 +15,9 @@ class OrderController extends Controller
         $carts = session()->get('orderItems') ?? [];
         $productIds = collect($carts)->pluck('product_id')->all();
         $productsKeyById = Product::whereIn('id', $productIds)->get()->keyBy('id');
+        $categories = Category::where('parent_id', null)->get();
 
-        return view('products.carts', compact('carts', 'productsKeyById'));
+        return view('products.carts', compact('carts', 'productsKeyById','categories'));
     }
 
     public function addProduct(Request $request)
