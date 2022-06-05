@@ -29,8 +29,9 @@ class FeController extends Controller
     {
         $product = Product::find($id);
         $lists = Product::where('category_id', $id)->get();
+        $categories = Category::where('parent_id', null)->get();
 
-        return view('products.detail', compact('product','lists'));
+        return view('products.detail', compact('product','lists','categories'));
     }
 
     public function getProductsByCategoryId(int $id)
