@@ -18,31 +18,33 @@
                     <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Code</th>
-                        <th>Status</th>
-                        <th>Name</th>
-                        <th>Image</th>
-                        <th>Original_price</th>
-                        <th>Price</th>
+                        <th>Mã Sản Phẩm</th>
+                        <th>Trạng Thái</th>
+                        <th>Tên Sản Phẩm</th>
+                        <th>Ảnh</th>
+                        <th>Giá Gốc</th>
+                        <th>Giá Khuyến Mại</th>
+                        <th>Loại</th>
                         <th>Hành động</th>
                     </tr>
                     </thead>
-                    @foreach ($products as $products)
+                    @foreach ($products as $pro)
                         <tr>
-                            <td>{{ $products->id }}</td>
-                            <td>{{ $products->code }}</td>
-                            <td>{{ $products->status_label }}</td>
-                            <td>{{ $products->name }}</td>
-                            <td><img src=/update/{{$products->image}} style="width:50px;height:50px"></td>
-                            <td>{{ number_format($products->original_price) }}</td>
-                            <td>{{ number_format($products->price) }}</td>
+                            <td>{{ $pro->id }}</td>
+                            <td>{{ $pro->code }}</td>
+                            <td>{{ $pro->status_label }}</td>
+                            <td>{{ $pro->name }}</td>
+                            <td><img src=/update/{{$pro->image}} style="width:50px;height:50px"></td>
+                            <td>{{ number_format($pro->price) }}</td>
+                            <td>{{ number_format($pro->original_price) }}</td>
+                            <td>{{ $pro->type }}</td>
                             <td>
-                                <a class="btn btn-info btn-sm" href="/admin/products/{{ $products->id }}/edit">
+                                <a class="btn btn-info btn-sm" href="/admin/products/{{ $pro->id }}/edit">
                                     <i class="fas fa-pencil-alt">
                                     </i>
                                     Edit
                                 </a>
-                                <a class="btn btn-danger btn-sm" href="/admin/products/{{ $products->id }}/destroy">
+                                <a class="btn btn-danger btn-sm" href="/admin/products/{{ $pro->id }}/destroy">
                                     <i class="fas fa-trash">
                                     </i>
                                     Delete
@@ -51,6 +53,7 @@
                         </tr>
                     @endforeach
                 </table>
+                {{ $products->links() }}
             </div>
         </div>
     </div>
