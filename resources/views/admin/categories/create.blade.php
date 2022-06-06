@@ -2,7 +2,7 @@
 @section('content')
     <div class="row">
         <div class="col-md-12">
-            <form method="post" action="{{ route() }}">
+            <form method="post" action="{{ route('admin.categories.store') }}">
                 <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                 <div class="card card-primary">
                     <div class="card-header">
@@ -11,20 +11,16 @@
                     <div class="card-body">
                         @csrf
                         <div class="form-group">
-                            <label for="name">Title:</label>
-                            <input class="form-control" type="text" name="title">
+                            <label for="name">ID:</label>
+                            <input class="form-control" type="text" name="id">
                         </div>
                         <div class="form-group">
-                            <label for="email">Content:</label>
-                            <input class="form-control" type="text" name="content">
+                            <label for="email">Name:</label>
+                            <input class="form-control" type="text" name="name">
                         </div>
                         <div class="form-group">
-                            <label for="password">Image</label>
-                            <input class="form-control" type="text" name="image">
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Category_id:</label>
-                            <input class="form-control" type="text" name="category_id">
+                            <label for="password">Parent_id</label>
+                            <input class="form-control" type="text" name="parent_id">
                         </div>
                     </div>
                     <div class="card-footer">
@@ -36,5 +32,6 @@
     </div>
 
 @endsection
+
 
 

@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\bannerController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -110,3 +111,11 @@ Route::get('admin/banners/{id}/destroy', [BannerController::class, 'destroy'])->
 
 //mail
 Route::get('mail', [MailController::class, 'testMail'])->name('');
+
+//Category
+Route::get('admin/categories/index', [CategoryController::class, 'index'])->name('admin.categories.index');
+Route::get('admin/categories/create', [CategoryController::class, 'create'])->name('admin.categories.create');
+Route::post('admin/categories/store', [CategoryController::class, 'store'])->name('admin.categories.store');
+Route::get('admin/categories/{id}/edit', [CategoryController::class, 'edit'])->name('admin.categories.edit');
+Route::put('admin/categories/{id}/update', [CategoryController::class, 'update'])->name('admin.categories.update');
+Route::get('admin/categories/{id}/destroy', [CategoryController::class, 'destroy'])->name('admin.categories.destroy');
