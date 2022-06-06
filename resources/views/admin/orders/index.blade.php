@@ -20,7 +20,7 @@
                         <th>Action</th>
                     </tr>
                     </thead>
-                    @foreach ($orders as $order)
+                    @foreach ($order as $order1)
                         <tr>
                             <td>{{ $order->id }}</td>
                             <td>{{ $order->full_name }}</td>
@@ -30,7 +30,7 @@
                             <td>{{ number_format($order->total_price)}} VNĐ</td>
                             <td>{{ $order->note }}</td>
                             <td>
-                                <a class="btn btn-info btn-sm" href="/admin/orders/{{ $order->id }}/update">
+                                <a class="btn btn-info btn-sm" href="/admin/orders/{{ $order->id }}/edit">
                                     <i class="fas fa-pencil-alt">
                                     </i>
                                     Edit
@@ -39,7 +39,6 @@
                         </tr>
                     @endforeach
                 </table>
-                {{ $orders->links() }}
             </div>
         </div>
     </div>

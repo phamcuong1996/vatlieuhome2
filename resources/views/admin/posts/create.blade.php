@@ -2,7 +2,7 @@
 @section('content')
     <div class="row">
         <div class="col-md-12">
-            <form method="post" action="{{ route() }}">
+            <form method="post" action="{{ route('admin.posts.store') }}">
                 <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                 <div class="card card-primary">
                     <div class="card-header">
