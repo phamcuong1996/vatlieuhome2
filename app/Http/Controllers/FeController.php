@@ -36,11 +36,11 @@ class FeController extends Controller
 
     public function getProductsByCategoryId(int $id)
     {
+        $categories = Category::where('parent_id', null)->get();
         $products = Product::where('category_id', $id)->get();
+        $lists = Product::where('category_id', $id)->get();
 
-        return view('products.list', [
-            'products' => $products
-        ]);
+        return view('products.list', compact('categories','products','lists'));
     }
 
     public function postDetail(int $id)
@@ -49,5 +49,13 @@ class FeController extends Controller
         $lists = Post::where('category_id', $id)->get();
 
         return view('fe.posts.detail', compact('post','lists'));
+    }
+
+    public function getPostsByCategoryId(int $id)
+    {
+        $categories = Category::where('parent_id', null)->get();
+        $posts = Post::where('category_id', $id)->get();
+
+        return view('fe.posts.list', compact('categories','posts'));
     }
 }
