@@ -9,6 +9,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\bannerController;
+use App\Http\Controllers\MailController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -106,3 +107,6 @@ Route::post('admin/banners/store', [BannerController::class, 'store'])->name('ad
 Route::get('admin/banners/{id}/edit', [BannerController::class, 'edit'])->name('admin.banners.edit');
 Route::post('admin/banners/{id}/update', [BannerController::class, 'update'])->name('admin.banners.update');
 Route::get('admin/banners/{id}/destroy', [BannerController::class, 'destroy'])->name('admin.banners.destroy');
+
+//mail
+Route::get('mail', [MailController::class, 'testMail'])->name('');
