@@ -1,7 +1,7 @@
 @extends('admin.layout')
 
 @section('content')
-    <a class="btn btn-primary" href="{{ route('users.create') }}">Thêm Mới</a>
+    <a class="btn btn-primary" href="{{ route('admin.users.create') }}">Thêm Mới</a>
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">Quản Lý User</h3>
@@ -23,12 +23,12 @@
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
                         <td>
-                            <a class="btn btn-info btn-sm" href="{{ route('users.edit', ['id' => $user->id ]) }}">
+                            <a class="btn btn-info btn-sm" href="{{ route('admin.users.edit', ['id' => $user->id ]) }}">
                                 <i class="fas fa-pencil-alt">
                                 </i>
                                 Edit
                             </a>
-                            <form action="{{ route('users.destroy', ['id' => $user->id ]) }}" method="post">
+                            <form action="{{ route('admin.users.destroy', ['id' => $user->id ]) }}" method="post">
                                 @csrf
                                 {{ method_field('DELETE') }}
                                 <button class="btn btn-danger btn-sm" type="submit">

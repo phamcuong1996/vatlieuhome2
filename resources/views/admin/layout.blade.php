@@ -260,6 +260,75 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="nav-item menu-open">
+                        <a href="#" class="nav-link active">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>
+                                Posts
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('admin.posts.index') }}" class="nav-link active">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Index</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.posts.create') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Create</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item menu-open">
+                        <a href="#" class="nav-link active">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>
+                                Banners
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('admin.banners.index') }}" class="nav-link active">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Index</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.banners.create') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Create</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item menu-open">
+                        <a href="#" class="nav-link active">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>
+                                Users
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('admin.users.index') }}" class="nav-link active">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Index</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.users.create') }}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Create</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     <li class="nav-item">
                         <a href="pages/widgets.html" class="nav-link">
                             <i class="nav-icon fas fa-th"></i>

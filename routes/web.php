@@ -50,12 +50,12 @@ Route::put('admin/posts/{id}/update', [PostController::class, 'update'])->name('
 Route::get('admin/posts/{id}/destroy', [PostController::class, 'destroy'])->name('admin.posts.destroy');
 
 //Users
-Route::get('admin/users/index', [UserController::class, 'index'])->name('users.index');
-Route::get('admin/users/create', [UserController::class, 'create'])->name('users.create');
-Route::post('admin/users/store', [UserController::class, 'store'])->name('users.store');
-Route::get('admin/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
-Route::put('admin/users/{id}/update', [UserController::class, 'update'])->name('users.update');
-Route::delete('admin/users/{id}/destroy', [UserController::class, 'destroy'])->name('users.destroy');
+Route::get('admin/users/index', [UserController::class, 'index'])->name('admin.users.index');
+Route::get('admin/users/create', [UserController::class, 'create'])->name('admin.users.create');
+Route::post('admin/users/store', [UserController::class, 'store'])->name('admin.users.store');
+Route::get('admin/users/{id}/edit', [UserController::class, 'edit'])->name('admin.users.edit');
+Route::put('admin/users/{id}/update', [UserController::class, 'update'])->name('admin.users.update');
+Route::delete('admin/users/{id}/destroy', [UserController::class, 'destroy'])->name('admin.users.destroy');
 
 //fe
 Route::get('/', [FeController::class, 'index'])->name('index');

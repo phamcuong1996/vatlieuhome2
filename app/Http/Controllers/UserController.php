@@ -24,7 +24,7 @@ class UserController extends Controller
         $data = $request->all();
         User::create($data);
 
-        return redirect()->route('users.index');
+        return redirect()->route('admin.users.index');
     }
 
     public function edit(Request $request)
@@ -41,7 +41,7 @@ class UserController extends Controller
         $user = User::find($id);
         $user->update($data);
 
-        return redirect()->route('users.index');
+        return redirect()->route('admin.users.index');
     }
 
     public function destroy($id)
@@ -49,6 +49,6 @@ class UserController extends Controller
         $user = User::find($id);
         $user->delete();
 
-        return redirect()->route('users.index');
+        return redirect()->route('admin.users.index');
     }
 }

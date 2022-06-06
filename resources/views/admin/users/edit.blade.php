@@ -2,7 +2,7 @@
 @section('content')
     <div class="row">
         <div class="col-md-12">
-            <form method="post" action="{{ route('users.update', ['id' => $user->id]) }}">
+            <form method="post" action="{{ route('admin.users.update', ['id' => $user->id]) }}">
                 <div class="card card-primary">
                     <div class="card-header">
                         <h3 class="card-title">Sửa</h3>
