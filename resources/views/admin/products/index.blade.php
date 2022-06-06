@@ -17,7 +17,7 @@
                 <table class="table table-bordered table-hover">
                     <thead>
                     <tr>
-                        <th>Id</th>
+                        <th>Số Thứ Tự</th>
                         <th>Mã Sản Phẩm</th>
                         <th>Trạng Thái</th>
                         <th>Tên Sản Phẩm</th>
@@ -30,24 +30,24 @@
                     </thead>
                     @foreach ($products as $pro)
                         <tr>
-                            <td>{{ $pro->id }}</td>
-                            <td>{{ $pro->code }}</td>
-                            <td>{{ $pro->status_label }}</td>
-                            <td>{{ $pro->name }}</td>
-                            <td><img src=/update/{{$pro->image}} style="width:50px;height:50px"></td>
-                            <td>{{ number_format($pro->price) }}</td>
-                            <td>{{ number_format($pro->original_price) }}</td>
-                            <td>{{ $pro->type }}</td>
-                            <td>
+                            <td width="100px">{{ $pro->id }}</td>
+                            <td width="130px">{{ $pro->code }}</td>
+                            <td width="100px">{{ $pro->status_label }}</td>
+                            <td width="100px">{{ $pro->name }}</td>
+                            <td width="40px"><img src=/update/{{$pro->image}} style="width:50px;height:50px"></td>
+                            <td width="80px">{{ number_format($pro->price) }}</td>
+                            <td width="130px">{{ number_format($pro->original_price) }}</td>
+                            <td width="60px">{{ $pro->type }}</td>
+                            <td width="100px">
                                 <a class="btn btn-info btn-sm" href="/admin/products/{{ $pro->id }}/edit">
                                     <i class="fas fa-pencil-alt">
                                     </i>
                                     Edit
                                 </a>
                                 <a class="btn btn-danger btn-sm" href="/admin/products/{{ $pro->id }}/destroy">
-                                    <i class="fas fa-trash">
-                                    </i>
-                                    Delete
+                                        <i class="fas fa-trash">
+                                        </i>
+                                        Delete
                                 </a>
                             </td>
                         </tr>
