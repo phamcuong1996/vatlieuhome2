@@ -19,7 +19,7 @@ class ProductController extends Controller
 
     public function create(Request $request)
     {
-        $products = Product::with('category');
+        $products = Product::with('category')->get();
 
         return view('admin.products.create',compact('products'));
     }
