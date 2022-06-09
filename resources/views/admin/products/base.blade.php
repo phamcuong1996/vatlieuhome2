@@ -39,33 +39,33 @@
             </div>
             <div class="form-group" style="display: flex">
                 <div class="col-3">
-                    <label>Ảnh (<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
+                    <label>Ảnh:</label>
                     <input type="file" class="form-control" name="file_update" value="{{ @$product->image }}">
                 </div>
                 <div class="col-3">
-                        <label for="">Loại Sản Phẩm:</label>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="type" value="1" checked="checked">
-                                Hot
-                            </label>
-                            <label>
-                                <input type="radio" name="type" value="2" checked="checked">
-                                New
-                            </label>
-                            <label>
-                                <input type="radio" name="type" value="3" checked="checked">
-                                Sale
-                            </label>
-                        </div>
-                </div>
-                <div class="col-3">
-                    <label>Danh Mục (<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
+                    <label>Danh Mục:</label>
                     <select id="category_id" name="category_id" class="form-control">
                         @foreach($category as $value)
                             <option value="{{$value->id}}">{{$value->name}}</option>
                         @endforeach
                     </select>
+                </div>
+                <div class="col-3">
+                    <label for="">Loại Sản Phẩm:</label>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="type" value="1" checked="checked">
+                            Hot
+                        </label>
+                        <label>
+                            <input type="radio" name="type" value="2" checked="checked">
+                            New
+                        </label>
+                        <label>
+                            <input type="radio" name="type" value="3" checked="checked">
+                            Sale
+                        </label>
+                    </div>
                 </div>
                 <div class="col-3">
                     <label for="">Trạng Thái:</label>
@@ -83,7 +83,7 @@
             </div>
             <div class="form-group" style="display: flex">
                 <div class="col-6">
-                    <label>Mô Tả Ngắn:</label>
+                    <label>Mô Tả Ngắn(<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
                     <textarea name="short_description" class="form-control" id="editor1"
                               placeholder="Nhập mô tả">{{ @$product->short_description }}</textarea>
                     <script>
@@ -91,7 +91,7 @@
                     </script>
                 </div>
                 <div class="col-6">
-                    <label>Mô tả Chi Tiết:</label>
+                    <label>Mô tả Chi Tiết(<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
                     <textarea name="description" class="form-control" id="editor2"
                               placeholder="Nhập mô tả">{{ @$product->description }}</textarea>
                     <script>
