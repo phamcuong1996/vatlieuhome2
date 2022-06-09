@@ -22,13 +22,13 @@
                            value="{{ @$product->name }}">
                 </div>
                 <div class="col-3">
-                    <label>Giá Khuyến Mại (<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
-                    <input type="text" class="form-control" name="original_price" placeholder="Nhập giá"
-                           value="{{ @$product->original_price }}">
+                    <label>Giá Gốc (<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
+                    <input type="text" class="form-control" name="price" placeholder="Nhập giá"
+                           value="{{ @$product->price }}">
                 </div>
                 <div class="col-3">
                     <label>Giá Khuyến Mại (<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
-                    <input type="text" class="form-control" name="price" placeholder="Nhập giá"
+                    <input type="text" class="form-control" name="original_price" placeholder="Nhập giá"
                            value="{{ @$product->original_price }}">
                 </div>
                 <div class="col-3">
@@ -43,12 +43,21 @@
                     <input type="file" class="form-control" name="file_update" value="{{ @$product->image }}">
                 </div>
                 <div class="col-3">
-                    <label>Loại Sản Phẩm (<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
-                    <select id="category_id" name="category_id" class="form-control">
-                        @foreach($products as $value)
-                            <option value="{{$value->id}}">{{$value->type}}</option>
-                        @endforeach
-                    </select>
+                        <label for="">Loại Sản Phẩm:</label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="type" value="1" checked="checked">
+                                Hot
+                            </label>
+                            <label>
+                                <input type="radio" name="type" value="2" checked="checked">
+                                New
+                            </label>
+                            <label>
+                                <input type="radio" name="type" value="3" checked="checked">
+                                Sale
+                            </label>
+                        </div>
                 </div>
                 <div class="col-3">
                     <label>Danh Mục (<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
@@ -59,12 +68,17 @@
                     </select>
                 </div>
                 <div class="col-3">
-                    <label>Trạng Thái:</label>
-                    <select id="status_id" name="status_id" class="form-control">
-                        @foreach($products as $value)
-                            <option value="{{$value->id}}">{{$value->status}}</option>
-                        @endforeach
-                    </select>
+                    <label for="">Trạng Thái:</label>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="status_id" value="1" checked="checked">
+                            Hiện
+                        </label>
+                        <label>
+                            <input type="radio" name="status_id" value="0" checked="checked">
+                            Ẩn
+                        </label>
+                    </div>
                 </div>
             </div>
             <div class="form-group" style="display: flex">
