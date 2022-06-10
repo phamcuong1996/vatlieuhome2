@@ -43,7 +43,7 @@ class PostController extends Controller
         if ($request->has('file_update')) {
             $file = $request->file_update;
             $ext = $request->file_update->extension();
-            $file_name = time().'-'.'post.'.$ext;
+            $file_name = time().'-'.'product.'.$ext;
 //            dd($file_name);
             $file->move(public_path('update'), $file_name);
         }
@@ -58,8 +58,9 @@ class PostController extends Controller
     public function edit(int $id)
     {
         $post = Post::find($id);
+        $category = Category::all();
 
-        return view('admin.posts.edit', compact('post'));
+        return view('admin.posts.edit', compact('post','category'));
     }
 
     public function update(Request $request, $id)
@@ -68,7 +69,7 @@ class PostController extends Controller
         $post = Post::find($id);
         $post->update($data);
 
-        return redirect()->route('posts.index');
+        return redirect()->route('admin.posts.index')->with('success','Sửa bài viết thành công !');
     }
 
     public function destroy($id)

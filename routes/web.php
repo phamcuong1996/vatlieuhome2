@@ -46,7 +46,7 @@ Route::get('admin/posts/index', [PostController::class, 'index'])->name('admin.p
 Route::get('admin/posts/create', [PostController::class, 'create'])->name('admin.posts.create');
 Route::post('admin/posts/store', [PostController::class, 'store'])->name('admin.posts.store');
 Route::get('admin/posts/{id}/edit', [PostController::class, 'edit'])->name('admin.posts.edit');
-Route::put('admin/posts/{id}/update', [PostController::class, 'update'])->name('admin.posts.update');
+Route::post('admin/posts/{id}/update', [PostController::class, 'update'])->name('admin.posts.update');
 Route::get('admin/posts/{id}/destroy', [PostController::class, 'destroy'])->name('admin.posts.destroy');
 
 //Users

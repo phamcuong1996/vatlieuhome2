@@ -34,7 +34,7 @@
                             <td>{{ $post->title }}</td>
                             <td>{{ $post->short_content }}</td>
                             <td>{{ $post->category->name }}</td>
-                            <td><img src="{{ $post->image }}" style="width:50px;height:50px"></td>
+                            <td width="40px"><img src=/update/{{$post->image}} style="width:50px;height:50px"></td>
 
                             <td>
                                 <a class="btn btn-info btn-sm" href="/admin/posts/{{ $post->id }}/edit">
