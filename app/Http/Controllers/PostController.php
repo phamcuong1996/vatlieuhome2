@@ -18,12 +18,25 @@ class PostController extends Controller
 
     public function create()
     {
-        return view('admin.posts.create');
+        $posts = Post::with('category')->get();
+        $category = Category::all();
+
+        return view('admin.posts.create',compact('category','posts'));
     }
 
     public function store(Request $request)
     {
         $data = $request->all();
+        if ($request->has('file_update')) {
+            $file = $request->file_update;
+            $ext = $request->file_update->extension();
+            $file_name = time().'-'.'post.'.$ext;
+//            dd($file_name);
+            $file->move(public_path('update'), $file_name);
+        }
+        $request->merge(['image' => $file_name]);
+        $data = $request->all();
+
         Post::create($data);
 
         return redirect()->route('posts.index');
