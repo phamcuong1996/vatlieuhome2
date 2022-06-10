@@ -18,7 +18,10 @@ class BannerController extends Controller
 
     public function create()
     {
-        return view('admin.banners.create');
+        $banners = Banner::with('category')->get();
+        $category = Category::all();
+
+        return view('admin.banners.create',compact('category','banners'));
     }
 
     public function store(Request $request)

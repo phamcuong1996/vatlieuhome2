@@ -16,16 +16,18 @@
                     <thead>
                     <tr>
                         <th width="50px">STT</th>
-                        <th width="50px">Trạng Thái</th>
-                        <th width="150px">Tên</th>
-                        <th width="150px">Ảnh</th>
-                        <th width="150px">Hành Động</th>
+                        <th width="100px">Trạng Thái</th>
+                        <th width="150px">Danh Mục</th>
+                        <th width="100px">Tên</th>
+                        <th width="100px">Ảnh</th>
+                        <th width="100px">Hành Động</th>
                     </tr>
                     </thead>
                     @foreach ($banners as $banner)
                         <tr>
                             <td>{{ $banner->id }}</td>
-                            <td>{{ $banner->status_label }}</td>
+                            <td>{{ ($banner->status_id ===1)?'Hiện':'Ẩn' }}</td>
+                            <td>{{ $banner->category->name }}</td>
                             <td>{{ $banner->name }}</td>
                             <td><img src=/update/{{$banner->image}} style="width:50px;height:50px"></td>
                             <td>
