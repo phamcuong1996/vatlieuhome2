@@ -78,6 +78,13 @@ class ProductController extends Controller
 
     public function update(Request $request, int $id)
     {
+        $validated = $request->validate([
+            'code' => 'required|unique:products|max:4',
+
+        ],[
+            'code.required' => 'Bạn cần nhập mã sản phẩm',
+            'code.unique' =>'Mã sản phẩm đã tồn tại',
+        ]);
         $data = $request->all();
         $product = Product::find($id);
         $product->update($data);
