@@ -15,20 +15,20 @@
                 <table class="table table-bordered table-hover">
                     <thead>
                     <tr>
-                        <th>Id</th>
-                        <th>Title</th>
-                        <th>Content</th>
-                        <th>Image</th>
-                        <th>Category_id</th>
-                        <th>Hành động</th>
+                        <th>STT</th>
+                        <th>Tiêu Đề</th>
+                        <th>Nội Dung Ngắn</th>
+                        <th>Danh Mục</th>
+                        <th>Ảnh</th>
+                        <th>Hành Động</th>
                     </tr>
                     </thead>
                     @foreach ($posts as $post)
                         <tr>
                             <td>{{ $post->id }}</td>
                             <td>{{ $post->title }}</td>
-                            <td>{{ $post->content }}</td>
-                            <td>{{ $post->category_id }}</td>
+                            <td>{{ $post->short_content }}</td>
+                            <td>{{ $post->category->name }}</td>
                             <td><img src="{{ $post->image }}" style="width:50px;height:50px"></td>
 
                             <td>
@@ -46,6 +46,7 @@
                         </tr>
                     @endforeach
                 </table>
+                {{ $posts->links() }}
             </div>
         </div>
     </div>
