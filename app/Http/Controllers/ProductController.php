@@ -58,7 +58,7 @@ class ProductController extends Controller
 
         Product::create($data);
 
-        return redirect()->route('admin.products.index')->with('success','Thêm sản phẩm thành công !');;
+        return redirect()->route('admin.products.index')->with('success','Thêm sản phẩm thành công !');
     }
 
     public function show()
@@ -82,7 +82,7 @@ class ProductController extends Controller
         $product = Product::find($id);
         $product->update($data);
 
-        return redirect('admin/products/index');
+        return redirect('admin/products/index')->with('success','Sửa sản phẩm thành công !');
     }
 
     public function destroy(int $id)
@@ -90,7 +90,7 @@ class ProductController extends Controller
         $product = Product::find($id);
         $product->delete();
 
-        return redirect('admin/products/index');
+        return redirect('admin/products/index')->with('success','Xóa sản phẩm thành công !');
     }
 
 }
