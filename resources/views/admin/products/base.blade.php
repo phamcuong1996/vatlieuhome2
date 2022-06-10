@@ -72,11 +72,11 @@
                     <div class="form-control">
                         <label>
                             <input type="radio" name="status_id" value="1" checked="checked">
-                            Hiện
+                            Còn Hàng
                         </label>
                         <label>
                             <input type="radio" name="status_id" value="0" checked="checked">
-                            Ẩn
+                            Hết Hàng
                         </label>
                     </div>
                 </div>

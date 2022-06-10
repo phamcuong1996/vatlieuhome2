@@ -38,12 +38,12 @@
                         <tr>
                             <td width="50px">{{ $pro->id }}</td>
                             <td width="30px">{{ $pro->code }}</td>
-                            <td width="80px">{{ $pro->status_label }}</td>
+                            <td width="80px">{{ ($pro->status_id===1)?'Còn hàng':'Hết hàng' }}</td>
                             <td width="80px">{{ $pro->name }}</td>
                             <td width="40px"><img src=/update/{{$pro->image}} style="width:50px;height:50px"></td>
                             <td width="80px">{{ number_format($pro->price) }}</td>
                             <td width="80px">{{ number_format($pro->original_price) }}</td>
-                            <td width="50px">{{ ($pro->type===1)?'Hiện':'Ẩn' }}</td>
+                            <td width="50px">{{ $pro ->type ===1 ?'Hot': $pro->type ==2 ?'New':'sale' }}</td>
                             <td width="50px">{{ $pro->category->name }}</td>
                             <td width="80px">
                                 <a class="btn btn-info btn-sm" href="/admin/products/{{ $pro->id }}/edit">
