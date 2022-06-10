@@ -52,7 +52,7 @@
                 </div>
                 <div class="col-3">
                     <label for="">Loại Sản Phẩm:</label>
-                    <div class="radio">
+                    <div class="form-control">
                         <label>
                             <input type="radio" name="type" value="1" checked="checked">
                             Hot
@@ -69,7 +69,7 @@
                 </div>
                 <div class="col-3">
                     <label for="">Trạng Thái:</label>
-                    <div class="radio">
+                    <div class="form-control">
                         <label>
                             <input type="radio" name="status_id" value="1" checked="checked">
                             Hiện

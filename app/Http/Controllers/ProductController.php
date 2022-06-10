@@ -32,6 +32,8 @@ class ProductController extends Controller
             'name' => 'required|unique:products|max:255',
             'price' => 'required',
             'original_price' => 'required',
+            'description' => 'required',
+            'short_description' => 'required',
 
         ],[
             'code.required' => 'Bạn cần nhập mã sản phẩm',
@@ -41,6 +43,8 @@ class ProductController extends Controller
             'code.unique' => 'Mã sản phẩm đã tồn tại',
             'name.unique' => 'Tên sản phẩm đã tồn tại',
             'code.max' => 'Mã sản phẩm tối đa 5 số',
+            'description.required' => 'Bạn cần nhập mô tả',
+            'short_description.required' => 'Bạn cần nhập mô tả ngắn',
         ]);
         if ($request->has('file_update')) {
             $file = $request->file_update;
@@ -54,7 +58,7 @@ class ProductController extends Controller
 
         Product::create($data);
 
-        return redirect()->route('admin.products.index');
+        return redirect()->route('admin.products.index')->with('success','Thêm sản phẩm thành công !');;
     }
 
     public function show()
