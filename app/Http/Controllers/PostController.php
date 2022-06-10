@@ -39,7 +39,7 @@ class PostController extends Controller
 
         Post::create($data);
 
-        return redirect()->route('posts.index');
+        return redirect()->route('admin.posts.index')->with('success','Thêm bài viết thành công !');
     }
 
     public function edit(int $id)

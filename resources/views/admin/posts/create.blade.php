@@ -17,7 +17,7 @@
                             </div>
                             <div class="col-4">
                                 <label>Ảnh:</label>
-                                <input type="file" class="form-control" name="file_update" value="{{ @$posts->image }}">
+                                <input type="file" class="form-control" name="file_update" value="">
                             </div>
                             <div class="col-4">
                                 <label>Danh Mục:</label>
@@ -31,16 +31,16 @@
                         <div class="form-group" style="display: flex">
                             <div class="col-6">
                                 <label>Nội Dung Ngắn(<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
-                                <textarea name="short_description" class="form-control" id="editor1"
-                                          placeholder="Nhập mô tả">{{ @$posts->short_content }}</textarea>
+                                <textarea name="short_content" class="form-control" id="editor1"
+                                          placeholder="Nhập mô tả"></textarea>
                                 <script>
                                     CKEDITOR.replace('editor1');
                                 </script>
                             </div>
                             <div class="col-6">
                                 <label>Nội Dung(<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
-                                <textarea name="short_description" class="form-control" id="editor2"
-                                          placeholder="Nhập mô tả">{{ @$posts->content }}</textarea>
+                                <textarea name="content" class="form-control" id="editor2"
+                                          placeholder="Nhập mô tả"></textarea>
                                 <script>
                                     CKEDITOR.replace('editor2');
                                 </script>
