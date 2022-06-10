@@ -22,10 +22,26 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
+        $validated = $request->validate([
+            'name' => 'required|unique:users|max:255',
+            'email' => 'required|unique:users|max:255',
+            'password' => 'required|min:6',
+
+        ],[
+            'name.required' => 'Bạn cần nhập tên tài khoản',
+            'email.required' => 'Bạn cần nhập email',
+            'password.required' => 'Bạn cần nhập mật khẩu',
+            'name.unique' => 'Tên tài khoản đã tồn tại',
+            'email.unique' => 'Email đã tồn tại',
+            'name.max' => 'Tên tối đa 255 ký tự',
+            'email.max' => 'Email tối đa 255 ký tự',
+            'password.min' => 'Mật Khẩu tối thiếu có 6 ký tự',
+        ]);
+
         $data = $request->all();
         User::create($data);
 
-        return redirect()->route('admin.users.index');
+        return redirect()->route('admin.users.index')->with('success','Thêm tài khoản thành công !');
     }
 
     public function edit(Request $request)
