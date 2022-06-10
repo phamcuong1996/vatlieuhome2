@@ -10,7 +10,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = User::with('category')->simplePaginate(5);
+        $users = User::with('category')->simplePaginate(7);
 
         return view('admin.users.index', compact('users'));
     }
@@ -24,7 +24,7 @@ class UserController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|unique:users|max:255',
-            'email' => 'required|unique:users|max:255',
+            'email' => 'required|unique:users|max:255|email',
             'password' => 'required|min:6',
 
         ],[
@@ -36,6 +36,7 @@ class UserController extends Controller
             'name.max' => 'Tên tối đa 255 ký tự',
             'email.max' => 'Email tối đa 255 ký tự',
             'password.min' => 'Mật Khẩu tối thiếu có 6 ký tự',
+            'email.email' => 'Bạn phải nhập địa chỉ email hợp lệ',
         ]);
 
         $data = $request->all();
