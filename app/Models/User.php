@@ -24,7 +24,10 @@ class User extends Authenticatable
         'email_verified_at',
         'remember_token'
     ];
-
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
     /**
      * The attributes that should be hidden for serialization.
      *
