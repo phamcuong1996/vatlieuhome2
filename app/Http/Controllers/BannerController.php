@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Banner;
 use Illuminate\Http\Request;
 
@@ -9,9 +10,10 @@ class BannerController extends Controller
 {
     public function index()
     {
-        $banners = Banner::all();
+        $banners = Banner::with('category')->simplePaginate(3);
+        $category = Category::all();
 
-        return view('admin.banners.index', compact('banners'));
+        return view('admin.banners.index', compact('banners','category'));
     }
 
     public function create()

@@ -14,7 +14,12 @@ class Banner extends Model
     protected $fillable = [
         'name',
         'image',
-        'image',
-        'category_id'
+        'category_id',
+        'status_id'
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }
