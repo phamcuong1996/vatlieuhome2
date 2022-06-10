@@ -58,7 +58,7 @@ class UserController extends Controller
         $user = User::find($id);
         $user->update($data);
 
-        return redirect()->route('admin.users.index');
+        return redirect()->route('admin.users.index')->with('success','Sửa thông tin tài khoản thành công !');
     }
 
     public function destroy($id)
@@ -66,6 +66,6 @@ class UserController extends Controller
         $user = User::find($id);
         $user->delete();
 
-        return redirect()->route('admin.users.index');
+        return redirect()->route('admin.users.index')->with('success','Xóa tài khoản thành công !');
     }
 }
