@@ -2,6 +2,15 @@
 @section('content')
     <div class="row">
         <div class="col-md-12">
+            @if ($errors->any())
+                <div class="alert alert-default-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <form method="post" action="{{ route('admin.posts.store') }}" enctype="multipart/form-data">
                 <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                 <div class="card card-primary">
@@ -12,7 +21,7 @@
                         @csrf
                         <div class="form-group" style="display: flex">
                             <div class="col-4">
-                                <label for="name">Tiều Đề:</label>
+                                <label for="name">Tiều Đề(<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
                                 <input class="form-control" type="text" name="title">
                             </div>
                             <div class="col-4">

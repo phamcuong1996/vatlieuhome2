@@ -1,7 +1,15 @@
 @extends('admin.layout')
 @section('content')
-
     <div class="row">
+        @if ($errors->any())
+            <div class="alert alert-default-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div class="col-md-12">
             <form method="post" action="{{ route('posts.update', $post->id) }}">
                 <div class="card card-primary">
