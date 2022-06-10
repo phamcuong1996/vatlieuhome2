@@ -26,6 +26,14 @@ class BannerController extends Controller
 
     public function store(Request $request)
     {
+        $validated = $request->validate([
+            'name' => 'required|unique:banners|max:255',
+        ],[
+            'name.required' => 'Bạn cần nhập tên',
+            'name.unique' => 'Tên đã được sử dụng',
+            'name.max' => 'Tên không quá 255 ký tự',
+        ]);
+
         if ($request->has('file_update')) {
             $file = $request->file_update;
             $ext = $request->file_update->extension();
@@ -38,7 +46,7 @@ class BannerController extends Controller
 
         Banner::create($data);
 
-        return redirect()->route('admin.banners.index');
+        return redirect()->route('admin.banners.index')->with('success','Thêm banner thành công !');
     }
 
     public function edit(int $id)

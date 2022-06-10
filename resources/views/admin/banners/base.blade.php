@@ -1,6 +1,15 @@
 <div class="card card-primary">
     <div class="card-header">Sửa banner</div>
     <div class="card-body">
+        @if ($errors->any())
+            <div class="alert alert-default-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <form method="post" action="{{ $route }}" enctype="multipart/form-data">
             <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
             <div class="form-group" style="display: flex">
@@ -31,10 +40,11 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            <div class="col-4">
                 <label>image:</label>
                 <input type="file" class="form-control" name="file_update" value="{{ @$banner->image }}">
             </div>
+            <br>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
