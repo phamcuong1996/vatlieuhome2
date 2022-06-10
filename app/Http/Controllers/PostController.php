@@ -77,6 +77,6 @@ class PostController extends Controller
         $post = Post::find($id);
         $post->delete();
 
-        return redirect()->route('admin.posts.index');
+        return redirect()->route('admin.posts.index')->with('success','Xóa bài viết thành công !');
     }
 }
