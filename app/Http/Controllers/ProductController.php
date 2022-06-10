@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -20,8 +20,9 @@ class ProductController extends Controller
     public function create(Request $request)
     {
         $products = Product::with('category')->get();
+        $category = Category::all();
 
-        return view('admin.products.create',compact('products'));
+        return view('admin.products.create',compact('products','category'));
     }
 
     public function store(Request $request)
@@ -31,6 +32,8 @@ class ProductController extends Controller
             'name' => 'required|unique:products|max:255',
             'price' => 'required',
             'original_price' => 'required',
+            'description' => 'required',
+            'short_description' => 'required',
 
         ],[
             'code.required' => 'Bạn cần nhập mã sản phẩm',
@@ -40,6 +43,8 @@ class ProductController extends Controller
             'code.unique' => 'Mã sản phẩm đã tồn tại',
             'name.unique' => 'Tên sản phẩm đã tồn tại',
             'code.max' => 'Mã sản phẩm tối đa 5 số',
+            'description.required' => 'Bạn cần nhập mô tả',
+            'short_description.required' => 'Bạn cần nhập mô tả ngắn',
         ]);
         if ($request->has('file_update')) {
             $file = $request->file_update;
@@ -53,7 +58,7 @@ class ProductController extends Controller
 
         Product::create($data);
 
-        return redirect()->route('admin.products.index');
+        return redirect()->route('admin.products.index')->with('success','Thêm sản phẩm thành công !');
     }
 
     public function show()
@@ -66,17 +71,25 @@ class ProductController extends Controller
     public function edit(int $id)
     {
         $product = Product::find($id);
+        $category = Category::all();
 
-        return view('admin.products.edit', ['product' => $product]);
+        return view('admin.products.edit', compact('category','product'));
     }
 
     public function update(Request $request, int $id)
     {
+        $validated = $request->validate([
+            'code' => 'required|unique:products|max:4',
+
+        ],[
+            'code.required' => 'Bạn cần nhập mã sản phẩm',
+            'code.unique' =>'Mã sản phẩm đã tồn tại',
+        ]);
         $data = $request->all();
         $product = Product::find($id);
         $product->update($data);
 
-        return redirect('admin/products/index');
+        return redirect('admin/products/index')->with('success','Sửa sản phẩm thành công !');
     }
 
     public function destroy(int $id)
@@ -84,7 +97,7 @@ class ProductController extends Controller
         $product = Product::find($id);
         $product->delete();
 
-        return redirect('admin/products/index');
+        return redirect('admin/products/index')->with('success','Xóa sản phẩm thành công !');
     }
 
 }

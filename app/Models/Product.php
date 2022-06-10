@@ -22,6 +22,7 @@ class Product extends Model
         'original_price',
         'price',
         'created_at',
+        'type',
     ];
 
     public function getStatusLabelAttribute()
