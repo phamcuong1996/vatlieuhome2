@@ -1,31 +1,53 @@
 <div class="card card-primary">
     <div class="card-header">Sửa banner</div>
     <div class="card-body">
+        @if ($errors->any())
+            <div class="alert alert-default-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <form method="post" action="{{ $route }}" enctype="multipart/form-data">
             <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
-            <div class="form-group">
-                <div class="form-group">
-                    <label>status_id:</label>
-                    <input type="text" class="form-control" name="name" value="{{ @$product->status_id}}">
-                    {{--                <select id="status_id" name="status_id" class="form-control">--}}
-                    {{--                    @foreach(__('constant.products.statuses') as $key => $value)--}}
-                    {{--                        <option value="{{ $key }}" {{ @$product->status_id == $key ? 'selected="selected"' : '' }}>{{ $value }}</option>--}}
-                    {{--                    @endforeach--}}
-                    {{--                </select>--}}
+            <p class="zid_regform_notice">Những thông tin có đánh dấu (<span class="fa fa-star"
+                                                                             style="font-size:10px;color:red"></span>)
+                là bắt buộc nhập.</p>
+            <div class="form-group" style="display: flex">
+                <div class="col-4">
+                    <label>Tên (<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
+                    <input type="text" class="form-control" name="name" value="{{ @$banner->name }}">
+                </div>
+                <div class="col-4">
+                    <label for="">Trạng Thái:</label>
+                    <div class="form-control">
+                        <label>
+                            <input type="radio" name="status_id" value="1" checked="checked">
+                            Hiện
+                        </label>
+                        <label>
+                            <input type="radio" name="status_id" value="0" checked="checked">
+                            Ẩn
+                        </label>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <label>Danh Mục:</label>
+                    <select id="category_id" name="category_id" class="form-control">
+                        @foreach($category as $value)
+                            <option value="{{$value->id}}">{{$value->name}}</option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
-            <div class="form-group">
-                <label>name:</label>
-                <input type="text" class="form-control" name="name" value="{{ @$banner->name }}">
-            </div>
-            <div class="form-group">
-                <label>image:</label>
+
+            <div class="col-4">
+                <label>image (<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
                 <input type="file" class="form-control" name="file_update" value="{{ @$banner->image }}">
             </div>
-            <div class="form-group">
-                <label>category_id:</label>
-                <input type="text" class="form-control" name="category_id" value="{{ @$banner->category_id }}">
-            </div>
+            <br>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>

@@ -21,8 +21,9 @@ class FeController extends Controller
         $posts = Post::where('category_id', 1)->get();
         $banners = Banner::where('category_id', 1)->get();
         $categories = Category::where('parent_id', null)->get();
+        $cat1 = Category::where('parent_id', 1)->get();
 
-        return view('fe.index.index', compact('chongTham', 'keoDan', 'thepXayDung', 'hot','sale', 'new','posts','banners','categories'));
+        return view('fe.index.index', compact('chongTham', 'keoDan', 'thepXayDung', 'hot','sale', 'new','posts','banners','categories','cat1'));
     }
 
     public function productDetail(int $id)
