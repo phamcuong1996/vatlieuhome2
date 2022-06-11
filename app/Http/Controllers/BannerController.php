@@ -10,7 +10,7 @@ class BannerController extends Controller
 {
     public function index()
     {
-        $banners = Banner::with('category')->simplePaginate(3);
+        $banners = Banner::with('category')->simplePaginate(5);
         $category = Category::all();
 
         return view('admin.banners.index', compact('banners','category'));
@@ -52,17 +52,26 @@ class BannerController extends Controller
     public function edit(int $id)
     {
         $banner = Banner::find($id);
+        $category = Category::all();
 
-        return view('admin.banners.edit', compact('banner'));
+        return view('admin.banners.edit', compact('banner','category'));
     }
 
     public function update(Request $request, $id)
     {
+        $validated = $request->validate([
+            'name' => 'required|unique:banners|max:255',
+        ],[
+            'name.required' => 'Bạn cần nhập tên',
+            'name.unique' => 'Tên đã được sử dụng',
+            'name.max' => 'Tên không quá 255 ký tự',
+        ]);
+
         $data = $request->all();
         $banner = Banner::find($id);
         $banner->update($data);
 
-        return redirect()->route('admin.banners.index');
+        return redirect()->route('admin.banners.index')->with('success','Sửa banner thành công !');
     }
 
     public function destroy($id)
@@ -70,6 +79,6 @@ class BannerController extends Controller
         $banner = Banner::find($id);
         $banner->delete();
 
-        return redirect()->route('admin.banners.index');
+        return redirect()->route('admin.banners.index')->with('success','Xóa banner thành công !');
     }
 }

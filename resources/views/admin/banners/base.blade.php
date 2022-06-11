@@ -12,9 +12,12 @@
         @endif
         <form method="post" action="{{ $route }}" enctype="multipart/form-data">
             <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+            <p class="zid_regform_notice">Những thông tin có đánh dấu (<span class="fa fa-star"
+                                                                             style="font-size:10px;color:red"></span>)
+                là bắt buộc nhập.</p>
             <div class="form-group" style="display: flex">
                 <div class="col-4">
-                    <label>name:</label>
+                    <label>Tên (<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
                     <input type="text" class="form-control" name="name" value="{{ @$banner->name }}">
                 </div>
                 <div class="col-4">
@@ -41,7 +44,7 @@
             </div>
 
             <div class="col-4">
-                <label>image:</label>
+                <label>image (<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
                 <input type="file" class="form-control" name="file_update" value="{{ @$banner->image }}">
             </div>
             <br>
