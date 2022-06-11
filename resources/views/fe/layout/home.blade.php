@@ -61,18 +61,11 @@
                                                                 <div class="row">
                                                                     <div class="col-3">
                                                                         <ul class="megamenu__links megamenu__links--level--0">
+                                                                            @foreach($cat1 as $value)
                                                                             <li class="megamenu__item ">
-                                                                                <a href="">Workbenches</a>
+                                                                                <a href="">{{$value->name}}</a>
                                                                             </li>
-                                                                            <li class="megamenu__item ">
-                                                                                <a href="">Presses</a>
-                                                                            </li>
-                                                                            <li class="megamenu__item ">
-                                                                                <a href="">Spray Guns</a>
-                                                                            </li>
-                                                                            <li class="megamenu__item ">
-                                                                                <a href="">Riveters</a>
-                                                                            </li>
+                                                                            @endforeach
                                                                         </ul>
                                                                     </div>
 
