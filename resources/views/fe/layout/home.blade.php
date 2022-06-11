@@ -48,7 +48,7 @@
                                             <ul class="departments__links">
                                                 @foreach($categories as $sach)
                                                 <li class="departments__item">
-                                                    <a class="departments__item-link" href="">
+                                                    <a class="departments__item-link" href="{{route('fe.product.list',$sach->id)}}">
                                                         {{$sach->name}}
                                                         <svg class="departments__item-arrow" width="6px" height="9px">
                                                             <use xlink:href="/fe/HTML/default/images/sprite.svg#arrow-rounded-right-6x9"></use>
@@ -60,13 +60,15 @@
                                                             <div class="megamenu__body" style="background-image: url('/fe/HTML/default/images/megamenu/megamenu-1.jpg');">
                                                                 <div class="row">
                                                                     <div class="col-3">
+                                                                        @if($sach->chils)
                                                                         <ul class="megamenu__links megamenu__links--level--0">
-                                                                            @foreach($cat1 as $value)
+                                                                            @foreach($sach->chils as $value)
                                                                             <li class="megamenu__item ">
-                                                                                <a href="">{{$value->name}}</a>
+                                                                                <a href="{{route('fe.product.list',$value->id)}}">- {{$value->name}}</a>
                                                                             </li>
                                                                             @endforeach
                                                                         </ul>
+                                                                        @endif
                                                                     </div>
 
                                                                 </div>
