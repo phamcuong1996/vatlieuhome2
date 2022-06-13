@@ -11,14 +11,14 @@
                 <table class="table table-bordered table-hover">
                     <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Image</th>
-                        <th>Quantity</th>
-                        <th>price</th>
+                        <th>Tên SẢn Phẩm</th>
+                        <th>Ảnh</th>
+                        <th>Số Lượng</th>
+                        <th>Giá</th>
                         <th><a class="btn btn-primary btn-sm" href="{{ route('admin.orders.create') }}">
                                 <i class="fas fa-pencil-alt">
                                 </i>
-                                Add
+                                Thêm
                             </a></th>
                     </tr>
                     </thead>
@@ -39,7 +39,9 @@
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="quantities[{{ $orderDetail->product->id}}]" value="{{ $orderDetail->quantity }}">
+                                    <input type="text" class="form-control"
+                                           name="quantities[{{ $orderDetail->product->id}}]"
+                                           value="{{ $orderDetail->quantity }}">
                                 </div>
                             </td>
                             <td>
@@ -48,10 +50,11 @@
                                 </div>
                             </td>
                             <td>
-                                <a class="btn btn-info btn-sm" href="{{ route('admin.orders.destroy', $orderDetail->id) }}">
+                                <a class="btn btn-danger btn-sm"
+                                   href="{{ route('admin.orders.destroy', $orderDetail->id) }}">
                                     <i class="fas fa-pencil-alt">
                                     </i>
-                                    Delete
+                                    Xóa
                                 </a>
                             </td>
                         </tr>
@@ -69,31 +72,44 @@
                 <h3 class="card-title">Thông Tin Đơn Hàng</h3>
             </div>
             <div class="card-body">
-                <div class="form-group">
-                    <label for="name">Full Name:</label>
-                    <input class="form-control" value="{{ $order->full_name }}" type="text" name="full_name">
-
-                    <label for="name">Email:</label>
-                    <input class="form-control" value="{{ $order->email}}" type="text" name="email">
-
-                    <label for="name">Phone:</label>
-                    <input class="form-control" value="{{ $order->phone }}" type="text" name="phone">
-
-                    <label for="name">Address:</label>
-                    <input class="form-control" value="{{ $order->address }}" type="text" name="address">
-
-                    <label for="name">Price:</label>
-                    <input class="form-control" disabled="disabled" value="{{ $order->total_price }}">
-
-                    <label for="name">Note:</label>
-                    <input class="form-control" value="{{ $order->note }}" type="text" name="note">
+                <div class="form-group" style="display: flex">
+                    <div class="col-4">
+                        <label for="name">Họ & Tên:</label>
+                        <input class="form-control" value="{{ $order->full_name }}" type="text" name="full_name">
+                    </div>
+                    <div class="col-4">
+                        <label for="name">Email:</label>
+                        <input class="form-control" value="{{ $order->email}}" type="text" name="email">
+                    </div>
+                    <div class="col-4">
+                        <label for="name">Điện Thoại:</label>
+                        <input class="form-control" value="{{ $order->phone }}" type="text" name="phone">
+                    </div>
                 </div>
-            </div>
-            <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="form-group" style="display: flex">
+                    <div class="col-4">
+                        <label for="name">Địa Chỉ:</label>
+                        <input class="form-control" value="{{ $order->address }}" type="text" name="address">
+                    </div>
+                    <div class="col-4">
+                        <label for="name">Ghi Chú:</label>
+                        <input class="form-control" value="{{ $order->note }}" type="text" name="note">
+                    </div>
+                    <div class="col-4">
+                        <label for="name">Giá:</label>
+                        <input class="form-control" disabled="disabled" value="{{ $order->total_price }}">
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary">Lưu Lại</button>
+                </div>
             </div>
         </div>
     </form>
+    <h6>-- Vui lòng ấn 'Xác Nhận' để chuyển đơn hàng sang trạng thái Xác Nhận--</h6>
+    <h6>-- Vui lòng ấn 'Hoàn Thành' để chuyển đơn hàng sang trạng thái Hoàn Thành--</h6>
+    <h6>-- Vui lòng ấn 'Hủy' để chuyển đơn hàng sang trạng thái Hủy--</h6>
+    <br>
     @if($order->status == 1)
         <form method="post" action="{{ route('orders.confirmed', $order->id) }}">
             @csrf
@@ -110,8 +126,5 @@
             @csrf
             <button style="margin-top: 20px" type="submit" class="btn btn-danger">Hủy</button>
         </form>
-        @endif
-        </div>
-        </div>
-
+    @endif
 @endsection

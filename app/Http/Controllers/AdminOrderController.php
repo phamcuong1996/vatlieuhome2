@@ -12,7 +12,7 @@ class AdminOrderController extends Controller
 {
     public function indexInit()
     {
-        $orders = Order::where('status', Order::STATUS_INIT)->get();
+        $orders = Order::where('status', Order::STATUS_INIT)->simplePaginate(3);
 
         return view('admin.orders.indexInit', compact('orders'));
     }

@@ -5,7 +5,7 @@
             @include('products.components.cart_component')
         </div>
     @else
-        <h2>Chưa có sản phẩm</h2>
+        <h4 style="text-align: center">Chưa có sản phẩm nào được thêm vào giỏ hàng</h4>
     @endif
     <script >
         $(document).ready(function() {

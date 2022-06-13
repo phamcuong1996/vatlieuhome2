@@ -43,7 +43,7 @@
 {{--                                }elseif ($products->type ===3 ) {--}}
 {{--                                    return '3';--}}
 {{--                                }}}--}}
-                                {{ $sach ->type ===1 ?'New': $sach->type ==2 ?'Hot':'sale' }}
+                                {{ $sach ->type ===1 ?'New': $sach->type ===2 ?'Hot':'Sale' }}
                             </div>
                             <div class="product-card__image product-image">
                                 <a href="/products/{{ $sach->id }}" class="product-image__body">

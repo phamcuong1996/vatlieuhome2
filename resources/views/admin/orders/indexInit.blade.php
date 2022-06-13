@@ -30,7 +30,7 @@
                             <td>{{ number_format($order->total_price)}} VNĐ</td>
                             <td>{{ $order->note }}</td>
                             <td>
-                                <a class="btn btn-info btn-sm" href="/admin/orders/{{ $order->id }}/edit-">
+                                <a class="btn btn-info btn-sm" href="/admin/orders/{{ $order->id }}/edit">
                                     <i class="fas fa-pencil-alt">
                                     </i>
                                     Edit
@@ -39,7 +39,7 @@
                         </tr>
                     @endforeach
                 </table>
-{{--                {{ $orders->links() }}--}}
+                {{ $orders->links() }}
             </div>
         </div>
     </div>
