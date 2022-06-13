@@ -121,7 +121,7 @@ class AdminOrderController extends Controller
         $data = $request->all();
         OrderDetail::create($data);
 
-        return redirect()->back();
+        return redirect()->route('admin.orders.indexInit');
     }
 
     public function destroy(int $id)
