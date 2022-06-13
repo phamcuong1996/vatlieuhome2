@@ -44,24 +44,38 @@
     </div>
 </div>
 <div class="container card">
+    @if ($errors->any())
+        <div class="alert alert-default-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <div class="row">
         <form action="{{ route('orders.save') }}" method="POST">
             @csrf
             <div class="col">
                 <div class="input-group mb-3">
-                    <input name="full_name" type="text" class="form-control" placeholder="Full Name"> <br>
+                    <label>Tên (<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
+                    <input name="full_name" type="text" class="form-control" placeholder="Vui lòng Nhập"> <br>
                 </div>
                 <div class="input-group mb-3">
-                    <input name="email" type="text" class="form-control" placeholder="Email"> <br>
+                    <label>Email (<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
+                    <input name="email" type="text" class="form-control" placeholder="Vui lòng Nhập"> <br>
                 </div>
                 <div class="input-group mb-3">
-                    <input name="address" type="text" class="form-control" placeholder="Address"> <br>
+                    <label>Địa Chỉ (<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
+                    <input name="address" type="text" class="form-control" placeholder="Vui lòng Nhập"> <br>
                 </div>
                 <div class="input-group mb-3">
-                    <input name="phone" type="text" class="form-control" placeholder="Phone"> <br>
+                    <label>Điện Thoại (<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
+                    <input name="phone" type="text" class="form-control" placeholder="Vui lòng Nhập"> <br>
                 </div>
                 <div class="input-group mb-3">
-                    <input name="note" type="text" class="form-control" placeholder="Note"> <br>
+                    <label>Ghi Chú (<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
+                    <input name="note" type="text" class="form-control" placeholder="Vui lòng Nhập"> <br>
                 </div>
                 <button type="submit" class="btn btn-primary">Đặt Hàng</button>
             </div>

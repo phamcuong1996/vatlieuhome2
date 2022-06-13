@@ -96,6 +96,21 @@ class OrderController extends Controller
 
     public function save(Request $request)
     {
+        $validated = $request->validate([
+            'full_name' => 'required',
+            'email' => 'required',
+            'address' => 'required',
+            'phone' => 'required',
+            'note' => 'required',
+
+        ],[
+            'full_name.required' => 'Bạn cần nhập Tên',
+            'email.required' => 'Bạn cần nhập email',
+            'address.required' => 'Bạn cần nhập địa chỉ',
+            'phone.required' => 'Bạn cần nhập điện thoại',
+            'note.required' => 'Bạn cần nhập ghi chú',
+        ]);
+
         $carts = session()->get('orderItems');
         $total = 0;
         $productIds = collect($carts)->pluck('product_id')->all();
