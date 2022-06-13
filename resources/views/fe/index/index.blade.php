@@ -110,7 +110,7 @@
         @include('fe.index.elements.product_list_2')
         <!-- .block-products-carousel / end -->
         <!-- .block-posts -->
-        @include('fe.index.elements.product_list', ['products' => $new, 'productListTitle' => 'Sản Phẩm Mới'])
+        @include('fe.index.elements.product_list_3', ['products' => $new, 'productListTitle' => 'Sản Phẩm Mới'])
         <!-- .block-posts / end -->
         <!-- .block-brands -->
         <div class="block block-brands">
