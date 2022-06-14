@@ -7,6 +7,7 @@
     @else
         <h2>Chưa có sản phẩm</h2>
     @endif
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>
         function cartUpdate(event) {
             event.preventDefault();
