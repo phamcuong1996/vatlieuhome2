@@ -77,6 +77,18 @@
                     <label>Ghi Chú (<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
                     <input name="note" type="text" class="form-control" placeholder="Vui lòng Nhập"> <br>
                 </div>
+                <div class="input-group mb-3">
+                    <label>Tỉnh/TP :</label>
+                    <input name="note" type="text" class="form-control"> <br>
+                </div>
+                <div class="input-group mb-3">
+                    <label>Huyện/Quận :</label>
+                    <input name="note" type="text" class="form-control"> <br>
+                </div>
+                <div class="input-group mb-3">
+                    <label>Xã/Phường :</label>
+                    <input name="note" type="text" class="form-control"> <br>
+                </div>
                 <button type="submit" class="btn btn-primary">Đặt Hàng</button>
             </div>
         </form>
