@@ -79,7 +79,7 @@
                 </div>
                 <div class="input-group mb-3">
                     <label>Tỉnh/TP:</label>
-                    <select id="province" name="province" class="form-control">
+                    <select id="province" name="province" class="form-control choose province">
                         <option value="">--Chọn Tỉnh/TP--</option>
                         @foreach($province as $pro)
                             <option value="{{$pro->id}}">{{$pro->_name}}</option>

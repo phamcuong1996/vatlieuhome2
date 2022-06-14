@@ -143,4 +143,9 @@ class OrderController extends Controller
 
         return redirect('/');
     }
+
+    public function select_delivery()
+    {
+
+    }
 }

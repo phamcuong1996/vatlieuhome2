@@ -56,5 +56,32 @@
             $(document).on('click', '.cart_delete', cartDelete);
         });
     </script>
+    <script>
+        $(document).ready(function () {
+            $(".choose").change(function () {
+                var action = $(this).attr('id');
+                var id = $(this).val();
+                var _token = $('input[name="_token"]').val();
+                var $result = '';
+                if (action == 'province') {
+                    result = 'district';
+                } else {
+                    result = 'ward';
+                }
+                $.ajax({
+                    url: {{('select_delivery')}},
+                    mothod: 'POST',
+                    data: {
+                        action: action,
+                        id: id,
+                        _token: _token
+                    },
+                    success:function(data) {
+                        $('#'+result).html(data);
+                    }
+                });
+            });
+        })
+    </script>
 @endsection
 
