@@ -44,13 +44,14 @@
                                     <span class="fake-svg-icon"></span>
                                 </button>
                                 <div class="product-card__badges-list">
-                                    {{ $sach ->type ===1 ?'New': $sach->type ===2 ?'Hot':'Sale' }}
-{{--                                    @if($sach->type===1)--}}
-{{--                                        <div class="product-card__badge product-card__badge--hot">Hot</div>--}}
-{{--                                    @elseif($sach->type===2)--}}
-{{--                                            <div class="product-card__badge product-card__badge--new">New</div>--}}
-{{--                                    @else($sach->type===3)--}}
-{{--                                                <div class="product-card__badge product-card__badge--sale">Sale</div>--}}
+{{--                                    {{ $sach ->type ===1 ?'New': $sach->type ===2 ?'Hot':'Sale' }}--}}
+                                        @if ($sach->type==1)
+                                            <div class="product-card__badge product-card__badge--hot">Hot</div>
+                                        @elseif ($sach->type==2)
+                                            <div class="product-card__badge product-card__badge--new">New</div>
+                                        @else
+                                            <div class="product-card__badge product-card__badge--sale">Sale</div>
+                                        @endif
                                 </div>
                                 <div class="product-card__image product-image">
                                     <a href="/products/{{ $sach->id }}" class="product-image__body">

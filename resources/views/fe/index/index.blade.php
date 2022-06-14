@@ -105,7 +105,7 @@
         <!-- .block-products -->
         @include('fe.index.elements.product_list_1')
         <!-- .block-products / end -->
-        @include('fe.index.elements.product_list', ['products' => $thepXayDung, 'productListTitle' => 'Thép Xây Dựng'])
+    @include('fe.index.elements.product_list', ['products' => $thepXayDung, 'productListTitle' => 'Thép Xây Dựng'])
         <!-- .block-products-carousel -->
         @include('fe.index.elements.product_list_2')
         <!-- .block-products-carousel / end -->
