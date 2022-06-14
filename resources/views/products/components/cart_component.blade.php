@@ -78,8 +78,13 @@
                     <input name="note" type="text" class="form-control" placeholder="Vui lòng Nhập"> <br>
                 </div>
                 <div class="input-group mb-3">
-                    <label>Tỉnh/TP :</label>
-                    <input name="note" type="text" class="form-control"> <br>
+                    <label>Tỉnh/TP:</label>
+                    <select id="province" name="province" class="form-control">
+                        <option value="">--Chọn Tỉnh/TP--</option>
+                        @foreach($province as $pro)
+                            <option value="{{$pro->id}}">{{$pro->_name}}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="input-group mb-3">
                     <label>Huyện/Quận :</label>

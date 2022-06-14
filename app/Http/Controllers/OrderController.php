@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Order;
 use App\Models\OrderDetail;
 use App\Models\Product;
+use App\Models\Province;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -16,8 +17,9 @@ class OrderController extends Controller
         $productIds = collect($carts)->pluck('product_id')->all();
         $productsKeyById = Product::whereIn('id', $productIds)->get()->keyBy('id');
         $categories = Category::where('parent_id', null)->get();
+        $province = Province::orderby('id', 'ASC')->get();
 
-        return view('products.carts', compact('carts', 'productsKeyById','categories'));
+        return view('products.carts', compact('carts', 'productsKeyById','categories','province'));
     }
 
     public function addProduct(Request $request)
