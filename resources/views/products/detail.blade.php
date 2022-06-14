@@ -1421,6 +1421,7 @@
         <script>
             $(document).ready(function () {
                 $(".add_to_cart").click(function () {
+                    let quantity = $(this).parents('tr').find('input.quantity').val();
                     $.ajax({
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -1431,7 +1432,7 @@
                         data: {
                             _token: "{{ csrf_token() }}",
                             product_id: {{ $product->id }},
-                            quantity: 4
+                            quantity: 1
                         },
                         success:function(response) {
                             console.log(response);

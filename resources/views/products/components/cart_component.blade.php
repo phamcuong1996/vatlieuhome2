@@ -77,6 +77,27 @@
                     <label>Ghi Chú (<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
                     <input name="note" type="text" class="form-control" placeholder="Vui lòng Nhập"> <br>
                 </div>
+                <div class="input-group mb-3">
+                    <label>Tỉnh/TP:</label>
+                    <select id="province" name="province" class="form-control choose province">
+                        <option value="">--Chọn Tỉnh/TP--</option>
+                        @foreach($province as $pro)
+                            <option value="{{$pro->id}}">{{$pro->_name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="input-group mb-3">
+                    <select id="district" name="district" class="form-control choose district">
+                        <option value="">--Chọn Quận/Huyện--</option>
+
+                    </select>
+                </div>
+                <div class="input-group mb-3">
+                    <select id="ward" name="ward" class="form-control ward">
+                        <option value="">--Chọn Xã/Phường--</option>
+
+                    </select>
+                </div>
                 <button type="submit" class="btn btn-primary">Đặt Hàng</button>
             </div>
         </form>
