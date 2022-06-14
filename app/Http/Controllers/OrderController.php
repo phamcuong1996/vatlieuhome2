@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\District;
 use App\Models\Order;
 use App\Models\OrderDetail;
 use App\Models\Product;
 use App\Models\Province;
+use App\Models\Ward;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -144,8 +146,25 @@ class OrderController extends Controller
         return redirect('/');
     }
 
-    public function select_delivery()
+    public function select_delivery(Request $request)
     {
-
+        $data = $request->all();
+        if ($data['action']) {
+            $output = '';
+            if ($data['action'] == "province") {
+                $district = District::where('_province_id ',$data['id'])->orderby('id','ASC')->get();
+                $output.='<option>--Chọn Quận/Huyện</option>';
+                foreach ($district as $distr){
+                $output.='<option value="'.$distr->_id.'">'.$distr->_name.'</option>';
+                }
+            } else {
+                $ward = Ward::where('_district_id  ',$data['id'])->orderby('id','ASC')->get();
+                $output.='<option>--Chọn Xã/Phường</option>';
+                foreach ($ward as $wa) {
+                    $output .= '<option value="' . $wa->_id . '">' . $wa->_name . '</option>';
+                }
+            }
+        }
+        echo $output;
     }
 }

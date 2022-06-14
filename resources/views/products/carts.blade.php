@@ -69,7 +69,7 @@
                     result = 'ward';
                 }
                 $.ajax({
-                    url: {{('select_delivery')}},
+                    url: '{{url('select_delivery')}}',
                     mothod: 'POST',
                     data: {
                         action: action,

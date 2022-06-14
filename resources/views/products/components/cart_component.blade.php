@@ -87,12 +87,16 @@
                     </select>
                 </div>
                 <div class="input-group mb-3">
-                    <label>Huyện/Quận :</label>
-                    <input name="note" type="text" class="form-control"> <br>
+                    <select id="district" name="district" class="form-control choose district">
+                        <option value="">--Chọn Quận/Huyện--</option>
+
+                    </select>
                 </div>
                 <div class="input-group mb-3">
-                    <label>Xã/Phường :</label>
-                    <input name="note" type="text" class="form-control"> <br>
+                    <select id="ward" name="ward" class="form-control ward">
+                        <option value="">--Chọn Xã/Phường--</option>
+
+                    </select>
                 </div>
                 <button type="submit" class="btn btn-primary">Đặt Hàng</button>
             </div>
