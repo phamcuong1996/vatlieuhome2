@@ -73,7 +73,8 @@ class OrderController extends Controller
             $carts = session()->get('orderItems');
             $productIds = collect($carts)->pluck('product_id')->all();
             $productsKeyById = Product::whereIn('id', $productIds)->get()->keyBy('id');
-            $cartComponent = view('products.components.cart_component', compact('carts', 'productsKeyById'))->render();
+            $province = Province::orderby('id', 'ASC')->get();
+            $cartComponent = view('products.components.cart_component', compact('carts', 'productsKeyById','province'))->render();
 
             return response()->json(['cart_component' => $cartComponent, 'code' => 200], 200);
         }
@@ -92,7 +93,8 @@ class OrderController extends Controller
             $carts = session()->get('orderItems');
             $productIds = collect($carts)->pluck('product_id')->all();
             $productsKeyById = Product::whereIn('id', $productIds)->get()->keyBy('id');
-            $cartComponent = view('products.components.cart_component', compact('carts', 'productsKeyById'))->render();
+            $province = Province::orderby('id', 'ASC')->get();
+            $cartComponent = view('products.components.cart_component', compact('carts', 'productsKeyById','province'))->render();
 
             return response()->json(['cart_component' => $cartComponent, 'code' => 200], 200);
         }
@@ -146,25 +148,10 @@ class OrderController extends Controller
         return redirect('/');
     }
 
-    public function select_delivery(Request $request)
+    public function selectDelivery(Request $request)
     {
         $data = $request->all();
-        if ($data['action']) {
-            $output = '';
-            if ($data['action'] == "province") {
-                $district = District::where('_province_id ',$data['id'])->orderby('id','ASC')->get();
-                $output.='<option>--Chọn Quận/Huyện</option>';
-                foreach ($district as $distr){
-                $output.='<option value="'.$distr->_id.'">'.$distr->_name.'</option>';
-                }
-            } else {
-                $ward = Ward::where('_district_id  ',$data['id'])->orderby('id','ASC')->get();
-                $output.='<option>--Chọn Xã/Phường</option>';
-                foreach ($ward as $wa) {
-                    $output .= '<option value="' . $wa->_id . '">' . $wa->_name . '</option>';
-                }
-            }
-        }
-        echo $output;
+
+        return District::where('_province_id', $data['id'])->orderby('id', 'ASC')->get();
     }
 }

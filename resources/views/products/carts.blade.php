@@ -7,7 +7,11 @@
     @else
         <h2>Chưa có sản phẩm</h2>
     @endif
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+{{--    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>--}}
+
+@endsection
+
+@section('script')
     <script>
         function cartUpdate(event) {
             event.preventDefault();
@@ -58,29 +62,21 @@
     </script>
     <script>
         $(document).ready(function () {
-            $(".choose").change(function () {
-                var action = $(this).attr('id');
-                var id = $(this).val();
-                var _token = $('input[name="_token"]').val();
-                var $result = '';
-                if (action == 'province') {
-                    result = 'district';
-                } else {
-                    result = 'ward';
-                }
+            $('.province').change(function () {
+                const id = $(this).val();
+                const _token = $('input[name="_token"]').val();
                 $.ajax({
-                    url: '{{url('select_delivery')}}',
-                    mothod: 'POST',
+                    url: '{{ route('getDistrictByProvinceId') }}',
                     data: {
-                        action: action,
                         id: id,
                         _token: _token
                     },
-                    success:function(data) {
-                        $('#'+result).html(data);
+                    success: function (data) {
+                        console.log(data)
+                        var option = $('<option></option>').attr("value", "option value").text("Text");
                     }
-                });
-            });
+                })
+            })
         })
     </script>
 @endsection

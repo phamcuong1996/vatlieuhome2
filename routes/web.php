@@ -70,7 +70,7 @@ Route::get('carts/index', [OrderController::class, 'index'])->name('carts.index'
 Route::get('/updatecart', [OrderController::class, 'updatecart'])->name('carts.update');
 Route::get('/deletecart', [OrderController::class, 'deletecart'])->name('carts.delete');
 Route::post('orders/save', [OrderController::class, 'save'])->name('orders.save');
-Route::post('/select-delivery', [OrderController::class, 'select_delivery']);
+Route::get('/select-delivery', [OrderController::class, 'selectDelivery'])->name('getDistrictByProvinceId');
 
 // AdminOrder
 Route::get('admin/orders/init', [AdminOrderController::class, 'indexInit'])->name('admin.orders.indexInit');

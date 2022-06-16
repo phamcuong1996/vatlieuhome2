@@ -829,6 +829,8 @@
 <script>
     svg4everybody();
 </script>
+
+@yield('script')
 </body>
 
 </html>
