@@ -45,7 +45,7 @@ class AdminOrderController extends Controller
         return view('admin.orders.index', compact('orders'));
     }
 
-    public function editOrder(Request $request, $id)
+    public function editOrder(Request $request, int $id)
     {
         $id = $request->id;
         $order = Order::find($id);
@@ -89,24 +89,25 @@ class AdminOrderController extends Controller
     {
         $data = $request->all();
         $order = Order::find($id);
+        $total_price = 0;
+        foreach($data['quantities'] as $productId => $quantity) {
+            $orderDetail = OrderDetail::where([
+                'product_id' => $productId,
+                'order_id' => $id
+            ])->first();
+            $orderDetail->update(['quantity' => $quantity]);
+            $total_price += ($orderDetail->quantity * $orderDetail->price );
+        }
+
         $orderData = [
             'full_name' => $data['full_name'],
             'email' => $data['email'],
             'phone' => $data['phone'],
             'address' => $data['address'],
             'note' => $data['note'],
-            'total_price' => $data['total_price'],
+            'total_price' => $total_price,
         ];
         $order->update($orderData);
-
-        foreach($data['quantities'] as $productId => $quantity) {
-            $orderDetail = OrderDetail::where([
-                'product_id' => $productId,
-                'order_id' => $id
-            ])->first();
-
-            $orderDetail->update(['quantity' => $quantity]);
-        }
 
         return redirect()->back();
     }
@@ -127,7 +128,7 @@ class AdminOrderController extends Controller
         return view('admin.orders.create', compact('items','orderDetail'));
     }
 
-    public function storeOrder(Request $request)
+    public function storeOrder(Request $request )
     {
         $validated = $request->validate([
             'quantity' => 'required',
@@ -139,7 +140,7 @@ class AdminOrderController extends Controller
         $data = $request->all();
         OrderDetail::create($data);
 
-        return redirect()->route('admin.orders.edit');
+        return redirect('admin/orders/index')->with('success','Thêm đơn hàng thành công !');
     }
 
     public function destroy(int $id)

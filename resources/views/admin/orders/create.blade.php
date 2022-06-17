@@ -33,11 +33,7 @@
                             </div>
                             <div class="col-3">
                                 <label for="password">Giá</label>
-                                <select id="price" name="price" class="form-control">
-                                    @foreach($orderDetail as $value)
-                                        <option value="{{$value->id}}">{{$value->price}}</option>
-                                    @endforeach
-                                </select>
+                                    <input class="form-control" type="text" name="price">
                             </div>
                             <div class="col-3">
                                 <label for="password">Đơn hàng</label>

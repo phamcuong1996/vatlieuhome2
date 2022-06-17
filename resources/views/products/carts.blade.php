@@ -72,8 +72,12 @@
                         _token: _token
                     },
                     success: function (data) {
-                        console.log(data)
-                        var option = $('<option></option>').attr("value", "option value").text("Text");
+                        const $el = $('.quanhuyen');
+                        $el.html(' ');
+                        $.each(data, function(key,value) {
+                            $el.append($("<option></option>")
+                                .attr("value", value.id).text(value._name));
+                        });
                     }
                 })
             })

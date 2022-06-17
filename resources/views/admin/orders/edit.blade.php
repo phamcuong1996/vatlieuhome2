@@ -1,5 +1,10 @@
 @extends('admin.layout')
 @section('content')
+    <div class="alert alert-success">
+        @if(session('success'))
+            {{ session('success') }}
+        @endif
+    </div>
     <form method="post" action="{{ route('admin.orders.update', $order->id) }}">
         {{ method_field('PUT') }}
         @csrf
@@ -42,7 +47,7 @@
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <input type="text" class="form-control"
+                                    <input type="number" class="form-control"
                                            name="quantities[{{ $orderDetail->product->id}}]"
                                            value="{{ $orderDetail->quantity }}">
                                 </div>
@@ -103,7 +108,7 @@
                         <input class="form-control" value="{{($total)}}" name="total_price">
                     </div>
                 </div>
-                <div class="card-footer">
+                <div>
                     <button type="submit" class="btn btn-primary">Lưu Lại</button>
                 </div>
             </div>
