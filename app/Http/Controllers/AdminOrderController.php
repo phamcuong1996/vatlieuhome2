@@ -92,6 +92,10 @@ class AdminOrderController extends Controller
         $orderData = [
             'full_name' => $data['full_name'],
             'email' => $data['email'],
+            'phone' => $data['phone'],
+            'address' => $data['address'],
+            'note' => $data['note'],
+            'total_price' => $data['total_price'],
         ];
         $order->update($orderData);
 

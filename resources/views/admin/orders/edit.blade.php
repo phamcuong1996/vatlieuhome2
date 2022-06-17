@@ -100,7 +100,7 @@
                     </div>
                     <div class="col-4">
                         <label for="name">Giá:</label>
-                        <input class="form-control" disabled="disabled" value="{{number_format($total)}}">
+                        <input class="form-control" value="{{($total)}}" name="total_price">
                     </div>
                 </div>
                 <div class="card-footer">
