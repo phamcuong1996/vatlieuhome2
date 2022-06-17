@@ -127,7 +127,7 @@ class AdminOrderController extends Controller
         return view('admin.orders.create', compact('items','orderDetail'));
     }
 
-    public function storeOrder(Request $request)
+    public function storeOrder(Request $request )
     {
         $validated = $request->validate([
             'quantity' => 'required',
