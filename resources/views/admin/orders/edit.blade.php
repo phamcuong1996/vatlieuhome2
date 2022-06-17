@@ -97,7 +97,7 @@
                     </div>
                     <div class="col-4">
                         <label for="name">Giá:</label>
-                        <input class="form-control" disabled="disabled" value="{{ $order->total_price }}">
+                        <input class="form-control" disabled="disabled" value="{{number_format($total)}}">
                     </div>
                 </div>
                 <div class="card-footer">
