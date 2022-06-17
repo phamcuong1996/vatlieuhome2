@@ -87,7 +87,7 @@
                     </select>
                 </div>
                 <div class="input-group mb-3">
-                    <select id="district" name="district" class="form-control choose district">
+                    <select id="district" name="district" class="form-control choose district quanhuyen">
                         <option value="">--Chọn Quận/Huyện--</option>
 
                     </select>
