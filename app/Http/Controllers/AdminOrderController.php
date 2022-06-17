@@ -38,6 +38,14 @@ class AdminOrderController extends Controller
         return view('admin.orders.indexCancel', compact('orders'));
     }
 
+    public function indexAll()
+    {
+        dd(123);
+        $orders = Order::where('status', Order::STATUS_CANCEL)->get();
+
+        return view('admin.orders.indexCancel', compact('orders'));
+    }
+
     public function editOrder(Request $request, $id)
     {
         $id = $request->id;
@@ -105,7 +113,6 @@ class AdminOrderController extends Controller
         $id = $request->id;
         $order = Order::find($id);
 
-
         return view('admin.orders.index', compact('order', ));
     }
 
@@ -121,7 +128,7 @@ class AdminOrderController extends Controller
         $data = $request->all();
         OrderDetail::create($data);
 
-        return redirect()->route('admin.orders.indexInit');
+        return redirect()->back();
     }
 
     public function destroy(int $id)

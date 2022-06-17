@@ -19,24 +19,6 @@
                             </select>
                             </div>
                             <div class="col-4">
-                                <label for="email">Ảnh:</label>
-                                <select class="form-control" name="item_id">
-                                    @foreach($items as $key => $item)
-                                        <option value="{{$key}}">{{$item->image}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="col-4">
-                                <label for="password">Giá:</label>
-                                <select class="form-control" name="item_id">
-                                    @foreach($items as $item)
-                                        <option value="{{$item->id}}">{{$item->price}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group" style="display: flex;">
-                            <div class="col-4">
                                 <label for="password">Số Lượng</label>
                                 <input class="form-control" type="text" name="quantity">
                             </div>
