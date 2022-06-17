@@ -89,24 +89,25 @@ class AdminOrderController extends Controller
     {
         $data = $request->all();
         $order = Order::find($id);
+        $total_price = 0;
+        foreach($data['quantities'] as $productId => $quantity) {
+            $orderDetail = OrderDetail::where([
+                'product_id' => $productId,
+                'order_id' => $id
+            ])->first();
+            $orderDetail->update(['quantity' => $quantity]);
+            $total_price += ($orderDetail->quantity * $orderDetail->price );
+        }
+
         $orderData = [
             'full_name' => $data['full_name'],
             'email' => $data['email'],
             'phone' => $data['phone'],
             'address' => $data['address'],
             'note' => $data['note'],
-            'total_price' => $data['total_price'],
+            'total_price' => $total_price,
         ];
         $order->update($orderData);
-
-        foreach($data['quantities'] as $productId => $quantity) {
-            $orderDetail = OrderDetail::where([
-                'product_id' => $productId,
-                'order_id' => $id
-            ])->first();
-
-            $orderDetail->update(['quantity' => $quantity]);
-        }
 
         return redirect()->back();
     }
