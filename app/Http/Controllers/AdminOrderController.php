@@ -45,7 +45,7 @@ class AdminOrderController extends Controller
         return view('admin.orders.index', compact('orders'));
     }
 
-    public function editOrder(Request $request, $id)
+    public function editOrder(Request $request, int $id)
     {
         $id = $request->id;
         $order = Order::find($id);
@@ -139,7 +139,7 @@ class AdminOrderController extends Controller
         $data = $request->all();
         OrderDetail::create($data);
 
-        return redirect()->route('admin.orders.edit');
+        return redirect()->route('admin.orders.index');
     }
 
     public function destroy(int $id)
@@ -147,6 +147,6 @@ class AdminOrderController extends Controller
         $orderDetail = OrderDetail::find($id);
         $orderDetail->delete();
 
-        return redirect()->back()->with('success','Xóa đơn hàng thành công !');
+        return redirect()->back();
     }
 }

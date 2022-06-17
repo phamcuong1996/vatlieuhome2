@@ -103,7 +103,7 @@
                         <input class="form-control" value="{{($total)}}" name="total_price">
                     </div>
                 </div>
-                <div class="card-footer">
+                <div>
                     <button type="submit" class="btn btn-primary">Lưu Lại</button>
                 </div>
             </div>
