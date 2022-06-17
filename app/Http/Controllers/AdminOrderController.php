@@ -40,10 +40,9 @@ class AdminOrderController extends Controller
 
     public function indexAll()
     {
-        dd(123);
-        $orders = Order::where('status', Order::STATUS_CANCEL)->get();
+        $orders = Order::all();
 
-        return view('admin.orders.indexCancel', compact('orders'));
+        return view('admin.orders.index', compact('orders'));
     }
 
     public function editOrder(Request $request, $id)
