@@ -3,6 +3,11 @@
 @section('content')
     <div class="container">
         <div class="card">
+            <div class="alert alert-success">
+                @if(session('success'))
+                    {{ session('success') }}
+                @endif
+            </div>
             <div class="card-header">
                 <h3 class="card-title">Quản Lý Đơn hàng</h3>
             </div>

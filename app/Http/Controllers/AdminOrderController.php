@@ -139,7 +139,7 @@ class AdminOrderController extends Controller
         $data = $request->all();
         OrderDetail::create($data);
 
-        return redirect()->route('admin.orders.index');
+        return redirect('admin/orders/index')->with('success','Thêm đơn hàng thành công !');
     }
 
     public function destroy(int $id)
@@ -147,6 +147,6 @@ class AdminOrderController extends Controller
         $orderDetail = OrderDetail::find($id);
         $orderDetail->delete();
 
-        return redirect()->back();
+        return redirect()->back()->with('success','Xóa đơn hàng thành công !');
     }
 }
