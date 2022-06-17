@@ -114,7 +114,7 @@ class OrderController extends Controller
             'email.required' => 'Bạn cần nhập email',
             'address.required' => 'Bạn cần nhập địa chỉ',
             'phone.required' => 'Bạn cần nhập điện thoại',
-            'note.required' => 'Bạn cần nhập ghi chú',
+            'note.required' => 'Bạn cần nhập ghi chú'
         ]);
 
         $carts = session()->get('orderItems');

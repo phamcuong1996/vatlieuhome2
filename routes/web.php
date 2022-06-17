@@ -73,6 +73,8 @@ Route::post('orders/save', [OrderController::class, 'save'])->name('orders.save'
 Route::get('/select-delivery', [OrderController::class, 'selectDelivery'])->name('getDistrictByProvinceId');
 
 // AdminOrder
+
+Route::get('admin/orders/index', [AdminOrderController::class, 'indexAll'])->name('admin.orders.index');
 Route::get('admin/orders/init', [AdminOrderController::class, 'indexInit'])->name('admin.orders.indexInit');
 Route::get('admin/orders/confirmed', [AdminOrderController::class, 'indexConfirmed'])->name('admin.orders.indexConfirmed');
 Route::get('admin/orders/done', [AdminOrderController::class, 'indexDone'])->name('admin.orders.indexDone');

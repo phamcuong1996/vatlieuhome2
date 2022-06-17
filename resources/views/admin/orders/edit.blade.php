@@ -6,6 +6,13 @@
         <div class="card card-primary">
             <div class="card-header">
                 <h3 class="card-title"> Thông Tin Chi Tiết Đơn Hàng</h3>
+                <div class="card-tools">
+                    <a class="btn btn-primary btn-sm" href="{{ route('admin.orders.create') }}">
+                        <i class="fas fa-pencil-alt">
+                        </i>
+                        Thêm
+                    </a>
+                </div>
             </div>
             <div class="card-body">
                 <table class="table table-bordered table-hover">
@@ -15,11 +22,7 @@
                         <th>Ảnh</th>
                         <th>Số Lượng</th>
                         <th>Giá</th>
-                        <th><a class="btn btn-primary btn-sm" href="{{ route('admin.orders.create') }}">
-                                <i class="fas fa-pencil-alt">
-                                </i>
-                                Thêm
-                            </a></th>
+                        <th>Hành Động</th>
                     </tr>
                     </thead>
                     @php
@@ -97,7 +100,7 @@
                     </div>
                     <div class="col-4">
                         <label for="name">Giá:</label>
-                        <input class="form-control" disabled="disabled" value="{{ $order->total_price }}">
+                        <input class="form-control" disabled="disabled" value="{{number_format($total)}}">
                     </div>
                 </div>
                 <div class="card-footer">
