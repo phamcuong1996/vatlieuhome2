@@ -22,7 +22,7 @@ class AuthController extends Controller
         $user->password = bcrypt($request->password);
         $user->save();
 
-        return redirect()->route('show-form-register')->with('success', 'Đăng Ký Thành Công !');
+        return redirect()->route('show-form-register')->with('success', 'Chúc Mừng Bạn Đã Đăng Đăng Ký Thành Công !! !');
     }
 
     public function showFormLogin(){
