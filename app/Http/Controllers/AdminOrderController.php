@@ -62,7 +62,7 @@ class AdminOrderController extends Controller
         $order->status = Order::STATUS_CONFIRMED;
         $order->save();
 
-        return redirect()->back();
+        return redirect()->route('admin.orders.indexConfirmed');
     }
 
     public function done(Request $request)
@@ -72,7 +72,7 @@ class AdminOrderController extends Controller
         $order->status = Order::STATUS_DONE;
         $order->save();
 
-        return redirect()->back();
+        return redirect()->route('admin.orders.indexDone');
     }
 
     public function cancel(Request $request)
@@ -82,7 +82,7 @@ class AdminOrderController extends Controller
         $order->status = Order::STATUS_CANCEL;
         $order->save();
 
-        return redirect()->back();
+        return redirect()->route('admin.orders.indexCancel');
     }
 
     public function update(Request $request, $id)
