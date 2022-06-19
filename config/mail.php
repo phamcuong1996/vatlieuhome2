@@ -36,11 +36,11 @@ return [
     'mailers' => [
         'smtp' => [
             'transport' => 'smtp',
-            'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
-            'port' => env('MAIL_PORT', 587),
-            'encryption' => env('MAIL_ENCRYPTION', 'tls'),
-            'username' => env('cuongpm0196@gmail.com'),
-            'password' => env('joaxsxzrahubwgsj'),
+            'host' => 'smtp.gmail.com',
+            'port' =>  587,
+            'encryption' =>  'tls',
+            'username' => 'cuongpm0196@gmail.com',
+            'password' => 'qjmsthudjnoemdac',
             'timeout' => null,
             'auth_mode' => null,
         ],
