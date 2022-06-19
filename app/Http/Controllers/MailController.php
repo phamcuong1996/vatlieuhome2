@@ -10,9 +10,9 @@ class MailController extends Controller
 {
     public function testMail()
     {
-        $name = 'Test Name For Email';
-        Mail::send('emails.test', compact('name'), function ($email) {
-            $email->to('cuongpm0196@gmail.com','Admin VLH');
+        $name = 'Phạm Mạnh Cường';
+        Mail::send('emails.test', compact('name'), function ($email) use($name){
+            $email->to('cuongpm0196@gmail.com',$name);
         });
     }
 }
