@@ -1,19 +1,14 @@
 <div style="width: 600px; margin: 0 auto">
     <div style="text-align: center">
-        <h2>Xin chào {{$orderDetail->name}}</h2>
+        <h2>Xin chào {{$order->full_name}}</h2>
         <p>Bạn đã đặt hàng tại hệ thống của chúng tôi, Vui lòng kiểm tra lại thông tin của bạn và nhấn vào nút xác nhận
             đơn hàng</p>
         <p>
             <a href="">Xác nhận đơn hàng của bạn</a>
         </p>
     </div>
-    <form method="post" action="{{ route('admin.orders.update', $order->id) }}">
-        {{ method_field('PUT') }}
-        @csrf
-        <div class="card card-primary">
-            <div class="card-header">
-                <h3 class="card-title"> Thông Tin Chi Tiết Đơn Hàng</h3>
-            </div>
+    <form>
+        <h3 class="card-title"> Thông Tin Chi Tiết Đơn Hàng</h3>
             <div class="card-body">
                 <table class="table table-bordered table-hover">
                     <thead>
@@ -22,7 +17,6 @@
                         <th>Ảnh</th>
                         <th>Số Lượng</th>
                         <th>Giá</th>
-                        <th>Hành Động</th>
                     </tr>
                     </thead>
                     @php
@@ -32,7 +26,7 @@
                         <tr>
                             <td>
                                 <div class="form-group">
-                                    <span class=""> {{ $orderDetail->product->name }}</span>
+                                    <span class="">{{ $orderDetail->product->name }}</span>
                                 </div>
                             </td>
                             <td>
@@ -51,14 +45,6 @@
                                 <div class="form-group">
                                     <span>{{number_format($orderDetail->price)}} VNĐ</span>
                                 </div>
-                            </td>
-                            <td>
-                                <a class="btn btn-danger btn-sm"
-                                   href="{{ route('admin.orders.destroy', $orderDetail->id) }}">
-                                    <i class="fas fa-pencil-alt">
-                                    </i>
-                                    Xóa
-                                </a>
                             </td>
                         </tr>
                         @php

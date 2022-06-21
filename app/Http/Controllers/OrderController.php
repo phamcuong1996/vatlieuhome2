@@ -141,12 +141,12 @@ class OrderController extends Controller
             $detailData['quantity'] = $item['quantity'];
             $detailData['order_id'] = $order->id;
 
-        $orderDetail= OrderDetail::create($detailData);
+        $orderDetails= OrderDetail::create($detailData);
         }
         //gui Email
-        Mail::send('emails.order', compact('order','orderDetail'), function ($email) use($orderDetail){
+        Mail::send('emails.order', compact('order','orderDetails'), function ($email) use($order){
             $email->subject('VatLieuHome-Shop');
-            $email->to($orderDetail->email,$orderDetail->name);
+            $email->to($order->email,$order->name);
         });
 
         $request->session()->forget('orderItems');
