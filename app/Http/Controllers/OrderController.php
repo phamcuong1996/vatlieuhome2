@@ -10,6 +10,7 @@ use App\Models\Product;
 use App\Models\Province;
 use App\Models\Ward;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
@@ -140,8 +141,13 @@ class OrderController extends Controller
             $detailData['quantity'] = $item['quantity'];
             $detailData['order_id'] = $order->id;
 
-            OrderDetail::create($detailData);
+        $orderDetail= OrderDetail::create($detailData);
         }
+        //gui Email
+        Mail::send('emails.order', compact('order','orderDetail'), function ($email) use($orderDetail){
+            $email->subject('VatLieuHome-Shop');
+            $email->to($orderDetail->email,$orderDetail->name);
+        });
 
         $request->session()->forget('orderItems');
 
