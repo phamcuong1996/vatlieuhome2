@@ -155,6 +155,7 @@ class AdminOrderController extends Controller
     {
         if ($order->token === $token) {
             $order->update(['status' => 2]);
+            return('Xác Nhận Thành Công');
         } else {
             dd('Mã Không Hợp Lệ');
         }
