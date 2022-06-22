@@ -9,6 +9,19 @@
         </p>
     </div>
 </div>
+<h3>Thông Tin Tài Khoản</h3>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+    </tr>
+    </thead>
+        <tr>
+            <td>{{ $user->name }}</td>
+            <td>{{ $user->email }}</td>
+        </tr>
+</table>
 
 
 
