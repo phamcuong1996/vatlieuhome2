@@ -150,4 +150,13 @@ class AdminOrderController extends Controller
 
         return redirect()->back()->with('success','Xóa đơn hàng thành công !');
     }
+
+    public function accept(Order $order, $token)
+    {
+        if ($order->token === $token) {
+            $order->update(['status' => 2]);
+        } else {
+            dd('Mã Không Hợp Lệ');
+        }
+    }
 }

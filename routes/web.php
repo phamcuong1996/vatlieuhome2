@@ -92,6 +92,8 @@ Route::get('admin/orders/create', [AdminOrderController::class, 'createOrder'])-
 Route::post('admin/orders/store', [AdminOrderController::class, 'storeOrder'])->name('admin.orders.store');
 Route::get('admin/orders/{id}/destroy', [AdminOrderController::class, 'destroy'])->name('admin.orders.destroy');
 
+Route::get('/accept/{order}/{token}', [AdminOrderController::class, 'accept'])->name('admin.orders.accept');
+
 //Auth
 Route::get('register', [AuthController::class, 'showFormRegister'])->name('show-form-register');
 Route::post('register', [AuthController::class, 'register'])->name('register');

@@ -4,13 +4,12 @@
         <p>Bạn đã đặt hàng tại hệ thống của chúng tôi, Vui lòng kiểm tra lại thông tin của bạn và nhấn vào nút xác nhận
             đơn hàng</p>
         <p>
-            <a href="">Xác nhận đơn hàng của bạn</a>
+            <a href="{{route('admin.orders.accept', ['order' => $order->id,'token' =>$order->token])}}"
+               style="display: inline-block; background: green; color: white; padding: 7px 25px; font-weight: bold">Xác nhận đơn hàng của bạn</a>
         </p>
     </div>
-    <div class="card-header">
-        <h3 class="card-title">Thông Tin Đơn Hàng</h3>
-    </div>
-    <div>
+</div>
+        <h3>Thông Tin Đơn Hàng</h3>
         <table border="1" cellspacing="10" style="width: 100%">
             <tr>
                 <th>Name</th>
@@ -37,8 +36,6 @@
                 <td>{{number_format($order->total_price)}} VND</td>
             </tr>
         </table>
-    </div>
-</div>
 @if($order->status == 1)
     <form method="post" action="{{ route('orders.confirmed', $order->id) }}">
         @csrf

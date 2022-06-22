@@ -25,5 +25,6 @@ class Order extends Model
         'note',
         'total_price',
         'status',
+        'token',
     ];
 }
