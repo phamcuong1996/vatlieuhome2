@@ -18,10 +18,7 @@ class HelloMail extends Mailable
      *
      * @return void
      */
-    public function __construct(User $user)
-    {
-        $this->user = $user;
-    }
+
 
     /**
      * Build the message.

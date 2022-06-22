@@ -113,7 +113,7 @@ Route::post('admin/banners/{id}/update', [BannerController::class, 'update'])->n
 Route::get('admin/banners/{id}/destroy', [BannerController::class, 'destroy'])->name('admin.banners.destroy');
 
 //mail
-Route::get('mail', [MailController::class, 'testMail'])->name('');
+Route::get('mail', [MailController::class, 'testMail'])->name('')->name('mail');
 
 //Category
 Route::get('admin/categories/index', [CategoryController::class, 'index'])->name('admin.categories.index');

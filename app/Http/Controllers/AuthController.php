@@ -22,7 +22,7 @@ class AuthController extends Controller
         $user->password = bcrypt($request->password);
         $user->save();
 
-        return redirect()->route('show-form-register')->with('success', 'Đăng Ký Thành Công !');
+        return redirect()->route('show-form-register')->with('success', 'Chúc Mừng Bạn Đã Đăng Đăng Ký Thành Công !! !');
     }
 
     public function showFormLogin(){
@@ -31,10 +31,11 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+        if (Auth::attempt([
+            'email' => $request->email,
+            'password' => $request->password])) {
             return redirect()->route('show-profile');
-        }
-
+        }else
         return redirect()->route('show-form-login')->with('error', 'Email Hoặc Mật Khẩu Không Chính Xác');
     }
 
