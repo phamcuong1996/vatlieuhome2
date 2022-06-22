@@ -7,94 +7,30 @@
             <a href="">Xác nhận đơn hàng của bạn</a>
         </p>
     </div>
-    <form>
-        <h3 class="card-title"> Thông Tin Chi Tiết Đơn Hàng</h3>
-            <div class="card-body">
-                <table class="table table-bordered table-hover">
-                    <thead>
-                    <tr>
-                        <th>Tên SẢn Phẩm</th>
-                        <th>Ảnh</th>
-                        <th>Số Lượng</th>
-                        <th>Giá</th>
-                    </tr>
-                    </thead>
-                    @php
-                        $total = 0;
-                    @endphp
-                    @foreach ($orderDetails as $orderDetail)
-                        <tr>
-                            <td>
-                                <div class="form-group">
-                                    <span class="">{{ $orderDetail->product->name }}</span>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="form-group">
-                                    <img src="{{ $orderDetail->product->image }}" alt="User Image" style="width: 100px">
-                                </div>
-                            </td>
-                            <td>
-                                <div class="form-group">
-                                    <input type="number" class="form-control"
-                                           name="quantities[{{ $orderDetail->product->id}}]"
-                                           value="{{ $orderDetail->quantity }}">
-                                </div>
-                            </td>
-                            <td>
-                                <div class="form-group">
-                                    <span>{{number_format($orderDetail->price)}} VNĐ</span>
-                                </div>
-                            </td>
-                        </tr>
-                        @php
-                            $total += ($orderDetail->quantity * $orderDetail->price );
-                        @endphp
-                    @endforeach
-                    <h2>Tổng Tiền: {{number_format($total)}}VNĐ</h2>
-                </table>
-            </div>
+    @php
+        $total = 0;
+    @endphp
+    @foreach ($orderDetails as $orderDetail)
+        @php
+            $total += ($orderDetails->quantity * $orderDetails->price );
+        @endphp
+    @endforeach
+    <div class="card-header">
+        <h3 class="card-title">Thông Tin Đơn Hàng</h3>
+    </div>
+    <div>
+        <tr>
+            <th>{{$order->email}}</th>
+            <th>{{$order->phone}}</th>
+            <th>{{$order->address}}</th>
+            <th>{{$order->note}}</th>
+            <th>{{$total}}</th>
+        </tr>
+    </div>
 
-            <br>
-
-            <div class="card-header">
-                <h3 class="card-title">Thông Tin Đơn Hàng</h3>
-            </div>
-            <div class="card-body">
-                <div class="form-group" style="display: flex">
-                    <div class="col-4">
-                        <label for="name">Họ & Tên:</label>
-                        <input class="form-control" value="{{ $order->full_name }}" type="text" name="full_name">
-                    </div>
-                    <div class="col-4">
-                        <label for="name">Email:</label>
-                        <input class="form-control" value="{{ $order->email}}" type="text" name="email">
-                    </div>
-                    <div class="col-4">
-                        <label for="name">Điện Thoại:</label>
-                        <input class="form-control" value="{{ $order->phone }}" type="text" name="phone">
-                    </div>
-                </div>
-                <div class="form-group" style="display: flex">
-                    <div class="col-4">
-                        <label for="name">Địa Chỉ:</label>
-                        <input class="form-control" value="{{ $order->address }}" type="text" name="address">
-                    </div>
-                    <div class="col-4">
-                        <label for="name">Ghi Chú:</label>
-                        <input class="form-control" value="{{ $order->note }}" type="text" name="note">
-                    </div>
-                    <div class="col-4">
-                        <label for="name">Giá:</label>
-                        <input class="form-control" value="{{($total)}}" name="total_price">
-                    </div>
-                </div>
-                <div>
-                    <button type="submit" class="btn btn-primary">Lưu Lại</button>
-                </div>
-            </div>
-        </div>
-    </form>
+    <div>
+        <button type="submit" class="btn btn-primary">Lưu Lại</button>
+    </div>
 </div>
 @if($order->status == 1)
     <form method="post" action="{{ route('orders.confirmed', $order->id) }}">
