@@ -155,6 +155,17 @@ class OrderController extends Controller
         return redirect('/');
     }
 
+    public function accept(Order $order, $token)
+    {
+        if ($order->token === $token) {
+            $order->update(['status' => 2]);
+            return('Xác Nhận Thành Công');
+
+        } else {
+            dd('Mã Không Hợp Lệ');
+        }
+    }
+
     public function selectDelivery(Request $request)
     {
         $data = $request->all();
