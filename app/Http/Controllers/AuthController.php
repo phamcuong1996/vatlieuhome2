@@ -22,7 +22,7 @@ class AuthController extends Controller
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
         $user->save();
-        Mail::send('emails.order', compact('user',), function ($email) use($user){
+        Mail::send('emails.active_account', compact('user',), function ($email) use($user){
             $email->subject('VatLieuHome-Shop');
             $email->to($user->email,$user->name);
         });
