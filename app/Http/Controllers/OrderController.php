@@ -159,10 +159,16 @@ class OrderController extends Controller
     {
         if ($order->token === $token) {
             $order->update(['status' => 2]);
-            return('Xác Nhận Thành Công');
+            Mail::send('emails.order_accepted', compact('order',), function ($email) use($order){
+                $email->subject('VatLieuHome-Shop');
+                $email->to($order->email,$order->name);
+            });
 
         } else {
-            dd('Mã Không Hợp Lệ');
+            Mail::send('emails.order_accepted', compact('order',), function ($email) use($order){
+                $email->subject('VatLieuHome-Shop');
+                $email->to($order->email,$order->name);
+            });
         }
     }
 
