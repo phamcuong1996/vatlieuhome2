@@ -17,6 +17,14 @@ class AuthController extends Controller
 
     public function register( Request $request)
     {
+        $validated = $request->validate([
+            'email' => 'required|unique:users',
+            'name' => 'required'
+        ],[
+            'email.required' => 'Bạn cần nhập email',
+            'name.required' => 'Bạn cần nhập tên',
+            'email.unique' => 'Email này đã tồn tại'
+        ]);
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
