@@ -7,29 +7,36 @@
             <a href="">Xác nhận đơn hàng của bạn</a>
         </p>
     </div>
-    @php
-        $total = 0;
-    @endphp
-    @foreach ($orderDetails as $orderDetail)
-        @php
-            $total += ($orderDetails->quantity * $orderDetails->price );
-        @endphp
-    @endforeach
     <div class="card-header">
         <h3 class="card-title">Thông Tin Đơn Hàng</h3>
     </div>
     <div>
-        <tr>
-            <th>{{$order->email}}</th>
-            <th>{{$order->phone}}</th>
-            <th>{{$order->address}}</th>
-            <th>{{$order->note}}</th>
-            <th>{{$total}}</th>
-        </tr>
-    </div>
-
-    <div>
-        <button type="submit" class="btn btn-primary">Lưu Lại</button>
+        <table border="1" cellspacing="10" style="width: 100%">
+            <tr>
+                <th>Name</th>
+                <td>{{$order->full_name}}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{$order->email}}</td>
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td>{{$order->phone}}</td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>{{$order->address}}</td>
+            </tr>
+            <tr>
+                <th>Note</th>
+                <td>{{$order->note}}</td>
+            </tr>
+            <tr>
+                <th>Total Price</th>
+                <td>{{number_format($order->total_price)}} VND</td>
+            </tr>
+        </table>
     </div>
 </div>
 @if($order->status == 1)
