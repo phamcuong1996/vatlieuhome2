@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Monolog\Handler\NewRelicHandler;
 
 class AuthController extends Controller
@@ -21,6 +22,10 @@ class AuthController extends Controller
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
         $user->save();
+        Mail::send('emails.order', compact('user',), function ($email) use($user){
+            $email->subject('VatLieuHome-Shop');
+            $email->to($user->email,$user->name);
+        });
 
         return redirect()->route('show-form-register')->with('success', 'Chúc Mừng Bạn Đã Đăng Đăng Ký Thành Công !! !');
     }
