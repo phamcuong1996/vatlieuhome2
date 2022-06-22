@@ -93,6 +93,7 @@ Route::post('admin/orders/store', [AdminOrderController::class, 'storeOrder'])->
 Route::get('admin/orders/{id}/destroy', [AdminOrderController::class, 'destroy'])->name('admin.orders.destroy');
 
 Route::get('/accept/{order}/{token}', [OrderController::class, 'accept'])->name('admin.orders.accept');
+Route::get('/active/{user}/{token}', [AuthController::class, 'active'])->name('admin.user.active');
 
 //Auth
 Route::get('register', [AuthController::class, 'showFormRegister'])->name('show-form-register');

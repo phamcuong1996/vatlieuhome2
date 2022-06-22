@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Monolog\Handler\NewRelicHandler;
-
+use Str;
 class AuthController extends Controller
 {
     public function showFormRegister()
@@ -29,6 +29,7 @@ class AuthController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
+        $user->token = strtoupper(Str::random(20));
         $user->save();
         Mail::send('emails.active_account', compact('user',), function ($email) use($user){
             $email->subject('VatLieuHome-Shop');
@@ -74,5 +75,15 @@ class AuthController extends Controller
         Auth::logout();
 
         return redirect()->route('show-form-login');
+    }
+
+    public function active(User $user, $token)
+    {
+        if ($user->token === $token) {
+            $user->update(['status' => 1]);
+            return 'Xac nhan tai khoan thanh cong';
+        } else {
+            return 'XU lys tiep';
+        }
     }
 }

@@ -4,7 +4,7 @@
         <p>Chúc mừng bạn đã tạo tài khoản thành công</p>
         <p>Để sử dụng được vui lòng nhấn vào nút kích hoạt bên dưới để kích hoạt tài khoản</p>
         <p>
-            <a href=""
+            <a href="{{route('admin.user.active', ['user' => $user->id,'token' =>$user->token])}}"
                style="display: inline-block; background: green; color: white; padding: 7px 25px; font-weight: bold">Kích hoạt tài khoản</a>
         </p>
     </div>
