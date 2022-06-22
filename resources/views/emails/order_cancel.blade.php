@@ -1,7 +1,7 @@
 <div style="width: 600px; margin: 0 auto">
     <div style="text-align: center">
         <h2>Xin chào {{$order->full_name}}</h2>
-        <p>Bạn đã xác nhận đơn hàng thành công. Chúng tôi sẽ giao hàng cho bạn sớm nhất</p>
+        <p>Đơn hàng của bạn đã quá thời gian xác nhận, Chúng tôi đã hủy đơn hàng này. Bạn vui lòng đặt hàng lại hoặc liên hệ HOTLINE: 0845336696 để được hỗ trợ</p>
         <p>VatLieuHome-Shop chân thành cảm ơn bạn đã ủng hộ chúng tôi</p>
     </div>
 </div>
@@ -32,5 +32,6 @@
         <td>{{number_format($order->total_price)}} VND</td>
     </tr>
 </table>
+
 
 
