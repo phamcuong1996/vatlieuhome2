@@ -1,5 +1,14 @@
 @extends('admin.layout')
 @section('content')
+    @if ($errors->any())
+        <div class="alert alert-default-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
             <div class="container">
                 <div class="alert alert-success">
                     @if(session('success'))
