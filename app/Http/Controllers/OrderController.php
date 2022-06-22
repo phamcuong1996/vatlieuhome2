@@ -11,6 +11,7 @@ use App\Models\Province;
 use App\Models\Ward;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Str;
 
 class OrderController extends Controller
 {
@@ -132,6 +133,7 @@ class OrderController extends Controller
         $data['note'] = $request['note'];
         $data['total_price'] = $total;
         $data['status'] = Order::STATUS_INIT;
+        $data['token'] = strtoupper(Str::random(20));
         $order = Order::create($data);
 
         foreach ($carts as $item) {
@@ -148,10 +150,26 @@ class OrderController extends Controller
             $email->subject('VatLieuHome-Shop');
             $email->to($order->email,$order->name);
         });
-
         $request->session()->forget('orderItems');
 
         return redirect('/');
+    }
+
+    public function accept(Order $order, $token)
+    {
+        if ($order->token === $token) {
+            $order->update(['status' => 2]);
+            Mail::send('emails.order_accepted', compact('order',), function ($email) use($order){
+                $email->subject('VatLieuHome-Shop');
+                $email->to($order->email,$order->name);
+            });
+
+        } else {
+            Mail::send('emails.order_accepted', compact('order',), function ($email) use($order){
+                $email->subject('VatLieuHome-Shop');
+                $email->to($order->email,$order->name);
+            });
+        }
     }
 
     public function selectDelivery(Request $request)

@@ -1,13 +1,8 @@
 <div style="width: 600px; margin: 0 auto">
     <div style="text-align: center">
         <h2>Xin chào {{$order->full_name}}</h2>
-        <p>Bạn đã đặt hàng tại hệ thống của chúng tôi, Vui lòng kiểm tra lại thông tin của bạn và nhấn vào nút xác nhận
-            đơn hàng</p>
-        <p>
-            <a href="{{route('admin.orders.accept', ['order' => $order->id,'token' =>$order->token])}}"
-               style="display: inline-block; background: green; color: white; padding: 7px 25px; font-weight: bold">Xác
-                nhận đơn hàng của bạn</a>
-        </p>
+        <p>Bạn đã xác nhận đơn hàng thành công. Chúng tôi sẽ giao hàng cho bạn sớm nhất</p>
+        <p>VatLieuHome-Shop chân thành cảm ơn bạn đã ủng hộ chúng tôi</p>
     </div>
 </div>
 <h3>Thông Tin Đơn Hàng</h3>
@@ -37,4 +32,5 @@
         <td>{{number_format($order->total_price)}} VND</td>
     </tr>
 </table>
+
 
