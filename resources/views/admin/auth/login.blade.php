@@ -18,6 +18,9 @@
                             <div class="form-group">
                                 <input type="password" name="password">
                             </div>
+                            <div class="form-group">
+                                <p>Bạn đã quên mật khẩu ?<a href="{{route('admin.forgetPass')}}">Click để lấy lại mật khẩu</a> </p>
+                            </div>
                             <button type="submit" class="btn btn-primary mt-4">Đăng Nhập</button>
                         </form>
                     </div>

@@ -153,7 +153,7 @@ class OrderController extends Controller
         });
         $request->session()->forget('orderItems');
 
-        return redirect('/');
+        return redirect('/')->with('success','Bạn đã đặt hàng thành công !');
     }
 
     public function accept(Order $order, $token)
@@ -164,6 +164,7 @@ class OrderController extends Controller
                 $email->subject('VatLieuHome-Shop');
                 $email->to($order->email,$order->name);
             });
+            return 'Bạn đã xác nhận đơn hàng thành công ! ';
 
         } else {
             Mail::send('emails.order_accepted', compact('order',), function ($email) use($order){

@@ -86,4 +86,9 @@ class AuthController extends Controller
             return 'XU lys tiep';
         }
     }
+
+    public function forgetPass()
+    {
+
+    }
 }

@@ -95,6 +95,9 @@ Route::get('admin/orders/{id}/destroy', [AdminOrderController::class, 'destroy']
 Route::get('/accept/{order}/{token}', [OrderController::class, 'accept'])->name('admin.orders.accept');
 Route::get('/active/{user}/{token}', [AuthController::class, 'active'])->name('admin.user.active');
 
+Route::get('/forget-password', [AuthController::class, 'forgetPass'])->name('admin.forgetPass');
+Route::post('/forget-password', [AuthController::class, 'postForgetPass'])->name('admin.orders.accept');
+
 //Auth
 Route::get('register', [AuthController::class, 'showFormRegister'])->name('show-form-register');
 Route::post('register', [AuthController::class, 'register'])->name('register');

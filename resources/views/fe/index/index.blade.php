@@ -1,6 +1,11 @@
 @extends('fe.layout.home')
 
 @section('content')
+    <div class="alert alert-success" style="text-align: center;">
+        @if(session('success'))
+            {{ session('success') }}
+        @endif
+    </div>
     <div class="site__body">
         <!-- .block-slideshow -->
         <div class="block-slideshow block-slideshow--layout--with-departments block">
