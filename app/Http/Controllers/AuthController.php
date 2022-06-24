@@ -91,4 +91,16 @@ class AuthController extends Controller
     {
         return view('admin.auth.forget_pass');
     }
+
+    public function postForgetPass(User $user, $token)
+    {
+        if ($user->token === $token) {
+            Mail::send('emails.forget_pass', compact('user',), function ($email) use($user){
+                $email->subject('VatLieuHome-Lấy lại mật khẩu');
+                $email->to($user->email,$user->name);
+            });
+        } else {
+            return 'XU lys tiep';
+        }
+    }
 }

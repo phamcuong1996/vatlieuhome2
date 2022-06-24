@@ -13,13 +13,11 @@
                         <form action="{{route('login')}}" method="post" style="text-align: center">
                             @csrf
                             <h2>lấy lại mật khẩu</h2>
+                            <p>Vui lòng nhập email mà bạn đã đăng ký tài khoản</p>
                             <div class="form-group">
                                 <input type="text" name="email">
                             </div>
-                            <div class="form-group">
-                                <input type="password" name="password">
-                            </div>
-                            <button type="submit" class="btn btn-primary mt-4">Đăng Nhập</button>
+                            <button type="submit" class="btn btn-primary mt-4">Lấy lại mật khẩu</button>
                         </form>
                     </div>
                 </div>
