@@ -12,14 +12,12 @@
                     <div class="card-body">
                         <form action="{{route('login')}}" method="post" style="text-align: center">
                             @csrf
+                            <h2>lấy lại mật khẩu</h2>
                             <div class="form-group">
                                 <input type="text" name="email">
                             </div>
                             <div class="form-group">
                                 <input type="password" name="password">
-                            </div>
-                            <div class="form-group">
-                                <p>Bạn đã quên mật khẩu ?<a href="{{route('forget_pass')}}">Click để lấy lại mật khẩu</a> </p>
                             </div>
                             <button type="submit" class="btn btn-primary mt-4">Đăng Nhập</button>
                         </form>
@@ -29,3 +27,4 @@
         </div>
     </div>
 @endsection
+

@@ -89,6 +89,6 @@ class AuthController extends Controller
 
     public function forgetPass()
     {
-
+        return view('admin.auth.forget_pass');
     }
 }
