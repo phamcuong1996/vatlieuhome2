@@ -1,14 +1,15 @@
 <div class="carts" data-url="{{route('carts.delete')}}">
+    <br>
     <div class="container">
         <div class="row">
             <table class="table update_cart_url  table-danger" data-url="{{route('carts.update')}}">
                 <thead>
                 <tr>
-                    <th scope="col">Id</th>
+                    <th scope="col">STT</th>
                     <th scope="col">Tên Sản phẩm</th>
-                    <th scope="col">Số Lượng</th>
                     <th scope="col">Ảnh</th>
                     <th scope="col">Giá</th>
+                    <th scope="col">Số Lượng</th>
                     <th scope="col">Tổng Tiền</th>
                     <th scope="col">Hành Động</th>
                 </tr>
@@ -24,13 +25,13 @@
                     <tr>
                         <td>{{ $cart['product_id'] }}</td>
                         <td>{{ $productsKeyById[$cart['product_id']]->name }}</td>
-                        <td><input type="number" value="{{ $cart['quantity'] }}" min="1" class="quantity"></td>
                         <td><img src="{{ $productsKeyById[$cart['product_id']]->image }}"
                                  style="width: 100px; height: 100px"></td>
                         <td>{{ number_format($productsKeyById[$cart['product_id']]->price)}}VNĐ</td>
+                        <td><input type="number" value="{{ $cart['quantity'] }}" min="1" class="quantity"></td>
                         <td>{{number_format($productsKeyById[$cart['product_id']]->price * $cart['quantity'])}}VNĐ</td>
                         <td>
-                            <a href="" data-product_id="{{ $cart['product_id'] }}" class="btn btn-primary cart_update">Cập Nhật</button>
+                            <a href="" data-product_id="{{ $cart['product_id'] }}" class="btn btn-primary cart_update" style="margin-right: 10px;">Cập Nhật</button>
                             <a href="" data-product_id="{{ $cart['product_id'] }}" class="btn btn-danger cart_delete">Xóa</a>
                         </td>
                     </tr>
