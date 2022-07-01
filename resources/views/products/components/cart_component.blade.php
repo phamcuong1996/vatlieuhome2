@@ -28,7 +28,7 @@
                         <td><img src="{{ $productsKeyById[$cart['product_id']]->image }}"
                                  style="width: 100px; height: 100px"></td>
                         <td>{{ number_format($productsKeyById[$cart['product_id']]->price)}}VNĐ</td>
-                        <td><input type="number" value="{{ $cart['quantity'] }}" min="1" class="quantity"></td>
+                        <td><input type="number" oninput="validity.valid||(value='')" value="{{ $cart['quantity'] }}" min="1" class="quantity"></td>
                         <td>{{number_format($productsKeyById[$cart['product_id']]->price * $cart['quantity'])}}VNĐ</td>
                         <td>
                             <a href="" data-product_id="{{ $cart['product_id'] }}" class="btn btn-primary cart_update" style="margin-right: 10px;">Cập Nhật</button>
@@ -39,9 +39,10 @@
                 </tbody>
             </table>
         </div>
-    </div>
-    <div class="row">
-        <h2 style="padding: 120px; margin-top: -100px">Tổng Tiền: {{number_format($total)}}VNĐ</h2>
+        <div class="row">
+            <h5 style="margin-top: 20px; margin-left:550px;color: red">Tổng tiền cần thanh toán: {{number_format($total)}}VNĐ</h5>
+        </div>
+        <br>
     </div>
 </div>
 <div class="container card">
@@ -54,10 +55,10 @@
             </ul>
         </div>
     @endif
-    <div class="row">
+    <div class="row" style="display: flex">
+        <div class="col-4">
         <form action="{{ route('orders.save') }}" method="POST">
             @csrf
-            <div class="col">
                 <div class="input-group mb-3">
                     <label>Tên (<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
                     <input name="full_name" type="text" class="form-control" placeholder="Vui lòng Nhập"> <br>
@@ -100,9 +101,9 @@
                     </select>
                 </div>
                 <button type="submit" class="btn btn-primary">Đặt Hàng</button>
-            </div>
         </form>
-        <div class="card-body">
+            </div>
+        <div class="col-8">
             <table class="cart__totals" style="margin-bottom: 22px">
                 <thead>
                 <tr>
