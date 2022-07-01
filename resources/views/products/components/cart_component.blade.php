@@ -56,7 +56,7 @@
         </div>
     @endif
     <div class="row" style="display: flex">
-        <div class="col-4">
+        <div class="col-5">
         <form action="{{ route('orders.save') }}" method="POST">
             @csrf
                 <div class="input-group mb-3">
@@ -103,14 +103,14 @@
                 <button type="submit" class="btn btn-primary">Đặt Hàng</button>
         </form>
             </div>
-        <div class="col-8">
+        <div class="col-7">
             <table class="cart__totals" style="margin-bottom: 22px">
                 <thead>
                 <tr>
                     <th colspan="2" class="text-center"><h3>Thông tin đại lý</h3></th>
                 </tr>
                 <tr>
-                    <td style="width: 100px"><b>Tên:</b></td>
+                    <td><b>Tên:</b></td>
                     <td id="agency_name">Công Ty Cổ phần Vật Liệu Home</td>
                 </tr>
                 <tr>
@@ -123,7 +123,10 @@
                 </tr>
                 <tr>
                     <td><b>Địa chỉ:</b></td>
-                    <td id="agency_address">Tầng 7 Số 18 Ngụy Như Kon Tum, P. Nhân Chính, Q. Thanh Xuân, TP. Hà Nội.</td>
+                    <td id="agency_address">Tầng 7 Số 18 Ngụy Như, P. Nhân Chính, Q. Thanh Xuân, TP. Hà Nội.</td>
+                </tr>
+                <tr>
+                    <td><img src="https://dplusvn.com/wp-content/uploads/2020/01/hinh-anh-van-phong-cong-ty-seongon-2.jpg" style="width: 300px;height: 200px"></td>
                 </tr>
                 </thead>
             </table>
