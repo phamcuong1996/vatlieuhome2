@@ -48,10 +48,13 @@ class AdminOrderController extends Controller
     {
         $id = $request->id;
         $order = Order::find($id);
-        $product = Product::find($id);
         $orderDetails = OrderDetail::where('order_id', $order->id)->with('product')->get();
+        if ($product = Product::find($id)===null) {
+            return 'Sản phẩm này đã bị xóa';
+        }
+        //Chay tiep chuong trinh
 
-        return view('admin.orders.edit', compact('order', 'orderDetails', 'product',));
+        return view('admin.orders.edit', compact('order', 'orderDetails', 'product'));
     }
 
     public function confirmed(Request $request)
@@ -111,7 +114,7 @@ class AdminOrderController extends Controller
         return redirect()->back();
     }
 
-    public function show(Request $request, $id)
+    public function show(Request $request, int $id)
     {
         $id = $request->id;
         $order = Order::find($id);

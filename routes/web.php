@@ -35,55 +35,55 @@ Route::prefix('admin')->middleware('Admin')->group(function () {
     Route::get('/posts/{id}/destroy', [PostController::class, 'destroy'])->name('admin.posts.destroy');
 
     //Products
-    Route::get('admin/products/index', [ProductController::class, 'index'])->name('admin.products.index')->middleware('Admin');
-    Route::get('admin/products/create', [ProductController::class, 'create'])->name('admin.products.create');
-    Route::post('admin/products/store', [ProductController::class, 'store'])->name('admin.products.store');
-    Route::get('admin/products/{id}/edit', [ProductController::class, 'edit'])->name('admin.products.edit');
-    Route::post('admin/products/{id}/update', [ProductController::class, 'update'])->name('admin.products.update');
-    Route::get('admin/products/{id}/destroy', [ProductController::class, 'destroy'])->name('admin.products.destroy');
+    Route::get('/products/index', [ProductController::class, 'index'])->name('admin.products.index')->middleware('Admin');
+    Route::get('/products/create', [ProductController::class, 'create'])->name('admin.products.create');
+    Route::post('/products/store', [ProductController::class, 'store'])->name('admin.products.store');
+    Route::get('/products/{id}/edit', [ProductController::class, 'edit'])->name('admin.products.edit');
+    Route::post('/products/{id}/update', [ProductController::class, 'update'])->name('admin.products.update');
+    Route::get('/products/{id}/destroy', [ProductController::class, 'destroy'])->name('admin.products.destroy');
 
     //Users
-    Route::get('admin/users/index', [UserController::class, 'index'])->name('admin.users.index');
-    Route::get('admin/users/create', [UserController::class, 'create'])->name('admin.users.create');
-    Route::post('admin/users/store', [UserController::class, 'store'])->name('admin.users.store');
-    Route::get('admin/users/{id}/edit', [UserController::class, 'edit'])->name('admin.users.edit');
-    Route::put('admin/users/{id}/update', [UserController::class, 'update'])->name('admin.users.update');
-    Route::delete('admin/users/{id}/destroy', [UserController::class, 'destroy'])->name('admin.users.destroy');
+    Route::get('/users/index', [UserController::class, 'index'])->name('admin.users.index');
+    Route::get('/users/create', [UserController::class, 'create'])->name('admin.users.create');
+    Route::post('/users/store', [UserController::class, 'store'])->name('admin.users.store');
+    Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('admin.users.edit');
+    Route::put('/users/{id}/update', [UserController::class, 'update'])->name('admin.users.update');
+    Route::delete('/users/{id}/destroy', [UserController::class, 'destroy'])->name('admin.users.destroy');
 
     //Banner
-    Route::get('admin/banners/index', [BannerController::class, 'index'])->name('admin.banners.index');
-    Route::get('admin/banners/create', [BannerController::class, 'create'])->name('admin.banners.create');
-    Route::post('admin/banners/store', [BannerController::class, 'store'])->name('admin.banners.store');
-    Route::get('admin/banners/{id}/edit', [BannerController::class, 'edit'])->name('admin.banners.edit');
-    Route::post('admin/banners/{id}/update', [BannerController::class, 'update'])->name('admin.banners.update');
-    Route::get('admin/banners/{id}/destroy', [BannerController::class, 'destroy'])->name('admin.banners.destroy');
+    Route::get('/banners/index', [BannerController::class, 'index'])->name('admin.banners.index');
+    Route::get('/banners/create', [BannerController::class, 'create'])->name('admin.banners.create');
+    Route::post('/banners/store', [BannerController::class, 'store'])->name('admin.banners.store');
+    Route::get('/banners/{id}/edit', [BannerController::class, 'edit'])->name('admin.banners.edit');
+    Route::post('/banners/{id}/update', [BannerController::class, 'update'])->name('admin.banners.update');
+    Route::get('/banners/{id}/destroy', [BannerController::class, 'destroy'])->name('admin.banners.destroy');
 
     //Category
-    Route::get('admin/categories/index', [CategoryController::class, 'index'])->name('admin.categories.index');
-    Route::get('admin/categories/create', [CategoryController::class, 'create'])->name('admin.categories.create');
-    Route::post('admin/categories/store', [CategoryController::class, 'store'])->name('admin.categories.store');
-    Route::get('admin/categories/{id}/edit', [CategoryController::class, 'edit'])->name('admin.categories.edit');
-    Route::put('admin/categories/{id}/update', [CategoryController::class, 'update'])->name('admin.categories.update');
-    Route::get('admin/categories/{id}/destroy', [CategoryController::class, 'destroy'])->name('admin.categories.destroy');
+    Route::get('/categories/index', [CategoryController::class, 'index'])->name('admin.categories.index');
+    Route::get('/categories/create', [CategoryController::class, 'create'])->name('admin.categories.create');
+    Route::post('/categories/store', [CategoryController::class, 'store'])->name('admin.categories.store');
+    Route::get('/categories/{id}/edit', [CategoryController::class, 'edit'])->name('admin.categories.edit');
+    Route::put('/categories/{id}/update', [CategoryController::class, 'update'])->name('admin.categories.update');
+    Route::get('/categories/{id}/destroy', [CategoryController::class, 'destroy'])->name('admin.categories.destroy');
 
     // AdminOrder
-    Route::get('admin/orders/index', [AdminOrderController::class, 'indexAll'])->name('admin.orders.index');
-    Route::get('admin/orders/init', [AdminOrderController::class, 'indexInit'])->name('admin.orders.indexInit');
-    Route::get('admin/orders/confirmed', [AdminOrderController::class, 'indexConfirmed'])->name('admin.orders.indexConfirmed');
-    Route::get('admin/orders/done', [AdminOrderController::class, 'indexDone'])->name('admin.orders.indexDone');
-    Route::get('admin/orders/cancel', [AdminOrderController::class, 'indexCancel'])->name('admin.orders.indexCancel');
+    Route::get('/orders/index', [AdminOrderController::class, 'indexAll'])->name('admin.orders.index');
+    Route::get('/orders/init', [AdminOrderController::class, 'indexInit'])->name('admin.orders.indexInit');
+    Route::get('/orders/confirmed', [AdminOrderController::class, 'indexConfirmed'])->name('admin.orders.indexConfirmed');
+    Route::get('/orders/done', [AdminOrderController::class, 'indexDone'])->name('admin.orders.indexDone');
+    Route::get('/orders/cancel', [AdminOrderController::class, 'indexCancel'])->name('admin.orders.indexCancel');
 
-    Route::get('admin/orders/{id}/show', [AdminOrderController::class, 'show'])->name('admin.orders.show');
-    Route::get('admin/orders/{id}/edit', [AdminOrderController::class, 'editOrder'])->name('admin.orders.edit');
+    Route::get('/orders/{id}/show', [AdminOrderController::class, 'show'])->name('admin.orders.show');
+    Route::get('/orders/{id}/edit', [AdminOrderController::class, 'editOrder'])->name('admin.orders.edit');
 
-    Route::post('admin/orders/{id}/confirmed', [AdminOrderController::class, 'confirmed'])->name('orders.confirmed');
-    Route::post('admin/orders/{id}/done', [AdminOrderController::class, 'done'])->name('orders.done');
-    Route::post('admin/orders/{id}/cancel', [AdminOrderController::class, 'cancel'])->name('orders.cancel');
+    Route::post('/orders/{id}/confirmed', [AdminOrderController::class, 'confirmed'])->name('orders.confirmed');
+    Route::post('/orders/{id}/done', [AdminOrderController::class, 'done'])->name('orders.done');
+    Route::post('/orders/{id}/cancel', [AdminOrderController::class, 'cancel'])->name('orders.cancel');
 
-    Route::put('admin/orders/{id}/update', [AdminOrderController::class, 'update'])->name('admin.orders.update');
-    Route::get('admin/orders/create', [AdminOrderController::class, 'createOrder'])->name('admin.orders.create');
-    Route::post('admin/orders/store', [AdminOrderController::class, 'storeOrder'])->name('admin.orders.store');
-    Route::get('admin/orders/{id}/destroy', [AdminOrderController::class, 'destroy'])->name('admin.orders.destroy');
+    Route::put('/orders/{id}/update', [AdminOrderController::class, 'update'])->name('admin.orders.update');
+    Route::get('/orders/create-product', [AdminOrderController::class, 'createOrder'])->name('admin.orders.create');
+    Route::post('/orders/store', [AdminOrderController::class, 'storeOrder'])->name('admin.orders.store');
+    Route::get('/orders/{id}/destroy', [AdminOrderController::class, 'destroy'])->name('admin.orders.destroy');
 });
 
 
