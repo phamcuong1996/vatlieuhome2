@@ -54,10 +54,8 @@ class AuthController extends Controller
     }
 
     public function showProfile(){
-        if (Auth::check()) {
-            return view('admin.auth.profile');
-        }
-        return redirect()->route('show-form-login');
+
+        return view('admin.auth.profile');
     }
 
     public function Profile(Request $request){

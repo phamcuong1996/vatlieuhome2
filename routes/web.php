@@ -25,16 +25,18 @@ use App\Http\Controllers\CategoryController;
 Route::get('/', function () {
     return view('welcome');
 });
-//
-Route::get('admin/posts/index', [PostController::class, 'index'])->name('posts.index');
-Route::get('admin/posts/create', [PostController::class, 'create'])->name('posts.create');
-Route::post('admin/posts/store', [PostController::class, 'store'])->name('posts.store');
-Route::get('admin/posts/{id}/edit', [PostController::class, 'edit'])->name('posts.edit');
-Route::put('admin/posts/{id}/update', [PostController::class, 'update'])->name('posts.update');
-Route::delete('admin/posts/{id}/destroy', [PostController::class, 'destroy'])->name('posts.destroy');
+Route::prefix('admin')->middleware('Admin')->group(function () {
+    //posts
+    Route::get('/posts/index', [PostController::class, 'index'])->name('admin.posts.index');
+    Route::get('/posts/create', [PostController::class, 'create'])->name('admin.posts.create');
+    Route::post('/posts/store', [PostController::class, 'store'])->name('admin.posts.store');
+    Route::get('/posts/{id}/edit', [PostController::class, 'edit'])->name('admin.posts.edit');
+    Route::post('/posts/{id}/update', [PostController::class, 'update'])->name('admin.posts.update');
+    Route::get('/posts/{id}/destroy', [PostController::class, 'destroy'])->name('admin.posts.destroy');
+});
 
 //Products
-Route::get('admin/products/index', [ProductController::class, 'index'])->name('admin.products.index');
+Route::get('admin/products/index', [ProductController::class, 'index'])->name('admin.products.index')->middleware('Admin');
 Route::get('admin/products/create', [ProductController::class, 'create'])->name('admin.products.create');
 Route::post('admin/products/store', [ProductController::class, 'store'])->name('admin.products.store');
 Route::get('admin/products/{id}/edit', [ProductController::class, 'edit'])->name('admin.products.edit');
