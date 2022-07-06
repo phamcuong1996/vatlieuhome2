@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('admin.layout1')
 @section('content')
     <div class="container">
         <div class="alert alert-success">
