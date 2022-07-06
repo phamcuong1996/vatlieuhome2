@@ -107,6 +107,9 @@ Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('profile', [AuthController::class, 'showProfile'])->name('show-profile');
 Route::put('profile', [AuthController::class, 'Profile'])->name('profile');
 
+Route::get('/forget-password', [AuthController::class, 'forgetPass'])->name('forget_pass');
+Route::post('/forget-password', [AuthController::class, 'postForgetPass']);
+
 //Banner
 Route::get('admin/banners/index', [BannerController::class, 'index'])->name('admin.banners.index');
 Route::get('admin/banners/create', [BannerController::class, 'create'])->name('admin.banners.create');

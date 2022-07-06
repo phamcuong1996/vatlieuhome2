@@ -7,7 +7,6 @@ use App\Models\OrderDetail;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
-
 class AdminOrderController extends Controller
 {
     public function indexInit()
@@ -117,7 +116,7 @@ class AdminOrderController extends Controller
         $id = $request->id;
         $order = Order::find($id);
 
-        return view('admin.orders.index', compact('order', ));
+        return view('admin.orders.index', compact('order'));
     }
 
     public function createOrder()

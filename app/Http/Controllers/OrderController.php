@@ -111,7 +111,6 @@ class OrderController extends Controller
             'address' => 'required',
             'phone' => 'required',
             'note' => 'required',
-
         ],[
             'full_name.required' => 'Bạn cần nhập Tên',
             'email.required' => 'Bạn cần nhập email',
@@ -144,8 +143,9 @@ class OrderController extends Controller
             $detailData['quantity'] = $item['quantity'];
             $detailData['order_id'] = $order->id;
 
-        $orderDetails= OrderDetail::create($detailData);
+            $orderDetails= OrderDetail::create($detailData);
         }
+
         //gui Email
         Mail::send('emails.order', compact('order','orderDetails'), function ($email) use($order){
             $email->subject('VatLieuHome-Shop');
@@ -153,22 +153,23 @@ class OrderController extends Controller
         });
         $request->session()->forget('orderItems');
 
-        return redirect('/');
+        return redirect('/')->with('success','Bạn đã đặt hàng thành công !');
     }
 
     public function accept(Order $order, $token)
     {
         if ($order->token === $token) {
             $order->update(['status' => 2]);
-            Mail::send('emails.order_accepted', compact('order',), function ($email) use($order){
+            Mail::send('emails.order_accepted', compact('order'), function ($email) use ($order) {
                 $email->subject('VatLieuHome-Shop');
                 $email->to($order->email,$order->name);
             });
+            return 'Bạn đã xác nhận đơn hàng thành công ! ';
 
         } else {
-            Mail::send('emails.order_accepted', compact('order',), function ($email) use($order){
+            Mail::send('emails.order_accepted', compact('order',), function ($email) use ($order) {
                 $email->subject('VatLieuHome-Shop');
-                $email->to($order->email,$order->name);
+                $email->to($order->email, $order->name);
             });
         }
     }
