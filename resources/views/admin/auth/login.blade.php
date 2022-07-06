@@ -12,6 +12,8 @@
                     <div class="card-body">
                         <form action="{{route('login')}}" method="post" style="text-align: center">
                             @csrf
+                            <h2>Vui lòng đăng nhập để vào hệ thống của chúng tôi</h2>
+                            <i>Lưu ý: Chỉ admin mới có quyền vào trang quản lý</i>
                             <div class="form-group">
                                 <input type="text" name="email">
                             </div>
