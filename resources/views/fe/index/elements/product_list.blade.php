@@ -185,13 +185,12 @@
                                         {{ number_format($sach->price) }}
                                     </div>
                                     <div class="product-card__buttons">
-                                        <button class="btn btn-primary product-card__addtocart" type="button">Add To
-                                            Cart
-                                        </button>
-                                        <button
-                                            class="btn btn-secondary product-card__addtocart product-card__addtocart--list"
-                                            type="button">Add To Cart
-                                        </button>
+                                        <div class="product__actions-item ">
+                                            <button style="width: 185px" type="button"
+                                                    class="btn btn-warning btn-lg add_to_cart"
+                                                    data-id="2">Thêm Vào Giỏ
+                                            </button>
+                                        </div>
                                         <button
                                             class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist"
                                             type="button">

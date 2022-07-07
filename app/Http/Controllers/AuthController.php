@@ -61,6 +61,7 @@ class AuthController extends Controller
     public function Profile(Request $request){
        $user = User::find(\auth()->id());
        $user->name = $request->name;
+       $user->email = $request->email;
         if ($request->change_password == 'on') {
             $user->password = bcrypt($request->password);
         }

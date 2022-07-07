@@ -10,15 +10,19 @@
                     <div class="col-md-12 d-flex flex-column mt-4 mt-md-0">
                         <div class="card flex-grow-1 mb-0">
                             <div class="card-body">
+                                <h2>THÔNG TIN TÀI KHOẢN</h2>
+                                <p>Email: {{auth()->user()->email}} </p>
+                                <p>Name: {{auth()->user()->name}} </p>
                                 <form action="{{route('profile')}}" method="post" style="text-align: center">
                                     @csrf
                                     @method('put')
                                     <div class="form-group">
-                                        <input type="text" value="{{auth()->user()->email}}" >
+                                        <input type="text" name="email" value="{{auth()->user()->email}}" >
                                     </div>
                                     <div class="form-group">
                                         <input type="text" name="name" value="{{auth()->user()->name}}">
                                     </div>
+                                    <i>Vui lòng tích vào để thay đổi cả mật khẩu</i>
                                     <div class="form-group">
                                         <input type="checkbox" name="change_password">
                                     </div>

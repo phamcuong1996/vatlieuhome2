@@ -49,10 +49,7 @@ class AdminOrderController extends Controller
         $id = $request->id;
         $order = Order::find($id);
         $orderDetails = OrderDetail::where('order_id', $order->id)->with('product')->get();
-        if ($product = Product::find($id)===null) {
-            return 'Sản phẩm này đã bị xóa';
-        }
-        //Chay tiep chuong trinh
+        $product = Product::find($id);
 
         return view('admin.orders.edit', compact('order', 'orderDetails', 'product'));
     }

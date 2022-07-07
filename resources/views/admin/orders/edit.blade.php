@@ -37,18 +37,18 @@
                         <tr>
                             <td>
                                 <div class="form-group">
-                                    <span class=""> {{ $orderDetail->product->name }}</span>
+                                    <span class=""> {{ !empty($orderDetail->product) ? $orderDetail->product->name:'' }}</span>
                                 </div>
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <img src="{{ $orderDetail->product->image }}" alt="User Image" style="width: 100px">
+                                    <img src="{{ !empty($orderDetail->product) ? $orderDetail->product->image:'' }}" alt="User Image" style="width: 100px">
                                 </div>
                             </td>
                             <td>
                                 <div class="form-group">
                                     <input type="number" class="form-control"
-                                           name="quantities[{{ $orderDetail->product->id}}]"
+                                           name="quantities[{{ !empty($orderDetail->product) ? $orderDetail->product->id:'' }}]"
                                            value="{{ $orderDetail->quantity }}">
                                 </div>
                             </td>

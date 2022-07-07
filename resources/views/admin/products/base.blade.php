@@ -38,11 +38,15 @@
                 </div>
             </div>
             <div class="form-group" style="display: flex">
-                <div class="col-3">
+                <div class="col-2">
                     <label>Ảnh:</label>
                     <input type="file" class="form-control" name="file_update" value="{{ @$product->image }}">
                 </div>
-                <div class="col-3">
+                <div class="col-2">
+                    <label>Ảnh mô tả:</label>
+                    <input type="file" class="form-control" name="files_update[]" multiple="multiple" value="{{ @$product->image }}">
+                </div>
+                <div class="col-2">
                     <label>Danh Mục:</label>
                     <select id="category_id" name="category_id" class="form-control">
                         @foreach($category as $value)
