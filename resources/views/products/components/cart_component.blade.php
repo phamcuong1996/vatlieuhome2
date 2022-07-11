@@ -59,77 +59,80 @@
         <div class="col-5">
         <form action="{{ route('orders.save') }}" method="POST">
             @csrf
-                <div class="input-group mb-3">
-                    <label>Tên (<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
-                    <input name="full_name" type="text" class="form-control" placeholder="Vui lòng Nhập"> <br>
+            <div class="auto" style="padding: 30px">
+                <div class="row mt-2">
+                    <label class="col-4" >Tên (<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
+                    <input name="full_name" type="text" class="form-control col-8" placeholder="Vui lòng Nhập" required=""> <br>
+                </div >
+                <div class="row mt-2">
+                    <label class="col-4">Email (<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
+                    <input name="email" type="text" class="form-control col-8" placeholder="Vui lòng Nhập" required="" > <br>
                 </div>
-                <div class="input-group mb-3">
-                    <label>Email (<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
-                    <input name="email" type="text" class="form-control" placeholder="Vui lòng Nhập"> <br>
+                <div class="row mt-2">
+                    <label class="col-4">Địa Chỉ (<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
+                    <input name="address" type="text" class="form-control col-8" placeholder="Vui lòng Nhập" required="" > <br>
                 </div>
-                <div class="input-group mb-3">
-                    <label>Địa Chỉ (<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
-                    <input name="address" type="text" class="form-control" placeholder="Vui lòng Nhập"> <br>
+                <div class="row mt-2">
+                    <label class="col-4">Điện Thoại (<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
+                    <input name="phone" type="text" class="form-control col-8" placeholder="Vui lòng Nhập" required="" > <br>
                 </div>
-                <div class="input-group mb-3">
-                    <label>Điện Thoại (<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
-                    <input name="phone" type="text" class="form-control" placeholder="Vui lòng Nhập"> <br>
+                <div class="row mt-2">
+                    <label class="col-4">Ghi Chú (<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
+                    <input name="note" type="text" class="form-control col-8" placeholder="Vui lòng Nhập" required="" > <br>
                 </div>
-                <div class="input-group mb-3">
-                    <label>Ghi Chú (<span class="fa fa-star" style="font-size:10px;color:red"></span>):</label>
-                    <input name="note" type="text" class="form-control" placeholder="Vui lòng Nhập"> <br>
-                </div>
-                <div class="input-group mb-3">
-                    <label>Tỉnh/TP:</label>
-                    <select id="province" name="province" class="form-control choose province">
+                <div class="row mt-2">
+                    <label class="col-4">Tỉnh/TP:</label>
+                    <select id="province" name="province" class="form-control col-8 choose province">
                         <option value="">--Chọn Tỉnh/TP--</option>
                         @foreach($province as $pro)
                             <option value="{{$pro->id}}">{{$pro->_name}}</option>
                         @endforeach
                     </select>
                 </div>
-                <div class="input-group mb-3">
-                    <select id="district" name="district" class="form-control choose district quanhuyen">
+                <div class="row mt-2">
+                    <label class="col-4">Quận, huyện:</label>
+                    <select id="district" name="district" class="form-control col-8 choose district quanhuyen">
                         <option value="">--Chọn Quận/Huyện--</option>
 
                     </select>
                 </div>
-                <div class="input-group mb-3">
-                    <select id="ward" name="ward" class="form-control ward">
-                        <option value="">--Chọn Xã/Phường--</option>
-
-                    </select>
+                <div class="row mt-2">
+                    <label class="col-4">Thôn, xã:</label>
+                    <input id="ward" name="ward" class="form-control col-8 ward" placeholder="Số nhà, thôn, xóm">
                 </div>
                 <button type="submit" class="btn btn-primary">Đặt Hàng</button>
+            </div>
         </form>
             </div>
         <div class="col-7">
-            <table class="cart__totals" style="margin-bottom: 22px">
-                <thead>
-                <tr>
-                    <th colspan="2" class="text-center"><h3>Thông tin đại lý</h3></th>
-                </tr>
-                <tr>
-                    <td><b>Tên:</b></td>
-                    <td id="agency_name">Công Ty Cổ phần Vật Liệu Home</td>
-                </tr>
-                <tr>
-                    <td><b>Điện thoại:</b></td>
-                    <td id="agency_phone">0934.553.122 </td>
-                </tr>
-                <tr>
-                    <td><b>Email:</b></td>
-                    <td id="agency_email">vatlieuhome@gmail.com</td>
-                </tr>
-                <tr>
-                    <td><b>Địa chỉ:</b></td>
-                    <td id="agency_address">Tầng 7 Số 18 Ngụy Như, P. Nhân Chính, Q. Thanh Xuân, TP. Hà Nội.</td>
-                </tr>
-                <tr>
-                    <td><img src="https://dplusvn.com/wp-content/uploads/2020/01/hinh-anh-van-phong-cong-ty-seongon-2.jpg" style="width: 300px;height: 200px"></td>
-                </tr>
-                </thead>
-            </table>
+           <div style="padding: 30px">
+               <table class="cart__totals" style="margin-bottom: 22px">
+                   <thead>
+                   <tr>
+                       <th colspan="2" class="text-center"><h3>Thông tin đại lý</h3></th>
+                   </tr>
+                   <tr>
+                       <td><b>Tên:</b></td>
+                       <td id="agency_name">Công Ty Cổ phần Vật Liệu Home</td>
+                   </tr>
+                   <tr>
+                       <td><b>Điện thoại:</b></td>
+                       <td id="agency_phone">0934.553.122 </td>
+                   </tr>
+                   <tr>
+                       <td><b>Email:</b></td>
+                       <td id="agency_email">vatlieuhome@gmail.com</td>
+                   </tr>
+                   <tr>
+                       <td><b>Địa chỉ:</b></td>
+                       <td id="agency_address">Tầng 7 Số 18 Ngụy Như, P. Nhân Chính, Q. Thanh Xuân, TP. Hà Nội.</td>
+                   </tr>
+                   <tr>
+                       <td><img src="https://dplusvn.com/wp-content/uploads/2020/01/hinh-anh-van-phong-cong-ty-seongon-2.jpg" style="width: 300px;height: 200px"></td>
+                   </tr>
+                   </thead>
+               </table>
+           </div>
         </div>
     </div>
 </div>

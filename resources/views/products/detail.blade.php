@@ -1418,27 +1418,27 @@
 
 </html>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script>
-            $(document).ready(function () {
-                $(".add_to_cart").click(function () {
-                    let quantity = $(this).parents('tr').find('input.quantity').val();
-                    $.ajax({
-                        headers: {
-                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                        },
-                        url: '/orders',
-                        dataType : 'json',
-                        type: 'POST',
-                        data: {
-                            _token: "{{ csrf_token() }}",
-                            product_id: {{ $product->id }},
-                            quantity: 1
-                        },
-                        success:function(response) {
-                            console.log(response);
-                        }
-                    });
-                });
-            })
-        </script>
+<script>
+    $(document).ready(function () {
+        $(".add_to_cart").click(function () {
+            let quantity = $(this).parents('tr').find('input.quantity').val();
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: '/orders',
+                dataType : 'json',
+                type: 'POST',
+                data: {
+                    _token: "{{ csrf_token() }}",
+                    product_id: {{ $product->id }},
+                    quantity: 1
+                },
+                success:function(response) {
+                    console.log(response);
+                }
+            });
+        });
+    })
+</script>
 @endsection
