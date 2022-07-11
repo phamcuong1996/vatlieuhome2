@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ActiveMail;
+use App\Mail\ForgetMail;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -31,10 +33,8 @@ class AuthController extends Controller
         $user->password = bcrypt($request->password);
         $user->token = strtoupper(Str::random(20));
         $user->save();
-        Mail::send('emails.active_account', compact('user',), function ($email) use($user){
-            $email->subject('VatLieuHome-Shop');
-            $email->to($user->email,$user->name);
-        });
+        $mailable = new ActiveMail($user);
+        Mail::to($user->email)->queue($mailable);
 
         return redirect()->route('show-form-register')->with('success', 'Chúc Mừng Bạn Đã Đăng Đăng Ký Thành Công !! !');
     }
@@ -91,15 +91,20 @@ class AuthController extends Controller
         return view('admin.auth.forget_pass');
     }
 
-    public function postForgetPass(User $user, $token)
+    public function postForgetPass(Request $request)
     {
-        if ($user->token === $token) {
-            Mail::send('emails.forget_pass', compact('user',), function ($email) use($user){
-                $email->subject('VatLieuHome-Lấy lại mật khẩu');
-                $email->to($user->email,$user->name);
-            });
-        } else {
-            return 'XU lys tiep';
-        }
+        $validated = $request->validate([
+            'email' => 'required|exists:users',
+        ],[
+            'email.required' => 'Bạn cần nhập email',
+            'email.exists' => 'Email này không tồn tại trong hệ thống'
+        ]);
+        $token = strtoupper(Str::random(20));
+        $user = User::where('email', $request->email)->first();
+        $user->update(['token' => $token]);
+        $mailable = new ForgetMail($user);
+        Mail::to($user->email)->queue($mailable);
+
+        return 'Vui lòng kiểm tra email của bạn';
     }
 }

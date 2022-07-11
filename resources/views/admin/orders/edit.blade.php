@@ -37,7 +37,7 @@
                         <tr>
                             <td>
                                 <div class="form-group">
-                                    <span class=""> {{ !empty($orderDetail->product) ? $orderDetail->product->name:'' }}</span>
+                                    <span class=""> {{ ($orderDetail->product) ? $orderDetail->product->name:'' }}</span>
                                 </div>
                             </td>
                             <td>
