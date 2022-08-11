@@ -3,9 +3,6 @@
     <div class="container">
         <div class="card">
             <div class="alert alert-success">
-                @if(session('success'))
-                    {{ session('success') }}
-                @endif
             </div>
             <div class="card-header">
                 <h3 class="card-title">Quản Lý Bài Viết</h3>
@@ -32,7 +29,7 @@
                         <tr>
                             <td>{{ $post->id }}</td>
                             <td>{{ $post->title }}</td>
-                            <td>{{ $post->short_content }}</td>
+                            <td>{!!$post->short_content !!}</td>
                             <td>{{ $post->category->name }}</td>
                             <td width="40px"><img src=/update/{{$post->image}} style="width:50px;height:50px"></td>
 

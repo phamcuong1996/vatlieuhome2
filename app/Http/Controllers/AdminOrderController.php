@@ -119,12 +119,15 @@ class AdminOrderController extends Controller
         return view('admin.orders.index', compact('order'));
     }
 
-    public function createOrder()
+    public function createOrder(Request $request, int $id)
     {
+        $order = Order::find($id);
+        $id = $request->id;
         $items = Product::all(['id', 'name','image','price']);
         $orderDetail = OrderDetail::all();
+//        dd($orderDetail[0]);
 
-        return view('admin.orders.create', compact('items','orderDetail'));
+        return view('admin.orders.create', compact('items','orderDetail','id', 'order'));
     }
 
     public function storeOrder(Request $request )

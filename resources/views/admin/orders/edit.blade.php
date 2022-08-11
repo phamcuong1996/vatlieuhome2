@@ -12,7 +12,7 @@
             <div class="card-header">
                 <h3 class="card-title"> Thông Tin Chi Tiết Đơn Hàng</h3>
                 <div class="card-tools">
-                    <a class="btn btn-primary btn-sm" href="{{ route('admin.orders.create') }}">
+                    <a class="btn btn-primary btn-sm" href="{{ route('admin.orders.create', $order->id) }}">
                         <i class="fas fa-pencil-alt">
                         </i>
                         Thêm

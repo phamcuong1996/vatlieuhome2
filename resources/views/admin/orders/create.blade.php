@@ -21,23 +21,23 @@
                         <div class="form-group" style="display: flex">
                             <div class="col-3">
                                 <label for="name">Tên Sản Phẩm:</label>
-                                <select class="form-control" name="product_id" id="product_id">
-                                    @foreach($items as $item)
-                                    <option value="{{$item->id}}">{{$item->name}}</option>
+                                <select class="form-control product_id" name="product_id" id="product_id">
+                                    @foreach($items as $key => $item)
+                                    <option data-key="{{$key}}" value="{{$item->id}}">{{$item->name}}</option>
                                     @endforeach
-                            </select>
+                                </select>
+                            </div>
+                            <div class="col-3">
+                                <label for="price">Giá</label>
+                                <input class="form-control price" type="text" name="price">
                             </div>
                             <div class="col-3">
                                 <label for="password">Số Lượng</label>
                                 <input class="form-control" type="text" name="quantity">
                             </div>
                             <div class="col-3">
-                                <label for="password">Giá</label>
-                                    <input class="form-control" type="text" name="price">
-                            </div>
-                            <div class="col-3">
                                 <label for="password">Đơn hàng</label>
-                                <input class="form-control" type="text" name="order_id">
+                                <input class="form-control" type="text" name="order_id" value="{{$order->id}}" disabled>
                             </div>
                         </div>
                     </div>
@@ -48,9 +48,13 @@
             </form>
         </div>
     </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>
-        $('#product_id').on('change', function() {
-            alert( this.value );
-        });
+        $(document).ready(function () {
+            $('#product_id').change(function () {
+                let key = $('option:selected').attr('data-key');
+                alert(key);
+            })
+        })
     </script>
 @endsection

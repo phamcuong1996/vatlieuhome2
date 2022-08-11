@@ -81,7 +81,7 @@ Route::prefix('admin')->middleware('Admin')->group(function () {
     Route::post('/orders/{id}/cancel', [AdminOrderController::class, 'cancel'])->name('orders.cancel');
 
     Route::put('/orders/{id}/update', [AdminOrderController::class, 'update'])->name('admin.orders.update');
-    Route::get('/orders/create-product', [AdminOrderController::class, 'createOrder'])->name('admin.orders.create');
+    Route::get('/orders/{id}/create-product', [AdminOrderController::class, 'createOrder'])->name('admin.orders.create');
     Route::post('/orders/store', [AdminOrderController::class, 'storeOrder'])->name('admin.orders.store');
     Route::get('/orders/{id}/destroy', [AdminOrderController::class, 'destroy'])->name('admin.orders.destroy');
 });

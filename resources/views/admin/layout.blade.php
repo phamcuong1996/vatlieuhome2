@@ -229,6 +229,12 @@
             <div class="container-fluid">
             </div><!-- /.container-fluid -->
         </div>
+
+        @if(session()->has('success'))
+            <div class="alert alert-success">
+                {{ session()->get('success') }}
+            </div>
+        @endif
         <!-- /.content-header -->
 
         <!-- Main content -->

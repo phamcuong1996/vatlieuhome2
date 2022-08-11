@@ -180,4 +180,5 @@ class OrderController extends Controller
 
         return District::where('_province_id', $data['id'])->orderby('id', 'ASC')->get();
     }
+
 }

@@ -10,7 +10,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::with('category')->simplePaginate(10);
+        $products = Product::with('category')->paginate(5);
 
         return view('admin.products.index', [
             'products' => $products
@@ -57,6 +57,7 @@ class ProductController extends Controller
         $data = $request->all();
 
         Product::create($data);
+        session()->flash('success', 'Thêm bài viết thành công !');
 
         return redirect()->route('admin.products.index')->with('success','Thêm sản phẩm thành công !');
     }

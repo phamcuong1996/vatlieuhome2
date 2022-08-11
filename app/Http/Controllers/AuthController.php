@@ -6,6 +6,7 @@ use App\Mail\ActiveMail;
 use App\Mail\ForgetMail;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Requests\RegisterRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Monolog\Handler\NewRelicHandler;
@@ -17,16 +18,8 @@ class AuthController extends Controller
         return view('admin.auth.register');
     }
 
-    public function register( Request $request)
+    public function register( RegisterRequest $request)
     {
-        $validated = $request->validate([
-            'email' => 'required|unique:users',
-            'name' => 'required'
-        ],[
-            'email.required' => 'Bạn cần nhập email',
-            'name.required' => 'Bạn cần nhập tên',
-            'email.unique' => 'Email này đã tồn tại'
-        ]);
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
@@ -103,7 +96,7 @@ class AuthController extends Controller
         $user = User::where('email', $request->email)->first();
         $user->update(['token' => $token]);
         $mailable = new ForgetMail($user);
-        Mail::to($user->email)->queue($mailable);
+        Mail::to($user->email)->send($mailable);
 
         return 'Vui lòng kiểm tra email của bạn';
     }

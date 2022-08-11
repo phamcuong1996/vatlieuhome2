@@ -44,6 +44,7 @@
                 url: urlDeleteCart,
                 data: {product_id: product_id},
                 success: function (data) {
+                    console.log($data)
                     if (data.code === 200) {
                         $('.cart_wapper').html(data.cart_component)
                         alert('Xóa Sản Phẩm Thành Công');
